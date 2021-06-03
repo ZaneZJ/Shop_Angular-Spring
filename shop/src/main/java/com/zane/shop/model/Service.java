@@ -1,11 +1,12 @@
 package com.zane.shop.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Set;
 
 @Entity
 @Table(name = "service")
-public class Service {
+public class Service implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

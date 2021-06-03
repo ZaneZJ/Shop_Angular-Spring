@@ -1,11 +1,12 @@
 package com.zane.shop.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @Table(name = "text")
-public class Text {
+public class Text implements Serializable {
 
     // TODO: figure out how to make chat (can leave this to the end)
 
