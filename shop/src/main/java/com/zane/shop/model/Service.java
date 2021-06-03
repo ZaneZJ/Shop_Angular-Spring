@@ -1,5 +1,7 @@
 package com.zane.shop.model;
 
+import org.apache.commons.lang.builder.ToStringBuilder;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
@@ -81,5 +83,18 @@ public class Service implements Serializable {
     }
     public void setChat_id(Set<Chat> chat_id) {
         this.chat_id = chat_id;
+    }
+
+    @Override
+    public String toString() {
+        return new ToStringBuilder(this)
+                .append("service_id", service_id)
+                .append("instance_id", instance_id)
+                .append("title", title)
+                .append("abstractt", abstractt)
+                .append("theme", theme)
+                .append("review_id", review_id)
+                .append("chat_id", chat_id)
+                .toString();
     }
 }

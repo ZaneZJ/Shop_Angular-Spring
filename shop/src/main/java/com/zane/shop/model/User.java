@@ -172,4 +172,25 @@ public class User implements Serializable {
     public void setType(LoyaltyType type) {
         this.type = type;
     }
+
+    @Override
+    public String toString() {
+        return new org.apache.commons.lang.builder.ToStringBuilder(this)
+                .append("username", username)
+                .append("name", name)
+                .append("surname", surname)
+                .append("phone_no", phone_no)
+                .append("address", address)
+                .append("email", email)
+                .append("postal_code", postal_code)
+                .append("picture_main", picture_main)
+                .append("picture_id", picture_id)
+                .append("account_no", account_no)
+                .append("service_id", service_id)
+                .append("type", type)
+                .append("from_chat", from_chat)
+                .append("to_chat", to_chat)
+                .append("review", review)
+                .toString();
+    }
 }

@@ -1,5 +1,7 @@
 package com.zane.shop.model;
 
+import org.apache.commons.lang.builder.ToStringBuilder;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -53,4 +55,13 @@ public class Review implements Serializable {
         this.review_from_user_id = review_from_user_id;
     }
 
+    @Override
+    public String toString() {
+        return new ToStringBuilder(this)
+                .append("review_id", review_id)
+                .append("rated", rated)
+                .append("review_text", review_text)
+                .append("review_from_user_id", review_from_user_id)
+                .toString();
+    }
 }

@@ -1,5 +1,7 @@
 package com.zane.shop.model;
 
+import org.apache.commons.lang.builder.ToStringBuilder;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -32,5 +34,12 @@ public class Pictures implements Serializable {
         this.picture = picture;
     }
 
+    @Override
+    public String toString() {
+        return new ToStringBuilder(this)
+                .append("picture_id", picture_id)
+                .append("picture", picture)
+                .toString();
+    }
 }
 

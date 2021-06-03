@@ -1,5 +1,7 @@
 package com.zane.shop.model;
 
+import org.apache.commons.lang.builder.ToStringBuilder;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -45,4 +47,12 @@ public class Text implements Serializable {
         this.create_time = create_time;
     }
 
+    @Override
+    public String toString() {
+        return new ToStringBuilder(this)
+                .append("text_id", text_id)
+                .append("body", body)
+                .append("create_time", create_time)
+                .toString();
+    }
 }

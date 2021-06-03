@@ -1,5 +1,7 @@
 package com.zane.shop.model;
 
+import org.apache.commons.lang.builder.ToStringBuilder;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -42,4 +44,12 @@ public class Bank implements Serializable {
         this.bank = bank;
     }
 
+    @Override
+    public String toString() {
+        return new ToStringBuilder(this)
+                .append("account_no", account_no)
+                .append("beneficiary", beneficiary)
+                .append("bank", bank)
+                .toString();
+    }
 }

@@ -1,5 +1,7 @@
 package com.zane.shop.model;
 
+import org.apache.commons.lang.builder.ToStringBuilder;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -62,4 +64,14 @@ public class Instance implements Serializable {
         this.info = info;
     }
 
+    @Override
+    public String toString() {
+        return new ToStringBuilder(this)
+                .append("insance_id", insance_id)
+                .append("price", price)
+                .append("time", time)
+                .append("listed_as", listed_as)
+                .append("info", info)
+                .toString();
+    }
 }
