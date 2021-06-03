@@ -18,6 +18,11 @@ public class Text implements Serializable {
     @Column(name = "create_time")
     private Date create_time;
 
+    public Text(Long text_id, String body, Date create_time) {
+        this.text_id = text_id;
+        this.body = body;
+        this.create_time = create_time;
+    }
 
     public Long getText_id() {
         return text_id;

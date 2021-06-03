@@ -15,6 +15,11 @@ public class Bank implements Serializable {
     @Column(name = "bank")
     private String bank;
 
+    public Bank(Long account_no, String beneficiary, String bank) {
+        this.account_no = account_no;
+        this.beneficiary = beneficiary;
+        this.bank = bank;
+    }
 
     public Long getAccount_no() {
         return account_no;

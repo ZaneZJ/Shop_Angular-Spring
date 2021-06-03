@@ -18,6 +18,12 @@ public class Review implements Serializable {
     @JoinColumn(name = "user_id")
     private User review_from_user_id;
 
+    public Review(Long review_id, Integer rated, String review_text, User review_from_user_id) {
+        this.review_id = review_id;
+        this.rated = rated;
+        this.review_text = review_text;
+        this.review_from_user_id = review_from_user_id;
+    }
 
     public Long getReview_id() {
         return review_id;

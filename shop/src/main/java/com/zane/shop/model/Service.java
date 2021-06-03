@@ -24,6 +24,15 @@ public class Service implements Serializable {
     @OneToMany(mappedBy = "chat_id")
     private Set<Chat> chat_id;
 
+    public Service(Long service_id, Set<Instance> instance_id, String title, String abstractt, String theme, Set<Review> review_id, Set<Chat> chat_id) {
+        this.service_id = service_id;
+        this.instance_id = instance_id;
+        this.title = title;
+        this.abstractt = abstractt;
+        this.theme = theme;
+        this.review_id = review_id;
+        this.chat_id = chat_id;
+    }
 
     public Long getService_id() {
         return service_id;

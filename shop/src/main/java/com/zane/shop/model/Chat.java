@@ -22,6 +22,12 @@ public class Chat implements Serializable {
     @OneToMany(mappedBy = "text_id")
     private Set<Text> text_id;
 
+    public Chat(Long chat_id, User from_user_id, User to_user_id, Set<Text> text_id) {
+        this.chat_id = chat_id;
+        this.from_user_id = from_user_id;
+        this.to_user_id = to_user_id;
+        this.text_id = text_id;
+    }
 
     public Long getChat_id() {
         return chat_id;

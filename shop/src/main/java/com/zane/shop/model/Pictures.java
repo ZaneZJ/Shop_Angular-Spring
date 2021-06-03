@@ -13,6 +13,10 @@ public class Pictures implements Serializable {
     @Column(name = "picture")
     private String picture;
 
+    public Pictures(Long picture_id, String picture) {
+        this.picture_id = picture_id;
+        this.picture = picture;
+    }
 
     public Long getPicture_id() {
         return picture_id;

@@ -19,6 +19,13 @@ public class Instance implements Serializable {
     @Column(name = "info")
     private String info;
 
+    public Instance(Long insance_id, Double price, String time, Integer listed_as, String info) {
+        this.insance_id = insance_id;
+        this.price = price;
+        this.time = time;
+        this.listed_as = listed_as;
+        this.info = info;
+    }
 
     public Long getInsance_id() {
         return insance_id;

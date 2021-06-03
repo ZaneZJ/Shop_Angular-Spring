@@ -50,6 +50,23 @@ public class User implements Serializable {
     @JoinColumn(name = "review_user_id")
     private Review review;
 
+    public User(String username, String name, String surname, String phone_no, String address, String email, String postal_code, String picture_main, Set<Pictures> picture_id, Bank account_no, Set<Service> service_id, LoyaltyType type, Chat from_chat, Chat to_chat, Review review) {
+        this.username = username;
+        this.name = name;
+        this.surname = surname;
+        this.phone_no = phone_no;
+        this.address = address;
+        this.email = email;
+        this.postal_code = postal_code;
+        this.picture_main = picture_main;
+        this.picture_id = picture_id;
+        this.account_no = account_no;
+        this.service_id = service_id;
+        this.type = type;
+        this.from_chat = from_chat;
+        this.to_chat = to_chat;
+        this.review = review;
+    }
 
     public String getUsername() {
         return username;
