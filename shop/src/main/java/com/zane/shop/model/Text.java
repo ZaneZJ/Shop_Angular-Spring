@@ -11,7 +11,7 @@ public class Text implements Serializable {
     // TODO: figure out how to make chat (can leave this to the end)
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long text_id;
     @Column(name = "body")
     private String body;

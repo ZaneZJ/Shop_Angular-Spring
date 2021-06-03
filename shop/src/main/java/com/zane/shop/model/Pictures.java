@@ -8,7 +8,7 @@ import java.io.Serializable;
 public class Pictures implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long picture_id;
     @Column(name = "picture")
     private String picture;

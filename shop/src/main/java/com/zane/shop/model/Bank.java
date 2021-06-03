@@ -8,7 +8,7 @@ import java.io.Serializable;
 public class Bank implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long account_no;
     @Column(name = "beneficiary")
     private String beneficiary;

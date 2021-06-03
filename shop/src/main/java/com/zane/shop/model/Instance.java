@@ -8,7 +8,7 @@ import java.io.Serializable;
 public class Instance implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long insance_id;
     @Column(name = "price")
     private Double price;

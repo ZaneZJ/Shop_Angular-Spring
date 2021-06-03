@@ -8,7 +8,7 @@ import java.io.Serializable;
 public class Review implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long review_id;
     @Column(name = "rated")
     private Integer rated;

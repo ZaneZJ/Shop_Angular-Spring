@@ -11,7 +11,7 @@ public class Chat implements Serializable {
     // TODO: figure out how to make chat
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long chat_id;
     @OneToOne
     @JoinColumn(name = "user_id")

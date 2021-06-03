@@ -9,7 +9,7 @@ import java.util.Set;
 public class Service implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long service_id;
     @OneToMany(mappedBy = "instance_id")
     private Set<Instance> instance_id;
