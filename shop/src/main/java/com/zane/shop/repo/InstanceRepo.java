@@ -1,0 +1,13 @@
+package com.zane.shop.repo;
+
+import com.zane.shop.model.Instance;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface InstanceRepo extends JpaRepository<Instance, Long> {
+
+}
+
