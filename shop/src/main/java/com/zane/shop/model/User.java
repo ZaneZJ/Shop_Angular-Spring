@@ -16,56 +16,56 @@ public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String username;
-    @Column(name = "name")
+
+    @Column
     private String name;
-    @Column(name = "surname")
+
+    @Column
     private String surname;
-    @Column(name = "phone_no")
-    private String phone_no;
-    @Column(name = "address")
+
+    @Column
+    private String phoneNo;
+
+    @Column
     private String address;
-    @Column(name = "email")
+
+    @Column
     private String email;
-    @Column(name = "postal_code")
-    private String postal_code;
-    @Column(name = "picture_main")
-    private String picture_main;
-    @OneToMany(mappedBy = "picture_id")
-    private Set<Pictures> picture_id;
+
+    @Column
+    private String postalCode;
+
+    @Column
+    private String pictureMain;
+
+    @OneToMany(mappedBy = "pictureId")
+    private Set<Pictures> pictures;
+
     @OneToOne
-    @JoinColumn(name = "account_no")
-    private Bank account_no;
-    @OneToMany(mappedBy = "service_id")
-    private Set<Service> service_id;
-    @Column(name = "type")
+    @JoinColumn
+    private Bank accountNo;
+
+    @OneToMany(mappedBy = "serviceId")
+    private Set<Service> services;
+
+    @Column
     @Enumerated(EnumType.STRING)
     private LoyaltyType type;
-    @OneToOne
-    @JoinColumn(name = "from_user_id")
-    private Chat from_chat;
-    @OneToOne
-    @JoinColumn(name = "to_user_id")
-    private Chat to_chat;
-    @OneToOne
-    @JoinColumn(name = "review_user_id")
-    private Review review;
 
-    public User(String username, String name, String surname, String phone_no, String address, String email, String postal_code, String picture_main, Set<Pictures> picture_id, Bank account_no, Set<Service> service_id, LoyaltyType type, Chat from_chat, Chat to_chat, Review review) {
+
+    public User(String username, String name, String surname, String phoneNo, String address, String email, String postalCode, String pictureMain, Set<Pictures> pictures, Bank accountNo, Set<Service> services, LoyaltyType type) {
         this.username = username;
         this.name = name;
         this.surname = surname;
-        this.phone_no = phone_no;
+        this.phoneNo = phoneNo;
         this.address = address;
         this.email = email;
-        this.postal_code = postal_code;
-        this.picture_main = picture_main;
-        this.picture_id = picture_id;
-        this.account_no = account_no;
-        this.service_id = service_id;
+        this.postalCode = postalCode;
+        this.pictureMain = pictureMain;
+        this.pictures = pictures;
+        this.accountNo = accountNo;
+        this.services = services;
         this.type = type;
-        this.from_chat = from_chat;
-        this.to_chat = to_chat;
-        this.review = review;
     }
 
     public String getUsername() {
@@ -89,11 +89,11 @@ public class User implements Serializable {
         this.surname = surname;
     }
 
-    public String getPhone_no() {
-        return phone_no;
+    public String getPhoneNo() {
+        return phoneNo;
     }
-    public void setPhone_no(String phone_no) {
-        this.phone_no = phone_no;
+    public void setPhoneNo(String phoneNo) {
+        this.phoneNo = phoneNo;
     }
 
     public String getAddress() {
@@ -110,60 +110,39 @@ public class User implements Serializable {
         this.email = email;
     }
 
-    public String getPostal_code() {
-        return postal_code;
+    public String getPostalCode() {
+        return postalCode;
     }
-    public void setPostal_code(String postal_code) {
-        this.postal_code = postal_code;
-    }
-
-    public String getPicture_main() {
-        return picture_main;
-    }
-    public void setPicture_main(String picture_main) {
-        this.picture_main = picture_main;
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
     }
 
-    public Set<Pictures> getPicture_id() {
-        return picture_id;
+    public String getPictureMain() {
+        return pictureMain;
     }
-    public void setPicture_id(Set<Pictures> picture_id) {
-        this.picture_id = picture_id;
-    }
-
-    public Bank getAccount_no() {
-        return account_no;
-    }
-    public void setAccount_no(Bank account_no) {
-        this.account_no = account_no;
+    public void setPictureMain(String pictureMain) {
+        this.pictureMain = pictureMain;
     }
 
-    public Set<Service> getService_id() {
-        return service_id;
+    public Set<Pictures> getPictures() {
+        return pictures;
     }
-    public void setService_id(Set<Service> service_id) {
-        this.service_id = service_id;
-    }
-
-    public Chat getFrom_chat() {
-        return from_chat;
-    }
-    public void setFrom_chat(Chat from_chat) {
-        this.from_chat = from_chat;
+    public void setPictures(Set<Pictures> pictures) {
+        this.pictures = pictures;
     }
 
-    public Chat getTo_chat() {
-        return to_chat;
+    public Bank getAccountNo() {
+        return accountNo;
     }
-    public void setTo_chat(Chat to_chat) {
-        this.to_chat = to_chat;
+    public void setAccountNo(Bank accountNo) {
+        this.accountNo = accountNo;
     }
 
-    public Review getReview() {
-        return review;
+    public Set<Service> getServices() {
+        return services;
     }
-    public void setReview(Review review) {
-        this.review = review;
+    public void setServices(Set<Service> services) {
+        this.services = services;
     }
 
     public LoyaltyType getType() {
@@ -179,18 +158,15 @@ public class User implements Serializable {
                 .append("username", username)
                 .append("name", name)
                 .append("surname", surname)
-                .append("phone_no", phone_no)
+                .append("phoneNo", phoneNo)
                 .append("address", address)
                 .append("email", email)
-                .append("postal_code", postal_code)
-                .append("picture_main", picture_main)
-                .append("picture_id", picture_id)
-                .append("account_no", account_no)
-                .append("service_id", service_id)
+                .append("postalCode", postalCode)
+                .append("pictureMain", pictureMain)
+                .append("pictures", pictures)
+                .append("accountNo", accountNo)
+                .append("services", services)
                 .append("type", type)
-                .append("from_chat", from_chat)
-                .append("to_chat", to_chat)
-                .append("review", review)
                 .toString();
     }
 }

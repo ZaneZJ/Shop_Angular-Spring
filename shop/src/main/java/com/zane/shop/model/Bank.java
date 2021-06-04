@@ -11,23 +11,25 @@ public class Bank implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long account_no;
-    @Column(name = "beneficiary")
+    private Long accountNo;
+
+    @Column
     private String beneficiary;
-    @Column(name = "bank")
+
+    @Column
     private String bank;
 
-    public Bank(Long account_no, String beneficiary, String bank) {
-        this.account_no = account_no;
+    public Bank(Long accountNo, String beneficiary, String bank) {
+        this.accountNo = accountNo;
         this.beneficiary = beneficiary;
         this.bank = bank;
     }
 
-    public Long getAccount_no() {
-        return account_no;
+    public Long getAccountNo() {
+        return accountNo;
     }
-    public void setAccount_no(Long account_no) {
-        this.account_no = account_no;
+    public void setAccountNo(Long accountNo) {
+        this.accountNo = accountNo;
     }
 
     public String getBeneficiary() {
@@ -47,7 +49,7 @@ public class Bank implements Serializable {
     @Override
     public String toString() {
         return new ToStringBuilder(this)
-                .append("account_no", account_no)
+                .append("accountNo", accountNo)
                 .append("beneficiary", beneficiary)
                 .append("bank", bank)
                 .toString();

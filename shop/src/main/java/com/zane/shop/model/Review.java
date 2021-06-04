@@ -11,27 +11,30 @@ public class Review implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long review_id;
-    @Column(name = "rated")
+    private Long reviewId;
+
+    @Column
     private Integer rated;
-    @Column(name = "review_text")
-    private String review_text;
+
+    @Column
+    private String reviewText;
+
     @OneToOne
-    @JoinColumn(name = "user_id")
-    private User review_from_user_id;
+    @JoinColumn(name = "userId")
+    private User user;
 
-    public Review(Long review_id, Integer rated, String review_text, User review_from_user_id) {
-        this.review_id = review_id;
+    public Review(Long reviewId, Integer rated, String reviewText, User user) {
+        this.reviewId = reviewId;
         this.rated = rated;
-        this.review_text = review_text;
-        this.review_from_user_id = review_from_user_id;
+        this.reviewText = reviewText;
+        this.user = user;
     }
 
-    public Long getReview_id() {
-        return review_id;
+    public Long getReviewId() {
+        return reviewId;
     }
-    public void setReview_id(Long review_id) {
-        this.review_id = review_id;
+    public void setReviewId(Long reviewId) {
+        this.reviewId = reviewId;
     }
 
     public Integer getRated() {
@@ -41,27 +44,27 @@ public class Review implements Serializable {
         this.rated = rated;
     }
 
-    public String getReview_text() {
-        return review_text;
+    public String getReviewText() {
+        return reviewText;
     }
-    public void setReview_text(String review_text) {
-        this.review_text = review_text;
+    public void setReviewText(String reviewText) {
+        this.reviewText = reviewText;
     }
 
-    public User getReview_from_user_id() {
-        return review_from_user_id;
+    public User getUser() {
+        return user;
     }
-    public void setReview_from_user_id(User review_from_user_id) {
-        this.review_from_user_id = review_from_user_id;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override
     public String toString() {
         return new ToStringBuilder(this)
-                .append("review_id", review_id)
+                .append("reviewId", reviewId)
                 .append("rated", rated)
-                .append("review_text", review_text)
-                .append("review_from_user_id", review_from_user_id)
+                .append("reviewText", reviewText)
+                .append("user", user)
                 .toString();
     }
 }

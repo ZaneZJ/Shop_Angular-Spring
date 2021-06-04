@@ -11,29 +11,33 @@ public class Instance implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long insance_id;
-    @Column(name = "price")
+    private Long instanceId;
+
+    @Column
     private Double price;
-    @Column(name = "time")
+
+    @Column
     private String time;
-    @Column(name = "listed_as")
-    private Integer listed_as;
-    @Column(name = "info")
+
+    @Column
+    private Integer listedAs;
+
+    @Column
     private String info;
 
-    public Instance(Long insance_id, Double price, String time, Integer listed_as, String info) {
-        this.insance_id = insance_id;
+    public Instance(Long instanceId, Double price, String time, Integer listedAs, String info) {
+        this.instanceId = instanceId;
         this.price = price;
         this.time = time;
-        this.listed_as = listed_as;
+        this.listedAs = listedAs;
         this.info = info;
     }
 
-    public Long getInsance_id() {
-        return insance_id;
+    public Long getInstanceId() {
+        return instanceId;
     }
-    public void setInsance_id(Long insance_id) {
-        this.insance_id = insance_id;
+    public void setInstanceId(Long instanceId) {
+        this.instanceId = instanceId;
     }
 
     public Double getPrice() {
@@ -50,11 +54,11 @@ public class Instance implements Serializable {
         this.time = time;
     }
 
-    public Integer getListed_as() {
-        return listed_as;
+    public Integer getListedAs() {
+        return listedAs;
     }
-    public void setListed_as(Integer listed_as) {
-        this.listed_as = listed_as;
+    public void setListedAs(Integer listedAs) {
+        this.listedAs = listedAs;
     }
 
     public String getInfo() {
@@ -67,10 +71,10 @@ public class Instance implements Serializable {
     @Override
     public String toString() {
         return new ToStringBuilder(this)
-                .append("insance_id", insance_id)
+                .append("instanceId", instanceId)
                 .append("price", price)
                 .append("time", time)
-                .append("listed_as", listed_as)
+                .append("listedAs", listedAs)
                 .append("info", info)
                 .toString();
     }

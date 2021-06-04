@@ -14,58 +14,61 @@ public class Chat implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long chat_id;
+    private Long chatId;
+
     @OneToOne
-    @JoinColumn(name = "user_id")
-    private User from_user_id;
+    @JoinColumn
+    private User fromUserId;
+
     @OneToOne
-    @JoinColumn(name = "user_id")
-    private User to_user_id;
-    @OneToMany(mappedBy = "text_id")
-    private Set<Text> text_id;
+    @JoinColumn
+    private User toUserId;
 
-    public Chat(Long chat_id, User from_user_id, User to_user_id, Set<Text> text_id) {
-        this.chat_id = chat_id;
-        this.from_user_id = from_user_id;
-        this.to_user_id = to_user_id;
-        this.text_id = text_id;
-    }
+    @OneToMany(mappedBy = "textId")
+    private Set<Text> texts;
 
-    public Long getChat_id() {
-        return chat_id;
-    }
-    public void setChat_id(Long chat_id) {
-        this.chat_id = chat_id;
+    public Chat(Long chatId, User fromUserId, User toUserId, Set<Text> texts) {
+        this.chatId = chatId;
+        this.fromUserId = fromUserId;
+        this.toUserId = toUserId;
+        this.texts = texts;
     }
 
-    public User getFrom_user_id() {
-        return from_user_id;
+    public Long getChatId() {
+        return chatId;
     }
-    public void setFrom_user_id(User from_user_id) {
-        this.from_user_id = from_user_id;
-    }
-
-    public User getTo_user_id() {
-        return to_user_id;
-    }
-    public void setTo_user_id(User to_user_id) {
-        this.to_user_id = to_user_id;
+    public void setChatId(Long chatId) {
+        this.chatId = chatId;
     }
 
-    public Set<Text> getText_id() {
-        return text_id;
+    public User getFromUserId() {
+        return fromUserId;
     }
-    public void setText_id(Set<Text> text_id) {
-        this.text_id = text_id;
+    public void setFromUserId(User fromUserId) {
+        this.fromUserId = fromUserId;
+    }
+
+    public User getToUserId() {
+        return toUserId;
+    }
+    public void setToUserId(User toUserId) {
+        this.toUserId = toUserId;
+    }
+
+    public Set<Text> getTexts() {
+        return texts;
+    }
+    public void setTexts(Set<Text> texts) {
+        this.texts = texts;
     }
 
     @Override
     public String toString() {
         return new ToStringBuilder(this)
-                .append("chat_id", chat_id)
-                .append("from_user_id", from_user_id)
-                .append("to_user_id", to_user_id)
-                .append("text_id", text_id)
+                .append("chatId", chatId)
+                .append("fromUserId", fromUserId)
+                .append("toUserId", toUserId)
+                .append("texts", texts)
                 .toString();
     }
 }

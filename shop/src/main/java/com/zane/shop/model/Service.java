@@ -12,42 +12,48 @@ public class Service implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long service_id;
-    @OneToMany(mappedBy = "instance_id")
-    private Set<Instance> instance_id;
-    @Column(name = "title")
+    private Long serviceId;
+
+    @OneToMany
+    private Set<Instance> instances;
+
+    @Column
     private String title;
-    @Column(name = "abstractt")
-    private String abstractt;
-    @Column(name = "theme")
+
+    @Column
+    private String description;
+
+    @Column
     private String theme;
-    @OneToMany(mappedBy = "review_id")
-    private Set<Review> review_id;
-    @OneToMany(mappedBy = "chat_id")
-    private Set<Chat> chat_id;
 
-    public Service(Long service_id, Set<Instance> instance_id, String title, String abstractt, String theme, Set<Review> review_id, Set<Chat> chat_id) {
-        this.service_id = service_id;
-        this.instance_id = instance_id;
+    @OneToMany(mappedBy = "reviewId")
+    private Set<Review> reviews;
+
+    @OneToMany(mappedBy = "chatId")
+    private Set<Chat> chats;
+
+    public Service(Long serviceId, Set<Instance> instances, String title, String description, String theme, Set<Review> reviews, Set<Chat> chats) {
+        this.serviceId = serviceId;
+        this.instances = instances;
         this.title = title;
-        this.abstractt = abstractt;
+        this.description = description;
         this.theme = theme;
-        this.review_id = review_id;
-        this.chat_id = chat_id;
+        this.reviews = reviews;
+        this.chats = chats;
     }
 
-    public Long getService_id() {
-        return service_id;
+    public Long getServiceId() {
+        return serviceId;
     }
-    public void setService_id(Long service_id) {
-        this.service_id = service_id;
+    public void setServiceId(Long serviceId) {
+        this.serviceId = serviceId;
     }
 
-    public Set<Instance> getInstance_id() {
-        return instance_id;
+    public Set<Instance> getInstances() {
+        return instances;
     }
-    public void setInstance_id(Set<Instance> instance_id) {
-        this.instance_id = instance_id;
+    public void setInstances(Set<Instance> instances) {
+        this.instances = instances;
     }
 
     public String getTitle() {
@@ -57,11 +63,11 @@ public class Service implements Serializable {
         this.title = title;
     }
 
-    public String getAbstractt() {
-        return abstractt;
+    public String getDescription() {
+        return description;
     }
-    public void setAbstractt(String abstractt) {
-        this.abstractt = abstractt;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getTheme() {
@@ -71,30 +77,30 @@ public class Service implements Serializable {
         this.theme = theme;
     }
 
-    public Set<Review> getReview_id() {
-        return review_id;
+    public Set<Review> getReviews() {
+        return reviews;
     }
-    public void setReview_id(Set<Review> review_id) {
-        this.review_id = review_id;
+    public void setReviews(Set<Review> reviews) {
+        this.reviews = reviews;
     }
 
-    public Set<Chat> getChat_id() {
-        return chat_id;
+    public Set<Chat> getChats() {
+        return chats;
     }
-    public void setChat_id(Set<Chat> chat_id) {
-        this.chat_id = chat_id;
+    public void setChats(Set<Chat> chats) {
+        this.chats = chats;
     }
 
     @Override
     public String toString() {
         return new ToStringBuilder(this)
-                .append("service_id", service_id)
-                .append("instance_id", instance_id)
+                .append("serviceId", serviceId)
+                .append("instances", instances)
                 .append("title", title)
-                .append("abstractt", abstractt)
+                .append("description", description)
                 .append("theme", theme)
-                .append("review_id", review_id)
-                .append("chat_id", chat_id)
+                .append("reviews", reviews)
+                .append("chats", chats)
                 .toString();
     }
 }

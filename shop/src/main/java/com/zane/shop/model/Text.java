@@ -14,23 +14,25 @@ public class Text implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long text_id;
-    @Column(name = "body")
+    private Long textId;
+
+    @Column
     private String body;
-    @Column(name = "create_time")
-    private Date create_time;
 
-    public Text(Long text_id, String body, Date create_time) {
-        this.text_id = text_id;
+    @Column
+    private Date createTime;
+
+    public Text(Long textId, String body, Date createTime) {
+        this.textId = textId;
         this.body = body;
-        this.create_time = create_time;
+        this.createTime = createTime;
     }
 
-    public Long getText_id() {
-        return text_id;
+    public Long getTextId() {
+        return textId;
     }
-    public void setText_id(Long text_id) {
-        this.text_id = text_id;
+    public void setTextId(Long textId) {
+        this.textId = textId;
     }
 
     public String getBody() {
@@ -40,19 +42,19 @@ public class Text implements Serializable {
         this.body = body;
     }
 
-    public Date getCreate_time() {
-        return create_time;
+    public Date getCreateTime() {
+        return createTime;
     }
-    public void setCreate_time(Date create_time) {
-        this.create_time = create_time;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
     @Override
     public String toString() {
         return new ToStringBuilder(this)
-                .append("text_id", text_id)
+                .append("textId", textId)
                 .append("body", body)
-                .append("create_time", create_time)
+                .append("createTime", createTime)
                 .toString();
     }
 }

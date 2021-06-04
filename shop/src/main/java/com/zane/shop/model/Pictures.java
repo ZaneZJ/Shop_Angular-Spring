@@ -11,20 +11,21 @@ public class Pictures implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long picture_id;
-    @Column(name = "picture")
+    private Long pictureId;
+
+    @Column
     private String picture;
 
-    public Pictures(Long picture_id, String picture) {
-        this.picture_id = picture_id;
+    public Pictures(Long pictureId, String picture) {
+        this.pictureId = pictureId;
         this.picture = picture;
     }
 
-    public Long getPicture_id() {
-        return picture_id;
+    public Long getPictureId() {
+        return pictureId;
     }
-    public void setPicture_id(Long id) {
-        this.picture_id = picture_id;
+    public void setPictureId(Long id) {
+        this.pictureId = pictureId;
     }
 
     public String getPicture() {
@@ -37,7 +38,7 @@ public class Pictures implements Serializable {
     @Override
     public String toString() {
         return new ToStringBuilder(this)
-                .append("picture_id", picture_id)
+                .append("pictureId", pictureId)
                 .append("picture", picture)
                 .toString();
     }
