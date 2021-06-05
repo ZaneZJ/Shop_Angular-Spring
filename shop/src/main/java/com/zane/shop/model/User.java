@@ -50,23 +50,26 @@ public class User implements Serializable {
 
     @Column
     @Enumerated(EnumType.STRING)
-    private LoyaltyType type;
+    private LoyaltyType loyaltyType;
+
+    @Column
+    private String status;
 
 
-    public User(String username, String name, String surname, String phoneNo, String address, String email, String postalCode, String pictureMain, Set<Pictures> pictures, Bank accountNo, Set<Service> services, LoyaltyType type) {
-        this.username = username;
-        this.name = name;
-        this.surname = surname;
-        this.phoneNo = phoneNo;
-        this.address = address;
-        this.email = email;
-        this.postalCode = postalCode;
-        this.pictureMain = pictureMain;
-        this.pictures = pictures;
-        this.accountNo = accountNo;
-        this.services = services;
-        this.type = type;
-    }
+//    public User(String username, String name, String surname, String phoneNo, String address, String email, String postalCode, String pictureMain, Set<Pictures> pictures, Bank accountNo, Set<Service> services, LoyaltyType type) {
+//        this.username = username;
+//        this.name = name;
+//        this.surname = surname;
+//        this.phoneNo = phoneNo;
+//        this.address = address;
+//        this.email = email;
+//        this.postalCode = postalCode;
+//        this.pictureMain = pictureMain;
+//        this.pictures = pictures;
+//        this.accountNo = accountNo;
+//        this.services = services;
+//        this.type = type;
+//    }
 
     public String getUsername() {
         return username;
@@ -145,11 +148,18 @@ public class User implements Serializable {
         this.services = services;
     }
 
-    public LoyaltyType getType() {
-        return type;
+    public LoyaltyType getLoyaltyType() {
+        return loyaltyType;
     }
-    public void setType(LoyaltyType type) {
-        this.type = type;
+    public void setLoyaltyType(LoyaltyType loyaltyType) {
+        this.loyaltyType = loyaltyType;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @Override
@@ -166,7 +176,8 @@ public class User implements Serializable {
                 .append("pictures", pictures)
                 .append("accountNo", accountNo)
                 .append("services", services)
-                .append("type", type)
+                .append("loyaltyType", loyaltyType)
+                .append("status", status)
                 .toString();
     }
 }

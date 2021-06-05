@@ -32,15 +32,20 @@ public class Service implements Serializable {
     @OneToMany(mappedBy = "chatId")
     private Set<Chat> chats;
 
-    public Service(Long serviceId, Set<Instance> instances, String title, String description, String theme, Set<Review> reviews, Set<Chat> chats) {
-        this.serviceId = serviceId;
-        this.instances = instances;
-        this.title = title;
-        this.description = description;
-        this.theme = theme;
-        this.reviews = reviews;
-        this.chats = chats;
-    }
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn
+    private User username;
+
+//    public Service(Long serviceId, Set<Instance> instances, String title, String description, String theme, Set<Review> reviews, Set<Chat> chats, User username) {
+//        this.serviceId = serviceId;
+//        this.instances = instances;
+//        this.title = title;
+//        this.description = description;
+//        this.theme = theme;
+//        this.reviews = reviews;
+//        this.chats = chats;
+//        this.username = username;
+//    }
 
     public Long getServiceId() {
         return serviceId;
@@ -91,6 +96,13 @@ public class Service implements Serializable {
         this.chats = chats;
     }
 
+    public User getUsername() {
+        return username;
+    }
+    public void setUsername(User username) {
+        this.username = username;
+    }
+
     @Override
     public String toString() {
         return new ToStringBuilder(this)
@@ -101,6 +113,7 @@ public class Service implements Serializable {
                 .append("theme", theme)
                 .append("reviews", reviews)
                 .append("chats", chats)
+                .append("username", username)
                 .toString();
     }
 }

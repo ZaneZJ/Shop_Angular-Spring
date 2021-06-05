@@ -16,10 +16,10 @@ public class Pictures implements Serializable {
     @Column
     private String picture;
 
-    public Pictures(Long pictureId, String picture) {
-        this.pictureId = pictureId;
-        this.picture = picture;
-    }
+//    public Pictures(Long pictureId, String picture) {
+//        this.pictureId = pictureId;
+//        this.picture = picture;
+//    }
 
     public Long getPictureId() {
         return pictureId;
