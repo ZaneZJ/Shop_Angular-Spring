@@ -25,13 +25,13 @@ public class Instance implements Serializable {
     @Column
     private String info;
 
-    public Instance(Long instanceId, Double price, String time, Integer listedAs, String info) {
-        this.instanceId = instanceId;
-        this.price = price;
-        this.time = time;
-        this.listedAs = listedAs;
-        this.info = info;
-    }
+//    public Instance(Long instanceId, Double price, String time, Integer listedAs, String info) {
+//        this.instanceId = instanceId;
+//        this.price = price;
+//        this.time = time;
+//        this.listedAs = listedAs;
+//        this.info = info;
+//    }
 
     public Long getInstanceId() {
         return instanceId;

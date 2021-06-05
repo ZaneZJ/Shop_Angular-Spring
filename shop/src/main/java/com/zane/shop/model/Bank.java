@@ -10,8 +10,8 @@ import java.io.Serializable;
 public class Bank implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long accountNo;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private String accountNo;
 
     @Column
     private String beneficiary;
@@ -19,16 +19,16 @@ public class Bank implements Serializable {
     @Column
     private String bank;
 
-    public Bank(Long accountNo, String beneficiary, String bank) {
-        this.accountNo = accountNo;
-        this.beneficiary = beneficiary;
-        this.bank = bank;
-    }
+//    public Bank(Long accountNo, String beneficiary, String bank) {
+//        this.accountNo = accountNo;
+//        this.beneficiary = beneficiary;
+//        this.bank = bank;
+//    }
 
-    public Long getAccountNo() {
+    public String getAccountNo() {
         return accountNo;
     }
-    public void setAccountNo(Long accountNo) {
+    public void setAccountNo(String accountNo) {
         this.accountNo = accountNo;
     }
 

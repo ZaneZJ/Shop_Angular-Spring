@@ -22,11 +22,11 @@ public class Text implements Serializable {
     @Column
     private Date createTime;
 
-    public Text(Long textId, String body, Date createTime) {
-        this.textId = textId;
-        this.body = body;
-        this.createTime = createTime;
-    }
+//    public Text(Long textId, String body, Date createTime) {
+//        this.textId = textId;
+//        this.body = body;
+//        this.createTime = createTime;
+//    }
 
     public Long getTextId() {
         return textId;

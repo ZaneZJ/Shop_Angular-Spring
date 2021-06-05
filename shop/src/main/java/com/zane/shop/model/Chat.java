@@ -27,12 +27,12 @@ public class Chat implements Serializable {
     @OneToMany(mappedBy = "textId")
     private Set<Text> texts;
 
-    public Chat(Long chatId, User fromUserId, User toUserId, Set<Text> texts) {
-        this.chatId = chatId;
-        this.fromUserId = fromUserId;
-        this.toUserId = toUserId;
-        this.texts = texts;
-    }
+//    public Chat(Long chatId, User fromUserId, User toUserId, Set<Text> texts) {
+//        this.chatId = chatId;
+//        this.fromUserId = fromUserId;
+//        this.toUserId = toUserId;
+//        this.texts = texts;
+//    }
 
     public Long getChatId() {
         return chatId;

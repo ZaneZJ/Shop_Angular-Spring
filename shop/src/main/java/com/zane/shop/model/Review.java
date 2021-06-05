@@ -21,14 +21,14 @@ public class Review implements Serializable {
 
     @OneToOne
     @JoinColumn(name = "userId")
-    private User user;
+    private User username;
 
-    public Review(Long reviewId, Integer rated, String reviewText, User user) {
-        this.reviewId = reviewId;
-        this.rated = rated;
-        this.reviewText = reviewText;
-        this.user = user;
-    }
+//    public Review(Long reviewId, Integer rated, String reviewText, User username) {
+//        this.reviewId = reviewId;
+//        this.rated = rated;
+//        this.reviewText = reviewText;
+//        this.user = username;
+//    }
 
     public Long getReviewId() {
         return reviewId;
@@ -51,11 +51,11 @@ public class Review implements Serializable {
         this.reviewText = reviewText;
     }
 
-    public User getUser() {
-        return user;
+    public User getUsername() {
+        return username;
     }
-    public void setUser(User user) {
-        this.user = user;
+    public void setUsername(User username) {
+        this.username = username;
     }
 
     @Override
@@ -64,7 +64,7 @@ public class Review implements Serializable {
                 .append("reviewId", reviewId)
                 .append("rated", rated)
                 .append("reviewText", reviewText)
-                .append("user", user)
+                .append("username", username)
                 .toString();
     }
 }
