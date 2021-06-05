@@ -1,5 +1,6 @@
 package com.zane.shop.service;
 
+import com.zane.shop.exception.UsernameNotFoundException;
 import com.zane.shop.model.User;
 import com.zane.shop.repo.UserRepo;
 import com.zane.shop.service.validator.UserValidator;
@@ -31,13 +32,30 @@ public class UserService {
         return userRepo.save(user);
     }
 
-    public User getUserByUsername(String username) {
-        return userRepo.getOne(username);
-    }
-
     public void softDeleteUser(String username){
         User user = userValidator.checkUsernameExists(username);
         user.setStatus("DELETED");
         userRepo.save(user);
     }
+
+    public List<User> findAllUsernames() {
+        return userRepo.findAll();
+    }
+
+    public User updateUser(User username) {
+        return userRepo.save(username);
+    }
+
+    public User getUserByUsername(String username) {
+        return userRepo.getOne(username);
+    }
+
+    // OR:
+
+    public User findByUsername(String username) {
+        return userRepo.findByUsername(username)
+                .orElseThrow(() -> new UsernameNotFoundException("Username: " + username + " was not found!"));
+    }
+
+
 }
