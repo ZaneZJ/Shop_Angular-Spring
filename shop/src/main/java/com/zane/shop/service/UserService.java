@@ -38,6 +38,12 @@ public class UserService {
         userRepo.save(user);
     }
 
+    // OR:
+
+    public void deleteUser(String username){
+        userRepo.deleteUserByUsername(username);
+    }
+
     public List<User> findAllUsernames() {
         return userRepo.findAll();
     }
@@ -57,5 +63,10 @@ public class UserService {
                 .orElseThrow(() -> new UsernameNotFoundException("Username: " + username + " was not found!"));
     }
 
+    public User addUser(User user) {
+        // FIXME: insert it manually
+//        user.setUsername(UUID.randomUUID().toString());
+        return userRepo.save(user);
+    }
 
 }

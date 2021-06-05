@@ -10,6 +10,7 @@ import java.util.List;
 public interface ServiceRepo extends JpaRepository<Service, Long> {
 
     List<Service> findByTheme(String theme);
+
     List<Service> findByTitleLike(String keyword);
 
 }
