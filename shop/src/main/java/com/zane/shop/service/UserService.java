@@ -4,12 +4,13 @@ import com.zane.shop.model.User;
 import com.zane.shop.repo.UserRepo;
 import com.zane.shop.service.validator.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.UUID;
 
-@Service
+@Component
 public class UserService {
 
     private final UserRepo userRepo;
@@ -35,7 +36,7 @@ public class UserService {
     }
 
     public void softDeleteUser(String username){
-        User user = userValidator.checkUserExists(username);
+        User user = userValidator.checkUsernameExists(username);
         user.setStatus("DELETED");
         userRepo.save(user);
     }

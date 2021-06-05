@@ -25,8 +25,8 @@ public class ServiceValidator {
     public Service checkServiceExists(Long serviceId) {
         Optional<Service> serviceFromDBOpt = serviceRepo.findById(serviceId);
         return serviceFromDBOpt.orElseThrow(() ->
-                new EntityDoesNotExistsException("Book: (" + serviceId
-                        + ") not exists!"));
+                new EntityDoesNotExistsException("Service: (" + serviceId
+                        + ") does not exists!"));
     }
 
 }

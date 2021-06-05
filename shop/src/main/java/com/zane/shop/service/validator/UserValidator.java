@@ -29,22 +29,23 @@ public class UserValidator {
         userRepo.findOne(userExample)
                 .ifPresent(t -> {
                     throw new EmailAlreadyExistsException(
-                            "Email AlreadyExists!: " + t.getEmail());
+                            "Email already exists!: " + t.getEmail());
                 });
     }
 
-    public User checkUserExists(String username) {
+    public User checkUsernameExists(String username) {
         Optional<User> userFromDBOpt = Optional.ofNullable(userRepo.findByStatusAndUsername("ACTIVE", username));
         return userFromDBOpt.orElseThrow(() ->
-                new EntityDoesNotExistsException("User: (" + username + ") not exists!"));
+                new EntityDoesNotExistsException("Username: (" + username + ") does not exists!"));
     }
 
-    public void checkUserHaveService(User username, Long serviceId) {
-        if (!username.getServices().stream().map(Service::getId)
-                .collect(Collectors.toSet()).contains(serviceId)) {
-            throw new UserDoesNotHaveThatServiceException("user("
-                    + username.getId() + ") does not have book (" + serviceId + ")");
-        }
-    }
+    // FIXME:
+//    public void checkUserHaveService(User user, Long serviceId) {
+//        if (!user.getServices().stream().map(Service::getUsername)
+//                .collect(Collectors.toSet()).contains(serviceId)) {
+//            throw new UserDoesNotHaveThatServiceException("user with username("
+//                    + user.getUsername() + ") does not have service (" + serviceId + ")");
+//        }
+//    }
 
 }
