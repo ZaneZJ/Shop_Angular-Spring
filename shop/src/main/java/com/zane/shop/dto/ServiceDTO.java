@@ -16,6 +16,7 @@ public class ServiceDTO {
 
     private Long serviceId;
 
+    @NotBlank(message = "instances can not be null")
     private Set<InstanceDTO> instancesDTOSet;
 
     @NotBlank(message = "title can not be null")
@@ -30,6 +31,7 @@ public class ServiceDTO {
 
     private Set<ChatDTO> chatsDTOSet;
 
+    @NotBlank(message = "username can not be null")
     private User username;
 
 
