@@ -3,6 +3,7 @@ package com.zane.shop.model;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 import java.util.Set;
 
@@ -18,13 +19,16 @@ public class Chat implements Serializable {
 
     @OneToOne
     @JoinColumn
+    @NotBlank(message = "from user code can not be null")
     private User fromUserId;
 
     @OneToOne
     @JoinColumn
+    @NotBlank(message = "to user can not be null")
     private User toUserId;
 
     @OneToMany(mappedBy = "textId")
+    @NotBlank(message = "texts can not be null")
     private Set<Text> texts;
 
 //    public Chat(Long chatId, User fromUserId, User toUserId, Set<Text> texts) {

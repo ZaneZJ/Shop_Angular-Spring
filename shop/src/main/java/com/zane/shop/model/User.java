@@ -1,8 +1,11 @@
 package com.zane.shop.model;
 
 import com.zane.shop.constants.LoyaltyType;
+import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 import java.util.Set;
 
@@ -14,25 +17,31 @@ public class User implements Serializable {
     // TODO: set upp roles
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Length(min = 4, max = 20)
     private String username;
 
     @Column
+    @NotBlank(message = "name can not be null")
     private String name;
 
     @Column
+    @NotBlank(message = "surname can not be null")
     private String surname;
 
     @Column
+    @Length(min = 8, max = 15)
     private String phoneNo;
 
     @Column
+    @NotBlank(message = "address can not be null")
     private String address;
 
     @Column
+    @Email(message = "Email should be valid")
     private String email;
 
     @Column
+    @NotBlank(message = "postal code can not be null")
     private String postalCode;
 
     @Column
@@ -43,6 +52,7 @@ public class User implements Serializable {
 
     @OneToOne
     @JoinColumn
+    @NotBlank(message = "account number can not be null")
     private Bank accountNo;
 
     @OneToMany(mappedBy = "serviceId")

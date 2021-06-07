@@ -3,6 +3,7 @@ package com.zane.shop.model;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
 @Entity
@@ -14,6 +15,7 @@ public class Pictures implements Serializable {
     private Long pictureId;
 
     @Column
+    @NotBlank(message = "picture can not be null")
     private String picture;
 
 //    public Pictures(Long pictureId, String picture) {

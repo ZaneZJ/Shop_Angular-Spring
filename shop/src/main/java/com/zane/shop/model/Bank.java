@@ -3,6 +3,7 @@ package com.zane.shop.model;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
 @Entity
@@ -14,9 +15,11 @@ public class Bank implements Serializable {
     private String accountNo;
 
     @Column
+    @NotBlank(message = "beneficiary can not be null")
     private String beneficiary;
 
     @Column
+    @NotBlank(message = "bank can not be null")
     private String bank;
 
 //    public Bank(Long accountNo, String beneficiary, String bank) {

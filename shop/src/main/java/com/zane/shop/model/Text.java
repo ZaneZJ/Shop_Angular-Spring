@@ -3,6 +3,7 @@ package com.zane.shop.model;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -17,9 +18,11 @@ public class Text implements Serializable {
     private Long textId;
 
     @Column
+    @NotBlank(message = "body can not be null")
     private String body;
 
     @Column
+    @NotBlank(message = "createTime can not be null")
     private Date createTime;
 
 //    public Text(Long textId, String body, Date createTime) {

@@ -1,8 +1,10 @@
 package com.zane.shop.model;
 
 import org.apache.commons.lang.builder.ToStringBuilder;
+import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
 @Entity
@@ -14,6 +16,7 @@ public class Review implements Serializable {
     private Long reviewId;
 
     @Column
+    @Length(min = 1, max = 5)
     private Integer rated;
 
     @Column
@@ -21,6 +24,7 @@ public class Review implements Serializable {
 
     @OneToOne
     @JoinColumn(name = "userId")
+    @NotBlank(message = "username can not be null")
     private User username;
 
 //    public Review(Long reviewId, Integer rated, String reviewText, User username) {

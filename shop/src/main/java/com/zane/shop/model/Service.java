@@ -3,6 +3,7 @@ package com.zane.shop.model;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 import java.util.Set;
 
@@ -15,12 +16,15 @@ public class Service implements Serializable {
     private Long serviceId;
 
     @OneToMany
+    @NotBlank(message = "instances can not be null")
     private Set<Instance> instances;
 
     @Column
+    @NotBlank(message = "title can not be null")
     private String title;
 
     @Column
+    @NotBlank(message = "description can not be null")
     private String description;
 
     @Column
@@ -34,6 +38,7 @@ public class Service implements Serializable {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn
+    @NotBlank(message = "username can not be null")
     private User username;
 
 //    public Service(Long serviceId, Set<Instance> instances, String title, String description, String theme, Set<Review> reviews, Set<Chat> chats, User username) {
