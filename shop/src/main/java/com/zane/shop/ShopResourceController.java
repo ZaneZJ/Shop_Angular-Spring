@@ -19,13 +19,13 @@ public class ShopResourceController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<User>> getUsersByUsername() {
-        List<User> users = userService.findAllUsernames();
+    public ResponseEntity<List<User>> getAllUsers() {
+        List<User> users = userService.findAllUsers();
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
 
     @GetMapping("/find/{username}")
-    public ResponseEntity<User> getAllUsers(@PathVariable("username") String username) {
+    public ResponseEntity<User> getUsersByUsername(@PathVariable("username") String username) {
         User user = userService.findByUsername(username);
         return new ResponseEntity<>(user, HttpStatus.OK);
     }

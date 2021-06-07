@@ -44,7 +44,7 @@ public class UserService {
         userRepo.deleteUserByUsername(username);
     }
 
-    public List<User> findAllUsernames() {
+    public List<User> findAllUsers() {
         return userRepo.findAll();
     }
 

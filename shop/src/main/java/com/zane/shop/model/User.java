@@ -20,6 +20,7 @@ public class User implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long user_id;
 
+    @Column(unique = true)
     @Length(min = 4, max = 20)
     private String username;
 
@@ -50,12 +51,8 @@ public class User implements Serializable {
     @Column
     private String pictureMain;
 
-    @OneToMany(mappedBy = "pictureId")
-    private Set<Pictures> pictures;
-
     @OneToOne
     @JoinColumn
-    @NotBlank(message = "account number can not be null")
     private Bank accountNo;
 
     @OneToMany(mappedBy = "serviceId")
@@ -147,13 +144,6 @@ public class User implements Serializable {
         this.pictureMain = pictureMain;
     }
 
-    public Set<Pictures> getPictures() {
-        return pictures;
-    }
-    public void setPictures(Set<Pictures> pictures) {
-        this.pictures = pictures;
-    }
-
     public Bank getAccountNo() {
         return accountNo;
     }
@@ -194,7 +184,6 @@ public class User implements Serializable {
                 .append("email", email)
                 .append("postalCode", postalCode)
                 .append("pictureMain", pictureMain)
-                .append("pictures", pictures)
                 .append("accountNo", accountNo)
                 .append("services", services)
                 .append("loyaltyType", loyaltyType)

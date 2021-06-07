@@ -7,6 +7,8 @@ import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 import java.util.Set;
 
+// FIXME: add pictures in here!!!
+
 @Entity
 @Table(name = "service")
 public class Service implements Serializable {
@@ -40,6 +42,9 @@ public class Service implements Serializable {
     @JoinColumn
     @NotBlank(message = "username can not be null")
     private User username;
+
+    @OneToMany(mappedBy = "pictureId")
+    private Set<Pictures> pictures;
 
 //    public Service(Long serviceId, Set<Instance> instances, String title, String description, String theme, Set<Review> reviews, Set<Chat> chats, User username) {
 //        this.serviceId = serviceId;
@@ -108,6 +113,13 @@ public class Service implements Serializable {
         this.username = username;
     }
 
+    public Set<Pictures> getPictures() {
+        return pictures;
+    }
+    public void setPictures(Set<Pictures> pictures) {
+        this.pictures = pictures;
+    }
+
     @Override
     public String toString() {
         return new ToStringBuilder(this)
@@ -119,6 +131,7 @@ public class Service implements Serializable {
                 .append("reviews", reviews)
                 .append("chats", chats)
                 .append("username", username)
+                .append("pictures", pictures)
                 .toString();
     }
 }
