@@ -58,12 +58,12 @@ public class ServiceService {
         serviceRepo.save(service);
     }
 
-    public void removeServiceFromUser(String username, Long serviceId) {
-        Service service = serviceValidator.checkServiceExists(serviceId);
-        User user = userValidator.checkUsernameExists(username);
-        userValidator.checkUserHaveService(user, serviceId);
-        service.setUsername(null);
-        serviceRepo.save(service);
-    }
+//    public void removeServiceFromUser(String username, Long serviceId) {
+//        Service service = serviceValidator.checkServiceExists(serviceId);
+//        User user = userValidator.checkUsernameExists(username);
+//        userValidator.checkUserHaveService(user, serviceId);
+//        service.setUsername(null);
+//        serviceRepo.save(service);
+//    }
 
 }
