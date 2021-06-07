@@ -1,0 +1,244 @@
+{
+	"info": {
+		"_postman_id": "8c8d8ffd-b9d4-40c3-83e7-cbbfebbc93bf",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User Controller",
+			"item": [
+				{
+					"name": "Add multiple users",
+					"item": [
+						{
+							"name": "addUser 1",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"MikeLux\",\r\n    \"name\": \"Mike\",\r\n    \"surname\": \"Lux\",\r\n    \"phoneNo\": \"22334466\",\r\n    \"address\": \"Street 2\",\r\n    \"email\": \"mike@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:9000/shop/add",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"shop",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addUser 2",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"SaraXX\",\r\n    \"name\": \"Sara\",\r\n    \"surname\": \"Fox\",\r\n    \"phoneNo\": \"22334477\",\r\n    \"address\": \"Street 3\",\r\n    \"email\": \"sara@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:9000/shop/add",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"shop",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addUser 3",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"Luisss\",\r\n    \"name\": \"Luis\",\r\n    \"surname\": \"Blue\",\r\n    \"phoneNo\": \"22334433\",\r\n    \"address\": \"Street 4\",\r\n    \"email\": \"luis@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:9000/shop/add",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"shop",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addUser 4",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"Sally123\",\r\n    \"name\": \"Sally\",\r\n    \"surname\": \"Max\",\r\n    \"phoneNo\": \"22334499\",\r\n    \"address\": \"Street 5\",\r\n    \"email\": \"sally@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:9000/shop/add",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"shop",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addUser 5",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"SamSol\",\r\n    \"name\": \"Sam\",\r\n    \"surname\": \"Sol\",\r\n    \"phoneNo\": \"22334400\",\r\n    \"address\": \"Street 6\",\r\n    \"email\": \"sam@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:9000/shop/add",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"shop",
+										"add"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "getAllUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9000/shop/all",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"shop",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUsersByUsername",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9000/shop/find/{{username}}",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"shop",
+								"find",
+								"{{username}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"zane123\",\r\n    \"name\": \"Zane\",\r\n    \"surname\": \"Jansone\",\r\n    \"phoneNo\": \"22334455\",\r\n    \"address\": \"Street 1\",\r\n    \"email\": \"zane@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9000/shop/add",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"shop",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
