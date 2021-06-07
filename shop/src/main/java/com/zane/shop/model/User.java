@@ -32,7 +32,7 @@ public class User implements Serializable {
     @NotBlank(message = "surname can not be null")
     private String surname;
 
-    @Column
+    @Column(unique = true)
     @Length(min = 8, max = 15)
     private String phoneNo;
 
@@ -40,7 +40,7 @@ public class User implements Serializable {
     @NotBlank(message = "address can not be null")
     private String address;
 
-    @Column
+    @Column(unique = true)
     @Email(message = "Email should be valid")
     private String email;
 
