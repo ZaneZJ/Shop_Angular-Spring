@@ -48,8 +48,8 @@ public class UserService {
         return userRepo.findAll();
     }
 
-    public User updateUser(User username) {
-        return userRepo.save(username);
+    public User updateUser(User userId) {
+        return userRepo.save(userId);
     }
 
     public User getUserByUsername(String username) {

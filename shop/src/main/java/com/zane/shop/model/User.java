@@ -18,7 +18,7 @@ public class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long user_id;
+    private Long userId;
 
     @Column(unique = true)
     @Length(min = 4, max = 20)
@@ -81,11 +81,11 @@ public class User implements Serializable {
 //        this.type = type;
 //    }
 
-    public Long getUser_id() {
-        return user_id;
+    public Long getUserId() {
+        return userId;
     }
-    public void setUser_id(Long user_id) {
-        this.user_id = user_id;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public String getUsername() {
@@ -175,7 +175,7 @@ public class User implements Serializable {
     @Override
     public String toString() {
         return new org.apache.commons.lang.builder.ToStringBuilder(this)
-                .append("user_id", user_id)
+                .append("userId", userId)
                 .append("username", username)
                 .append("name", name)
                 .append("surname", surname)
