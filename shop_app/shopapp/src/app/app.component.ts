@@ -28,8 +28,7 @@ export class AppComponent implements OnInit {
       },
       (error: HttpErrorResponse) => {
         alert(error.message);
-      };
-      )
+      }
     )
   }
 }
