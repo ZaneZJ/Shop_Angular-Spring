@@ -12,7 +12,10 @@ export class AppComponent implements OnInit {
   title = 'shopapp';
 
   public users: User[];
-  constructor(private userService: UserService){}
+  constructor(private userService: UserService){
+    // Initialization inside the constructor
+    this.users = [];
+  }
 
   ngOnInit() {
     this.getUsers();
