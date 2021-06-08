@@ -40,7 +40,11 @@ public class UserService {
 
     // OR:
 
-    public void deleteUser(String username){
+    public void deleteUser(Long userId){
+        userRepo.deleteUserByUserId(userId);
+    }
+
+    public void deleteUserByUsername(String username){
         userRepo.deleteUserByUsername(username);
     }
 
