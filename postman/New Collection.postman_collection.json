@@ -13,6 +13,19 @@
 					"item": [
 						{
 							"name": "addUser 1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"addUser 1. Successful POST request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -41,6 +54,19 @@
 						},
 						{
 							"name": "addUser 2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"addUser 2. Successful POST request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -69,6 +95,19 @@
 						},
 						{
 							"name": "addUser 3",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"addUser 3. Successful POST request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -97,6 +136,19 @@
 						},
 						{
 							"name": "addUser 4",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"addUser 4. Successful POST request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -125,6 +177,19 @@
 						},
 						{
 							"name": "addUser 5",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"addUser 5. Successful POST request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -194,6 +259,19 @@
 				},
 				{
 					"name": "addUser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"addUser. Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -225,7 +303,17 @@
 					"request": {
 						"method": "PUT",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "localhost:9000/shop/update",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"shop",
+								"update"
+							]
+						}
 					},
 					"response": []
 				},
@@ -234,7 +322,18 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "localhost:9000/shop/delete/{{userId}}",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"shop",
+								"delete",
+								"{{userId}}"
+							]
+						}
 					},
 					"response": []
 				}
