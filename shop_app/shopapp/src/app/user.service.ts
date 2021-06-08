@@ -8,7 +8,7 @@ import { User } from './user';
     providedIn: 'root'
 })
 export class UserService {
-    private apiServerUrl = '';
+    private apiServerUrl = environment.apiBaseUrl;
 
     constructor(private http: HttpClient) { }
 
