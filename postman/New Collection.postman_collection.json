@@ -215,6 +215,621 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "addUser 6",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"addUser 6. Successful POST request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"Lisa\",\r\n    \"name\": \"Lisa\",\r\n    \"surname\": \"Robin\",\r\n    \"phoneNo\": \"22332200\",\r\n    \"address\": \"Street 7\",\r\n    \"email\": \"lisa@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:9000/shop/add",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"shop",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addUser 7",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"addUser 7. Successful POST request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"Robin1\",\r\n    \"name\": \"Robin\",\r\n    \"surname\": \"Dog\",\r\n    \"phoneNo\": \"22331100\",\r\n    \"address\": \"Street 7\",\r\n    \"email\": \"doggydog@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:9000/shop/add",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"shop",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addUser 8",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"addUser 8. Successful POST request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"TomTom\",\r\n    \"name\": \"Tom\",\r\n    \"surname\": \"First\",\r\n    \"phoneNo\": \"22111100\",\r\n    \"address\": \"Street 8\",\r\n    \"email\": \"tomm@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:9000/shop/add",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"shop",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addUser 9",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"addUser 9. Successful POST request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"Samanta\",\r\n    \"name\": \"Samanta\",\r\n    \"surname\": \"Green\",\r\n    \"phoneNo\": \"22122100\",\r\n    \"address\": \"Street 8\",\r\n    \"email\": \"sammy@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:9000/shop/add",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"shop",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addUser 10",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"addUser 10. Successful POST request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"LucyPoke\",\r\n    \"name\": \"Lucy\",\r\n    \"surname\": \"Poke\",\r\n    \"phoneNo\": \"22111199\",\r\n    \"address\": \"Street 10\",\r\n    \"email\": \"lucy@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:9000/shop/add",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"shop",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addUser 11",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"addUser 11. Successful POST request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"CarlB\",\r\n    \"name\": \"Carl\",\r\n    \"surname\": \"Black\",\r\n    \"phoneNo\": \"22114499\",\r\n    \"address\": \"Street 11\",\r\n    \"email\": \"carlb@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:9000/shop/add",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"shop",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addUser 12",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"addUser 12. Successful POST request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"Nicky123\",\r\n    \"name\": \"Nick\",\r\n    \"surname\": \"Sure\",\r\n    \"phoneNo\": \"22332222\",\r\n    \"address\": \"Street 12\",\r\n    \"email\": \"nicky@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:9000/shop/add",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"shop",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addUser 13",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"addUser 13. Successful POST request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"Eddie\",\r\n    \"name\": \"Eduard\",\r\n    \"surname\": \"Nice\",\r\n    \"phoneNo\": \"22335599\",\r\n    \"address\": \"Street 13\",\r\n    \"email\": \"eddie@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:9000/shop/add",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"shop",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addUser 14",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"addUser 14. Successful POST request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"Samantha\",\r\n    \"name\": \"Samantha\",\r\n    \"surname\": \"Rabit\",\r\n    \"phoneNo\": \"22779999\",\r\n    \"address\": \"Street 14\",\r\n    \"email\": \"sammy123@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:9000/shop/add",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"shop",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addUser 15",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"addUser 15. Successful POST request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"Marta00\",\r\n    \"name\": \"Marta\",\r\n    \"surname\": \"Dust\",\r\n    \"phoneNo\": \"22339911\",\r\n    \"address\": \"Street 15\",\r\n    \"email\": \"dust@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:9000/shop/add",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"shop",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addUser 16",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"addUser 16. Successful POST request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"Lauma\",\r\n    \"name\": \"Lauma\",\r\n    \"surname\": \"Sun\",\r\n    \"phoneNo\": \"22339988\",\r\n    \"address\": \"Street 16\",\r\n    \"email\": \"laumasun@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"SILVER\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:9000/shop/add",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"shop",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addUser 17",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"addUser 17. Successful POST request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"Timmy\",\r\n    \"name\": \"Tim\",\r\n    \"surname\": \"Cool\",\r\n    \"phoneNo\": \"22337700\",\r\n    \"address\": \"Street 17\",\r\n    \"email\": \"timmy@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"SILVER\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:9000/shop/add",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"shop",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addUser 18",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"addUser 18. Successful POST request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"Jane\",\r\n    \"name\": \"Jane\",\r\n    \"surname\": \"Second\",\r\n    \"phoneNo\": \"22337722\",\r\n    \"address\": \"Street 18\",\r\n    \"email\": \"jane@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"SILVER\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:9000/shop/add",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"shop",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addUser 19",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"addUser 20. Successful POST request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"Ian1\",\r\n    \"name\": \"Ian\",\r\n    \"surname\": \"Tree\",\r\n    \"phoneNo\": \"22337733\",\r\n    \"address\": \"Street 19\",\r\n    \"email\": \"iantree@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"GOLD\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:9000/shop/add",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"shop",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addUser 20",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"addUser 20. Successful POST request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"Emily\",\r\n    \"name\": \"Emily\",\r\n    \"surname\": \"White\",\r\n    \"phoneNo\": \"22337744\",\r\n    \"address\": \"Street 20\",\r\n    \"email\": \"emily@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"GOLD\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:9000/shop/add",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"shop",
+										"add"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
