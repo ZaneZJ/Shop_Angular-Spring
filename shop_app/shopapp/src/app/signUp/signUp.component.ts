@@ -1,7 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
-// import { User } from '.signUp.component.spec/user';
 import { UserService } from '../user.service';
 import { NgForm } from '@angular/forms';
 
@@ -10,7 +9,7 @@ import { NgForm } from '@angular/forms';
   templateUrl: './signUp.component.html',
   styleUrls: ['./signUp.component.css']
 })
-export class AppComponent implements OnInit {
+export class SignUpComponent implements OnInit {
 
   public users: User[];
 
@@ -35,7 +34,7 @@ export class AppComponent implements OnInit {
   }
 
   public onAddUser(addForm: NgForm): void {
-    document.getElementById('add-user-form').click();
+    document!.getElementById('add-user-form')!.click();
     this.userService.addUser(addForm.value).subscribe(
       (response: User) => {
         console.log(response);

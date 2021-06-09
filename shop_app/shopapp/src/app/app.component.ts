@@ -39,7 +39,7 @@ export class AppComponent implements OnInit {
 
   public onAddUser(addForm: NgForm): void {
     // With ! we let the compiler know that a value isn't null by external means.
-    document!.getElementById('add-user-form').click();
+    document!.getElementById('add-user-form')!.click();
     this.userService.addUser(addForm.value).subscribe(
       (response: User) => {
         console.log(response);
@@ -93,13 +93,17 @@ export class AppComponent implements OnInit {
     }
   }
 
+  // TODO: remove this (I don't like it)
+  // mode is gonna tell what the user is trying to do
   public onOpenModal(user: User, mode: string): void {
+    // assigning button to main-container
     const container = document.getElementById('main-container');
     const button = document.createElement('button');
     button.type = 'button';
     button.style.display = 'none';
     button.setAttribute('data-toggle', 'modal');
     if (mode === 'add') {
+      // it's referencing a id, that's why #
       button.setAttribute('data-target', '#addUserModal');
     }
     if (mode === 'edit') {
@@ -110,7 +114,7 @@ export class AppComponent implements OnInit {
       this.deleteUser = user;
       button.setAttribute('data-target', '#deleteUserModal');
     }
-    container.appendChild(button);
+    container!.appendChild(button);
     button.click();
   }
 }

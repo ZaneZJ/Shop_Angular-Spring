@@ -1,17 +1,17 @@
 .phone-1 {
-    background: url(../images/phones/3.png) no-repeat;
+    background: url(./images/phones/3.png) no-repeat;
     background-size: contain;
     height: 100%;
     width: 100%;
 }
 .phone-2 {
-    background: url(../images/phones/2.png) no-repeat;
+    background: url(./images/phones/2.png) no-repeat;
     background-size: contain;
     height: 100%;
     width: 100%;
 }
 .phone-3 {
-    background: url(../images/phones/1.png) no-repeat;
+    background: url(./images/phones/1.png) no-repeat;
     background-size: contain;
     height: 100%;
     width: 100%;
@@ -43,9 +43,9 @@
         display: none;
     }
 }
-.bubbles {
+.main-banner {
     height: 635px;
-	background-image: url(../images/banner/inner-section-bg.png);
+	background-image: url(./images/banner/inner-section-bg.png);
     background-size: 100% auto;
     background-repeat: no-repeat;
     background-position: center bottom;
