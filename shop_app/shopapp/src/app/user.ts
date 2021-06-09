@@ -7,8 +7,8 @@ export interface User {
     address: string;
     postalCode: string;
     pictureMain: string;
+    accountId: number;
     // FIXME: returns Set of strings
-    accountNo: string;
-    services: string;
+    services: number;
     type: string;
 }

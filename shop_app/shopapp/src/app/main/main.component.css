@@ -1,0 +1,66 @@
+.phone-1 {
+    background: url(../images/phones/3.png) no-repeat;
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+}
+.phone-2 {
+    background: url(../images/phones/2.png) no-repeat;
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+}
+.phone-3 {
+    background: url(../images/phones/1.png) no-repeat;
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+}
+.phone-wrapper-1 {
+    right: 0;
+    top: -50px
+}
+.phone-wrapper-2 {
+    right: 200px;
+    top: -200px;
+}
+.phone-wrapper-3 {
+    right: 450px;
+    top: -50px;
+}
+.rotate {
+    z-index: 1;
+    transform: rotate(10deg);
+    position: absolute;
+    height: 1100px;
+    width: 200px;
+}
+.banner {
+    overflow: hidden;
+}
+@media only screen and (max-width: 992px) {
+    .rotate {
+        display: none;
+    }
+}
+.bubbles {
+    height: 635px;
+	background-image: url(../images/banner/inner-section-bg.png);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+.white-text {
+    color: white;
+}
+
+.navbar:not(.scrolled) {
+    background-color: rgba(255, 255, 255, 0.97);
+    border-radius: 5px;
+    padding: 0 3rem;
+}
+
+.container {
+	max-width: 1200px;
+}
