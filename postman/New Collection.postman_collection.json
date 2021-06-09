@@ -858,7 +858,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:9000/shop/find/{{username}}",
+							"raw": "localhost:9000/shop/find/zane123",
 							"host": [
 								"localhost"
 							],
@@ -866,7 +866,7 @@
 							"path": [
 								"shop",
 								"find",
-								"{{username}}"
+								"zane123"
 							]
 						}
 					},
@@ -915,6 +915,19 @@
 				},
 				{
 					"name": "updateUser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"updateUser. Successful PUT request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -934,11 +947,24 @@
 				},
 				{
 					"name": "deleteUser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"deleteUser. Successful DELETE request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:9000/shop/delete/{{userId}}",
+							"raw": "localhost:9000/shop/delete/1",
 							"host": [
 								"localhost"
 							],
@@ -946,7 +972,7 @@
 							"path": [
 								"shop",
 								"delete",
-								"{{userId}}"
+								"1"
 							]
 						}
 					},
