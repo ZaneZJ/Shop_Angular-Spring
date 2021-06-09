@@ -11,7 +11,11 @@ import java.io.Serializable;
 public class Bank implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long accountId;
+
+    @Column
+    @NotBlank(message = "account number can not be null")
     private String accountNo;
 
     @Column
@@ -27,6 +31,13 @@ public class Bank implements Serializable {
 //        this.beneficiary = beneficiary;
 //        this.bank = bank;
 //    }
+
+    public Long getAccountId() {
+        return accountId;
+    }
+    public void setAccountId(Long accountId) {
+        this.accountId = accountId;
+    }
 
     public String getAccountNo() {
         return accountNo;
@@ -52,6 +63,7 @@ public class Bank implements Serializable {
     @Override
     public String toString() {
         return new ToStringBuilder(this)
+                .append("accountId", accountId)
                 .append("accountNo", accountNo)
                 .append("beneficiary", beneficiary)
                 .append("bank", bank)

@@ -53,7 +53,7 @@ public class User implements Serializable {
 
     @OneToOne
     @JoinColumn
-    private Bank accountNo;
+    private Bank accountId;
 
     @OneToMany(mappedBy = "serviceId")
     private Set<Service> services;
@@ -144,11 +144,11 @@ public class User implements Serializable {
         this.pictureMain = pictureMain;
     }
 
-    public Bank getAccountNo() {
-        return accountNo;
+    public Bank getAccountId() {
+        return accountId;
     }
-    public void setAccountNo(Bank accountNo) {
-        this.accountNo = accountNo;
+    public void setAccountId(Bank accountId) {
+        this.accountId = accountId;
     }
 
     public Set<Service> getServices() {
@@ -184,7 +184,7 @@ public class User implements Serializable {
                 .append("email", email)
                 .append("postalCode", postalCode)
                 .append("pictureMain", pictureMain)
-                .append("accountNo", accountNo)
+                .append("accountId", accountId)
                 .append("services", services)
                 .append("loyaltyType", loyaltyType)
                 .append("status", status)
