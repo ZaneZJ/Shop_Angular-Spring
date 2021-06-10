@@ -43,93 +43,157 @@
     crossorigin="anonymous"
   ></script>
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+  />
 </head>
 <body>
-<!-- Banner starts -->
-<section class="banner">
-<!-- <section class="banner d-flex align-items-center"> -->
-  <!-- Phones -->
-  <div class="phone-wrapper-1 rotate">
-    <div class="phone-1 rellax" data-rellax-speed="-17"></div>
-  </div>
+  <!-- START of Nav Bar -->
 
-  <div class="phone-wrapper-2 rotate">
-    <div class="phone-2 rellax" data-rellax-speed="7"></div>
-  </div>
+  <ul class="navbar navbody" id="navbar-zindex">
+    <img src="./images/logo/logo.png" alt="logo" width="100" href="main"/>
+    <li class="navli">
+		<input type="text" id="findService" name="fname" placeholder="Find Service" class="navbar-search" >
+	</li>
+    <li style="float: right">
+		<!-- TODO: if user is logged in the show initials but if not show signIn and signUp buttons -->
+      <a class="profile-button" href="profile">ZJ</a>
+    </li>
+  </ul>
 
-  <div class="phone-wrapper-3 rotate">
-    <div class="phone-3 rellax" data-rellax-speed="-10"></div>
-  </div>
-  <!-- /Phones -->
-  <div></div>
-  <div class="container">
-    <div class="row no-gutters align-items-center">
-      <div class="col-lg-5 text-center text-lg-left">
-        <h1 class="white-text">
-          Find the service <br />for your needs
-        </h1>
-        <p class="larger-txt white-text">
-          Some text
-          <br />
-          Some extra text
-        </p>
-        <!-- FIXME: show the sign up only when user is not authorised -->
-        <a
-          href="#"
-          class="custom-btn secondary-btn page-scroll"
-          data-toggle="modal"
-          data-target="#call_me_modal"
-          >Sign Up</a
-        >
+  <!-- END of Nav Bar -->
+
+  <!-- START of Banner -->
+
+  <section class="banner">
+    <!-- <section class="banner d-flex align-items-center"> -->
+
+    <!-- START of Phones -->
+    <div class="phone-wrapper-1 rotate">
+      <div class="phone-1 rellax" data-rellax-speed="-17"></div>
+    </div>
+
+    <div class="phone-wrapper-2 rotate">
+      <div class="phone-2 rellax" data-rellax-speed="7"></div>
+    </div>
+
+    <div class="phone-wrapper-3 rotate">
+      <div class="phone-3 rellax" data-rellax-speed="-10"></div>
+    </div>
+
+    <!-- END of Phones -->
+
+    <div></div>
+    <div class="container">
+      <div class="row no-gutters align-items-center">
+        <div class="col-lg-5 text-center text-lg-left banner-text">
+          <h1 class="white-text">Find the service <br />for your needs</h1>
+          <p class="larger-txt white-text">
+            Some text
+            <br />
+            Some extra text
+          </p>
+          <!-- FIXME: show the sign up only when user is not authorised -->
+          <a
+            href="signUp"
+            class="custom-btn secondary-btn page-scroll signup-button"
+            data-toggle="modal"
+            data-target="#call_me_modal"
+            >Sign Up</a
+          >
+        </div>
       </div>
     </div>
+  </section>
+
+  <!-- END of Banner -->
+
+  <!-- START of Services -->
+
+  <div id="service-zindex" class="service">
+    <!-- START of Search/Filter -->
+
+    <div class="service-search">
+      <p>hello</p>
+    </div>
+
+    <!-- END of Search/Filter -->
+
+    <!-- START of Service Display -->
+
+    <div>
+	</div>
+
+    <!-- END of Service Display -->
   </div>
-</section>
 
-<!-- jQuery -->
-<script src="js/vendor/jquery-3.3.1.min.js"></script>
-<script src="js/vendor/jquery-migrate.min.js"></script>
-<!-- Bootstrap js -->
-<script src="js/vendor/bootstrap.bundle.min.js"></script>
-<!-- jQuery Easing Plugin -->
-<script src="js/vendor/easing-1.3.js"></script>
-<!-- jQuery progressbar plugin -->
-<script src="js/vendor/jquery.waypoints.min.js"></script>
-<script src="js/vendor/jquery.counterup.min.js"></script>
-<!-- ImagesLoaded js -->
-<script src="js/vendor/imagesloaded.pkgd.min.js"></script>
-<!-- Owl carousel js -->
-<script src="js/vendor/owl.carousel.min.js"></script>
-<!-- Magnific popup -->
-<script src="js/vendor/jquery.magnific-popup.min.js"></script>
+  <!-- END of Services -->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+  <!-- jQuery -->
+  <script src="js/vendor/jquery-3.3.1.min.js"></script>
+  <script src="js/vendor/jquery-migrate.min.js"></script>
+  <!-- Bootstrap js -->
+  <script src="js/vendor/bootstrap.bundle.min.js"></script>
+  <!-- jQuery Easing Plugin -->
+  <script src="js/vendor/easing-1.3.js"></script>
+  <!-- jQuery progressbar plugin -->
+  <script src="js/vendor/jquery.waypoints.min.js"></script>
+  <script src="js/vendor/jquery.counterup.min.js"></script>
+  <!-- ImagesLoaded js -->
+  <script src="js/vendor/imagesloaded.pkgd.min.js"></script>
+  <!-- Owl carousel js -->
+  <script src="js/vendor/owl.carousel.min.js"></script>
+  <!-- Magnific popup -->
+  <script src="js/vendor/jquery.magnific-popup.min.js"></script>
 
-<script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js" integrity="sha512-f5HTYZYTDZelxS7LEQYv8ppMHTZ6JJWglzeQmr0CVTS70vJgaJiIO15ALqI7bhsracojbXkezUIL+35UXwwGrQ==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/glide.min.js" integrity="sha512-IkLiryZhI6G4pnA3bBZzYCT9Ewk87U4DGEOz+TnRD3MrKqaUitt+ssHgn2X/sxoM7FxCP/ROUp6wcxjH/GcI5Q==" crossorigin="anonymous"></script>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
 
-<!-- Custom js -->
-<script src="js/main.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"
+    integrity="sha512-f5HTYZYTDZelxS7LEQYv8ppMHTZ6JJWglzeQmr0CVTS70vJgaJiIO15ALqI7bhsracojbXkezUIL+35UXwwGrQ=="
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/glide.min.js"
+    integrity="sha512-IkLiryZhI6G4pnA3bBZzYCT9Ewk87U4DGEOz+TnRD3MrKqaUitt+ssHgn2X/sxoM7FxCP/ROUp6wcxjH/GcI5Q=="
+    crossorigin="anonymous"
+  ></script>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <!-- Custom js -->
+  <script src="js/main.js"></script>
 
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"
+  ></script>
 </body>
 
 <!-- <div class="container" id="main-container">
   <div class="row">
     <div *ngFor="let user of users" class="col-md-6 col-xl-3"> -->
-      <!-- Cards with Users -->
-      <!-- <div class="card m-b-30">
+<!-- Cards with Users -->
+<!-- <div class="card m-b-30">
         <div class="card-body row">
           <div class="col-6"> -->
-            <!-- Image for the cards = pictureMain -->
-            <!-- By using user? I'm making sure that user exists before accessing it's attributes -->
-            <!-- <a href=""
+<!-- Image for the cards = pictureMain -->
+<!-- By using user? I'm making sure that user exists before accessing it's attributes -->
+<!-- <a href=""
               ><img
                 src="{{ user?.pictureMain }}"
                 alt=""
@@ -171,9 +235,9 @@
     </div>
   </div> -->
 
-  <!-- Notification for no users -->
+<!-- Notification for no users -->
 
-  <!-- <div *ngIf="users?.length == 0" class="col-lg-12 col-md-12 col-xl-12">
+<!-- <div *ngIf="users?.length == 0" class="col-lg-12 col-md-12 col-xl-12">
     <div class="alert alert-info" role="alert">
       <h4 class="alert-heading">NO USERS!</h4>
       <p>No Users were found.</p>
