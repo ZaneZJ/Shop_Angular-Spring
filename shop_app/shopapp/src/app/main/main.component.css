@@ -5,6 +5,37 @@ button:focus {
     outline: none;
 }
 
+/* START of Service Fields */
+
+mat-card {
+    margin: auto;
+    /* max-width: 500px; */
+    max-width: 100%;
+    margin-top: 25px;
+    margin-bottom: 35px;
+}
+
+.example-small-box, .example-large-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 16px;
+    padding: 16px;
+    border-radius: 8px;
+  }
+  
+  .example-small-box {
+    height: 100px;
+    width: 100px;
+  }
+  
+  .example-large-box {
+    height: 300px;
+    width: 300px;
+  }
+
+/* END of Service Fields */
+
 /* START of Nav Bar */
 
 .navbody {
@@ -82,7 +113,7 @@ button:focus {
     border-radius: 20px;
     text-align: center;
     color: #9dc0c5;
-    margin-left: -70px;
+    margin-left: -100px;
 }
 
 /* END of Nav Bar */
