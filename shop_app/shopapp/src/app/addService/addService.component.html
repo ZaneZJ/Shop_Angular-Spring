@@ -1,0 +1,71 @@
+<div class="main-background main-background-fade">
+
+    <!-- START of Nav Bar -->
+    
+    <ul class="navbar navbody" id="navbar-zindex">
+        <img src="assets/logo.png" alt="logo" width="170" href="main"/>
+        <li style="float: right">
+            <!-- TODO: if user is logged in the show initials but if not show signIn and signUp buttons -->
+            <a class="profile-button" href="profile">ZJ</a>
+        </li>
+    </ul>
+    
+    <!-- END of Nav Bar -->
+    
+    <main style="padding-bottom: 150px;">
+  
+  <!-- Add User Modal -->
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title style="margin-left: 10px; color: #94c6ce;">Add Service</mat-card-title>
+    </mat-card-header>
+        <!-- FIXME: all have to be filled -->
+        <ng-template matStepLabel>Service</ng-template>
+        <mat-form-field>
+          <mat-label>Title</mat-label>
+          <input matInput formControlName="firstCtrl" required>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Description</mat-label>
+          <input matInput formControlName="firstCtrl" required>
+        </mat-form-field>
+
+        <mat-form-field class="example-chip-list">
+            <mat-label>Service Type</mat-label>
+            <mat-chip-list #chipList aria-label="Service selection">
+              <mat-chip
+                *ngFor="let service of services"
+                [selectable]="selectable"
+                [removable]="removable"
+                (removed)="remove(service)">
+                {{service}}
+                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+              </mat-chip>
+              <input
+                placeholder="New service..."
+                #serviceInput
+                [formControl]="serviceCtrl"
+                [matAutocomplete]="auto"
+                [matChipInputFor]="chipList"
+                [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                (matChipInputTokenEnd)="add($event)">
+            </mat-chip-list>
+            <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+              <mat-option *ngFor="let service of filteredServices | async" [value]="service">
+                {{service}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        
+        <div>
+          <button mat-raised-button style="background-color: #94c6ce; color: #fff;">Save</button>
+        </div>
+
+  </mat-card>
+  
+  </main>
+  </div>
+  
+  <div class="footer">
+  
+  </div>
