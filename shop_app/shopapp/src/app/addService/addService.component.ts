@@ -4,11 +4,11 @@ import { User } from '../user';
 import { UserService } from '../user.service';
 
 @Component({
-  selector: 'app-profileAllSee',
-  templateUrl: './profileAllSee.component.html',
-  styleUrls: ['./profileAllSee.component.css']
+  selector: 'app-addService',
+  templateUrl: './addService.component.html',
+  styleUrls: ['./addService.component.css']
 })
-export class ProfileAllSeeComponent implements OnInit {
+export class AddServiceComponent implements OnInit {
 
   public users: User[];
 

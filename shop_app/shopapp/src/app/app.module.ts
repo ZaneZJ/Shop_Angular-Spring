@@ -13,6 +13,9 @@ import { ProfileComponent } from './profile/profile.component';
 import { MainComponent } from './main/main.component';
 import { EditProfileComponent } from './editProfile/editProfile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProfileAllSeeComponent } from './profileAllSee/profileAllSee.component';
+import { AddServiceComponent } from './addService/addService.component';
+import { DisplayServiceComponent } from './displayService/displayService.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SignInComponent,
     ProfileComponent,
     MainComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    ProfileAllSeeComponent,
+    AddServiceComponent,
+    DisplayServiceComponent
   ],
   imports: [
     BrowserModule,
