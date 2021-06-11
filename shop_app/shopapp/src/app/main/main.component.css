@@ -82,6 +82,7 @@ button:focus {
     border-radius: 20px;
     text-align: center;
     color: #9dc0c5;
+    margin-left: -70px;
 }
 
 /* END of Nav Bar */
@@ -106,6 +107,30 @@ button:focus {
     color: #fff;
 }
 
+.serviceul {
+    text-align: center;
+    list-style: none;
+    padding-bottom: 40px;
+    width: 50%;
+    margin: auto;
+}
+
+.serviceli {
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: auto ;
+    margin-right: auto ;
+    vertical-align: middle;
+}
+  
+.serviceli a {
+    display: block;
+    color: rgb(135, 160, 180);
+    text-align: center;
+    text-decoration: none;
+}
+
 /* END of Service */
 
 /* START of Banner */
@@ -113,19 +138,19 @@ button:focus {
 /* TODO: uncomment phone pictures */
 
 .phone-1 {
-  /* background: url(./images/phones/3.png) no-repeat; */
+  /* background: url(/../assets/3.png) no-repeat; */
   background-size: contain;
   height: 100%;
   width: 100%;
 }
 .phone-2 {
-  /* background: url(./images/phones/2.png) no-repeat; */
+  /* background: url(/../assets/2.png) no-repeat; */
   background-size: contain;
   height: 100%;
   width: 100%;
 }
 .phone-3 {
-  /* background: url(./images/phones/1.png) no-repeat; */
+  /* background: url(/../assets/1.png) no-repeat; */
   background-size: contain;
   height: 100%;
   width: 100%;

@@ -1,0 +1,42 @@
+<div class="main-background main-background-fade">
+
+    <!-- START of Nav Bar -->
+    
+    <ul class="navbar navbody" id="navbar-zindex">
+        <img src="assets/logo.png" alt="logo" width="170" href="main"/>
+        <li class="navli">
+            <!-- FIXME: place in the center -->
+            <input type="text" id="findService" name="fname" placeholder="Find Service" class="navbar-search" >
+        </li>
+        <li style="float: right">
+            <!-- TODO: if user is logged in the show initials but if not show signIn and signUp buttons -->
+            <a class="profile-button" href="profile">ZJ</a>
+        </li>
+    </ul>
+    
+    <!-- END of Nav Bar -->
+    
+    <main>
+
+<mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title style="margin-left: -10px; color: #94c6ce;">Sign In</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-form-field appearance="fill">
+            <mat-label>Username</mat-label>
+            <input matInput [(ngModel)]="username">
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+                <input [(ngModel)]="password" matInput [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+          </mat-form-field>
+          <button (click)="signIn()" mat-raised-button style="background-color: #94c6ce; color: #fff;">Sign In</button>
+    </mat-card-content>
+  </mat-card>
+
+</main>
+</div>

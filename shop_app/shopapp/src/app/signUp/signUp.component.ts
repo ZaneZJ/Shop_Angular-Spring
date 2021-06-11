@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import { UserService } from '../user.service';
 import { NgForm } from '@angular/forms';
+import { RouterLinkWithHref } from '@angular/router';
 
 @Component({
   selector: 'app-signUp',
@@ -13,9 +14,32 @@ export class SignUpComponent implements OnInit {
 
   public users: User[];
 
+  hide = true;
+
+  username: string = "";
+  password: string = "";
+  name: string = "";
+  surname: string = "";
+  phoneNo: string = "";
+  address: string = "";
+  email: string = "";
+  postalCode: string = "";
+  pictureMain: string = "";
+  accountNo: string = "";
+  beneficiary: string = "";
+  bank: string = "";
+
   constructor(private userService: UserService){
     // Initialization inside the constructor
     this.users = [];
+  }
+
+  signUp() {
+    alert(this.username + " " + this.password);
+  }
+
+  close() {
+    window.location.href = "localhost:4200/main";
   }
 
   ngOnInit() {

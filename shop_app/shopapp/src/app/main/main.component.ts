@@ -18,6 +18,14 @@ export class MainComponent implements OnInit {
     this.users = [];
   }
 
+  signUp() {
+    window.location.replace("http://localhost:4200/signUp");
+  }
+
+  signIn() {
+    window.location.replace("http://localhost:4200/signIn");
+  }
+
   ngOnInit() {
     this.getUsers();
   }

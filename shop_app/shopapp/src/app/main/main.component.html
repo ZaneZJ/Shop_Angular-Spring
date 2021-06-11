@@ -54,15 +54,16 @@
   <!-- START of Nav Bar -->
 
   <ul class="navbar navbody" id="navbar-zindex">
-    <img src="./images/logo/logo.png" alt="logo" width="100" href="main"/>
+    <img src="assets/logo.png" alt="logo" width="170" href="main"/>
     <li class="navli">
-		<input type="text" id="findService" name="fname" placeholder="Find Service" class="navbar-search" >
-	</li>
-    <li style="float: right">
-		<!-- TODO: if user is logged in the show initials but if not show signIn and signUp buttons -->
-      <a class="profile-button" href="profile">ZJ</a>
+        <!-- FIXME: place in the center -->
+        <input type="text" id="findService" name="fname" placeholder="Find Service" class="navbar-search" >
     </li>
-  </ul>
+    <li style="float: right">
+        <!-- TODO: if user is logged in the show initials but if not show signIn and signUp buttons -->
+        <a class="profile-button" href="profile">ZJ</a>
+    </li>
+</ul>
 
   <!-- END of Nav Bar -->
 
@@ -90,20 +91,17 @@
     <div class="container">
       <div class="row no-gutters align-items-center">
         <div class="col-lg-5 text-center text-lg-left banner-text">
-          <h1 class="white-text">Find the service <br />for your needs</h1>
+          <h1 class="white-text"  style="padding-top: 60px;">Find the Service <br />for your needs</h1>
           <p class="larger-txt white-text">
-            Some text
+            Offer your services to customers worldwide
             <br />
-            Some extra text
+            And work from anywhere in the world
           </p>
           <!-- FIXME: show the sign up only when user is not authorised -->
-          <a
-            href="signUp"
-            class="custom-btn secondary-btn page-scroll signup-button"
-            data-toggle="modal"
-            data-target="#call_me_modal"
-            >Sign Up</a
-          >
+          <!-- FIXME: rederect to the right page doesn't work backwards!!!! -->
+
+          <button (click)="signUp()" mat-raised-button style="background-color: #94c6ce; color: #fff;">Sign Up</button>
+          <button (click)="signIn()" mat-raised-button style="background-color: #94c6ce; color: #fff; margin-left: 20px;">Sign In</button>
         </div>
       </div>
     </div>
@@ -117,7 +115,37 @@
     <!-- START of Search/Filter -->
 
     <div class="service-search">
-      <p>hello</p>
+
+      <!-- <mat-tab-group>
+        <mat-tab label="First"> Content 1 </mat-tab>
+        <mat-tab label="Second"> Content 2 </mat-tab>
+        <mat-tab label="Third"> Content 3 </mat-tab>
+      </mat-tab-group> -->
+
+		<ul class="serviceul">
+			<li class="serviceli">
+				<p>Programming</p>
+			</li>
+			<li class="serviceli">
+				<p>Design</p>
+			</li>
+			<li class="serviceli">
+				<p>Music</p>
+			</li>
+			<li class="serviceli">
+				<p>Education</p>
+			</li>
+			<li class="serviceli">
+				<p>Lifestyle</p>
+			</li>
+			<li class="serviceli">
+				<p>Lifestyle</p>
+			</li>			
+			<li class="serviceli">
+				<p>All</p>
+			</li>
+		</ul>
+	  <!-- TODO: add filtering as ||| at the end -->
     </div>
 
     <!-- END of Search/Filter -->
