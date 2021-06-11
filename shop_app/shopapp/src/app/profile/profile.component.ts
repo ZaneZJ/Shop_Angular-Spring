@@ -2,7 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import { UserService } from '../user.service';
-import { NgForm } from '@angular/forms';
+import {FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-profile',
@@ -15,6 +15,47 @@ export class ProfileComponent implements OnInit {
 
   public deleteUser!: User;
 
+  step = 0;
+
+  currentPassword = new FormControl("password");
+  newPassword = new FormControl("password");
+
+  setStep(index: number) {
+    this.step = index;
+  }
+
+  nextStep() {
+    this.step++;
+  }
+
+  prevStep() {
+    this.step--;
+  }
+
+  // FIXME: connect to databasee
+
+  saveEmailPhoneURL() {
+    // update email, phoneNo, pictureMain
+  }
+
+  saveAddressPostCode() {
+    // update address, postalCode
+  }
+
+  saveBanksInfo() {
+    // update bank, accountNo, beneficiary
+  }
+
+  savePassword() {
+    // update to new password
+  }
+
+  // FIXME: 
+
+  addService() {
+    // rederect to URL to add service
+  }
+  
   constructor(private userService: UserService){
     // Initialization inside the constructor
     this.users = [];

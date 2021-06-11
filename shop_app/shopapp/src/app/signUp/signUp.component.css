@@ -13,11 +13,20 @@ mat-form-field {
 
 .main-background {
     background: url(/../assets/background.jpg) no-repeat;
-
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
+/* START of Footer */
+
+.footer {
+    height: 100px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+/* END of Footer */
 
 /* START of Nav Bar */
 
