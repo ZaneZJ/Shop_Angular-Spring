@@ -2,8 +2,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import { UserService } from '../user.service';
-import { NgForm } from '@angular/forms';
 import { RouterLinkWithHref } from '@angular/router';
+import { FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-signUp',
@@ -14,6 +14,10 @@ export class SignUpComponent implements OnInit {
 
   public users: User[];
 
+  isLinear = false;
+  firstFormGroup!: FormGroup;
+  secondFormGroup!: FormGroup;
+  thirdFormGroup!: FormGroup;
   hide = true;
 
   username: string = "";
@@ -29,7 +33,7 @@ export class SignUpComponent implements OnInit {
   beneficiary: string = "";
   bank: string = "";
 
-  constructor(private userService: UserService){
+  constructor(private userService: UserService, private _formBuilder: FormBuilder){
     // Initialization inside the constructor
     this.users = [];
   }
@@ -42,8 +46,22 @@ export class SignUpComponent implements OnInit {
     window.location.href = "localhost:4200/main";
   }
 
+  done() {
+    
+  }
+
   ngOnInit() {
     this.getUsers();
+
+    this.firstFormGroup = this._formBuilder.group({
+      firstCtrl: ['', Validators.required]
+    });
+    this.secondFormGroup = this._formBuilder.group({
+      secondCtrl: ['', Validators.required]
+    });
+    this.thirdFormGroup = this._formBuilder.group({
+      thirdCtrl: ['', Validators.required]
+    });
   }
 
   public getUsers(): void {
