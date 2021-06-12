@@ -21,17 +21,22 @@
     </mat-card-header>
         <!-- FIXME: all have to be filled -->
         <ng-template matStepLabel>Service</ng-template>
+
+        <!-- Title -->
         <mat-form-field>
           <mat-label>Title</mat-label>
-          <input matInput formControlName="firstCtrl" required>
-        </mat-form-field>
-        <mat-form-field>
-          <mat-label>Description</mat-label>
-          <input matInput formControlName="firstCtrl" required>
+          <input matInput required>
         </mat-form-field>
 
+        <!-- Description -->
+        <mat-form-field>
+          <mat-label>Description</mat-label>
+          <textarea matInput required placeholder="I'm providing a service for..."></textarea>
+        </mat-form-field>
+
+        <!-- Theme (right now it's an array but could make it into a sting and afterwards search thrrough the string) -->
         <mat-form-field class="example-chip-list">
-            <mat-label>Service Type</mat-label>
+            <mat-label>Service Theme</mat-label>
             <mat-chip-list #chipList aria-label="Service selection">
               <mat-chip
                 *ngFor="let service of services"
@@ -42,7 +47,7 @@
                 <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
               </mat-chip>
               <input
-                placeholder="New service..."
+                placeholder="Add New Service Theme..."
                 #serviceInput
                 [formControl]="serviceCtrl"
                 [matAutocomplete]="auto"
@@ -56,7 +61,71 @@
               </mat-option>
             </mat-autocomplete>
           </mat-form-field>
-        
+
+          <!-- Insert img -->
+
+          <!-- TODO: add 3 img imports -->
+
+          <!-- End insert img -->
+
+          <mat-tab-group mat-align-tabs="center">
+            <!-- Listed as 1 (new instance) -->
+            <mat-tab label="First">
+              <!-- Price -->
+              <mat-form-field style="margin-top: 20px;">
+                <mat-label>List length</mat-label>
+                <input matInput [(ngModel)]="length" type="number" required>
+              </mat-form-field>
+              <!-- Time -->
+              <mat-form-field>
+                <mat-label>Time</mat-label>
+                <input matInput required>
+              </mat-form-field>
+              <!-- Info (is an arrray (in the serviceView have to show each under one another)) -->
+              <mat-form-field>
+                <mat-label>Description</mat-label>
+                <textarea matInput required placeholder="Description about specific type..."></textarea>
+              </mat-form-field>
+            </mat-tab>
+            <!-- Listed as 2 (new instance) -->
+            <mat-tab label="Second">
+              <!-- Price -->
+              <mat-form-field style="margin-top: 20px;">
+                <mat-label>List length</mat-label>
+                <input matInput [(ngModel)]="length" type="number" required>
+              </mat-form-field>
+              <!-- Time -->
+              <mat-form-field>
+                <mat-label>Time</mat-label>
+                <input matInput required>
+              </mat-form-field>
+              <!-- Info (is an arrray (in the serviceView have to show each under one another)) -->
+              <mat-form-field>
+                <mat-label>Description</mat-label>
+                <textarea matInput required placeholder="Description about specific type..."></textarea>
+              </mat-form-field>
+            </mat-tab>
+            <!-- Listed as 3 (new instance) -->
+            <mat-tab label="Third">
+              <!-- Price -->
+              <mat-form-field style="margin-top: 20px;">
+                <mat-label>List length</mat-label>
+                <input matInput [(ngModel)]="length" type="number" required>
+              </mat-form-field>
+              <!-- Time -->
+              <mat-form-field>
+                <mat-label>Time</mat-label>
+                <input matInput required>
+              </mat-form-field>
+              <!-- Info (is an arrray (in the serviceView have to show each under one another)) -->
+              <mat-form-field>
+                <mat-label>Description</mat-label>
+                <textarea matInput required placeholder="Description about specific type..."></textarea>
+              </mat-form-field>
+            </mat-tab>
+          </mat-tab-group>
+
+
         <div>
           <button mat-raised-button style="background-color: #94c6ce; color: #fff;">Save</button>
         </div>

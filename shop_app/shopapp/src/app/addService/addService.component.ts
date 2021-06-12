@@ -24,6 +24,9 @@ export class AddServiceComponent implements OnInit {
     description: string = "";
     theme: string = "";
 
+    // MatPaginator Inputs
+    length = 0;
+
     visible = true;
     selectable = true;
     removable = true;
@@ -111,4 +114,7 @@ export class AddServiceComponent implements OnInit {
         }
       );
     }
+
+
+
 }

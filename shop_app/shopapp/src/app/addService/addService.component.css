@@ -15,6 +15,10 @@ mat-form-field {
     width: 100%;
 }
 
+.mat-tab-group {
+  margin-bottom: 48px;
+}
+
 .main-background {
     background: url(/../assets/background.jpg) no-repeat;
     background-position: center;

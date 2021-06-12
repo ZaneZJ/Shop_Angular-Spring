@@ -14,6 +14,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatSelectModule} from '@angular/material/select';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 const modules = [
     MatCardModule, 
@@ -30,12 +33,15 @@ const modules = [
     MatTooltipModule,
     MatChipsModule,
     MatSelectModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    BrowserModule,
+    FormsModule,
+    MatPaginatorModule
 ];
 
 @NgModule({
   imports: [
-    ...modules
+      ...modules
   ],
   exports: [
     ...modules
