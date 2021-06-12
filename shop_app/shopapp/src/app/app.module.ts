@@ -17,6 +17,14 @@ import { ProfileAllSeeComponent } from './profileAllSee/profileAllSee.component'
 import { AddServiceComponent } from './addService/addService.component';
 import { DisplayServiceComponent } from './displayService/displayService.component';
 import { ServiceViewComponent } from './serviceView/serviceView.component';
+import { UserService } from './user.service';
+import { TextService } from './text.service';
+import { ServiceService } from './service.service';
+import { ReviewService } from './review.service';
+import { PicturesService } from './pictures.service';
+import { InstanceService } from './instance.service';
+import { ChatService } from './chat.service';
+import { BankService } from './bank.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +48,16 @@ import { ServiceViewComponent } from './serviceView/serviceView.component';
     BrowserAnimationsModule,
     MaterialModule,
   ],
-  providers: [],
+  providers: [
+    UserService,
+    TextService,
+    ServiceService,
+    ReviewService,
+    PicturesService,
+    InstanceService,
+    ChatService,
+    BankService
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

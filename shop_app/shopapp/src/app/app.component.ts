@@ -37,21 +37,21 @@ export class AppComponent implements OnInit {
     )
   }
 
-  public onAddUser(addForm: NgForm): void {
-    // With ! we let the compiler know that a value isn't null by external means.
-    document!.getElementById('add-user-form')!.click();
-    this.userService.addUser(addForm.value).subscribe(
-      (response: User) => {
-        console.log(response);
-        this.getUsers();
-        addForm.reset();
-      },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
-        addForm.reset();
-      }
-    );
-  }
+  // public onAddUser(addForm: NgForm): void {
+  //   // With ! we let the compiler know that a value isn't null by external means.
+  //   document!.getElementById('add-user-form')!.click();
+  //   this.userService.addUser(addForm.value).subscribe(
+  //     (response: User) => {
+  //       console.log(response);
+  //       this.getUsers();
+  //       addForm.reset();
+  //     },
+  //     (error: HttpErrorResponse) => {
+  //       alert(error.message);
+  //       addForm.reset();
+  //     }
+  //   );
+  // }
 
   public onUpdateUser(user: User): void {
     this.userService.updateUser(user).subscribe(
@@ -81,9 +81,9 @@ export class AppComponent implements OnInit {
     console.log(key);
     const results: User[] = [];
     for (const user of this.users) {
-      if (user.name.toLowerCase().indexOf(key.toLowerCase()) !== -1
-      || user.surname.toLowerCase().indexOf(key.toLowerCase()) !== -1
-      || user.username.toLowerCase().indexOf(key.toLowerCase()) !== -1) {
+      if (user.user_name.toLowerCase().indexOf(key.toLowerCase()) !== -1
+      || user.user_surname.toLowerCase().indexOf(key.toLowerCase()) !== -1
+      || user.user_username.toLowerCase().indexOf(key.toLowerCase()) !== -1) {
         results.push(user);
       }
     }

@@ -19,78 +19,148 @@
           >Sign Up</mat-card-title
         >
       </mat-card-header>
-      <mat-horizontal-stepper [linear]="!isLinear" #stepper>
-        <mat-step [stepControl]="firstFormGroup">
-          <form [formGroup]="firstFormGroup">
-            <!-- FIXME: all have to be filled -->
-            <ng-template matStepLabel>User</ng-template>
-            <mat-form-field>
-              <mat-label>Username</mat-label>
-              <input matInput formControlName="firstCtrl" required />
-            </mat-form-field>
-            <mat-form-field>
-              <mat-label>Name</mat-label>
-              <input matInput formControlName="firstCtrl" required />
-            </mat-form-field>
-            <mat-form-field>
-              <mat-label>Surname</mat-label>
-              <input matInput formControlName="firstCtrl" required />
-            </mat-form-field>
-            <mat-form-field>
-              <mat-label>Email address</mat-label>
-              <input matInput formControlName="firstCtrl" required />
-            </mat-form-field>
-            <mat-form-field>
-              <mat-label>Phone</mat-label>
-              <input matInput formControlName="firstCtrl" required />
-            </mat-form-field>
-            <mat-form-field>
-              <mat-label>Your pictures URL</mat-label>
-              <input matInput formControlName="firstCtrl" required />
-            </mat-form-field>
-            <mat-form-field>
-              <mat-label>Password</mat-label>
-              <input
-                [(ngModel)]="password"
-                matInput
-                [type]="hide ? 'password' : 'text'"
-                formControlName="firstCtrl"
-                required
-              />
-              <button
-                mat-icon-button
-                matSuffix
-                (click)="hide = !hide"
-                [attr.aria-label]="'Hide password'"
-                [attr.aria-pressed]="hide"
-              >
-                <mat-icon>{{
-                  hide ? "visibility_off" : "visibility"
-                }}</mat-icon>
-              </button>
-            </mat-form-field>
-            <div>
-              <button
-                mat-button
-                matStepperNext
-                mat-raised-button
-                style="background-color: #94c6ce; color: #fff"
-              >
-                Next
-              </button>
-            </div>
-          </form>
-        </mat-step>
-        <mat-step [stepControl]="secondFormGroup" label="Your address">
-          <form [formGroup]="secondFormGroup">
-            <mat-form-field>
-              <mat-label>Address</mat-label>
-              <input matInput formControlName="secondCtrl" required />
-            </mat-form-field>
-            <mat-form-field>
-              <mat-label>Postal code</mat-label>
-              <input matInput formControlName="secondCtrl" required />
-            </mat-form-field>
+      <form #addUserForm="ngForm" (ngSubmit)="onAddUser(addUserForm)">
+        <mat-horizontal-stepper [linear]="!isLinear" #stepper>
+          <mat-step [stepControl]="firstFormGroup">
+            <form [formGroup]="firstFormGroup">
+              <!-- FIXME: all have to be filled -->
+              <ng-template matStepLabel>User</ng-template>
+              <mat-form-field>
+                <mat-label>Username</mat-label>
+                <input ngModel name="user_username" id="user_username" matInput formControlName="firstCtrl" required />
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Name</mat-label>
+                <input ngModel name="user_name" id="user_name" matInput formControlName="firstCtrl1" required />
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Surname</mat-label>
+                <input ngModel name="user_surname" id="user_surname" matInput formControlName="firstCtrl2" required />
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Email address</mat-label>
+                <input ngModel name="user_email" id="user_email" matInput formControlName="firstCtrl3" required />
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Phone</mat-label>
+                <input ngModel name="user_phoneNo" id="user_phoneNo" matInput formControlName="firstCtrl4" required />
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Your pictures URL</mat-label>
+                <input ngModel name="user_pictureMain" id="user_pictureMain" matInput formControlName="firstCtrl5" required />
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Password</mat-label>
+                <!-- FIXME: figure out what to do! -->
+                <input
+                  ngModel
+                  id="user_password" 
+                  name="user_password"
+                  [(ngModel)]="user_password"
+                  matInput
+                  [type]="hide ? 'password' : 'text'"
+                  formControlName="firstCtrl6"
+                  required
+                />
+                <button
+                  mat-icon-button
+                  matSuffix
+                  (click)="hide = !hide"
+                  [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide"
+                >
+                  <mat-icon>{{
+                    hide ? "visibility_off" : "visibility"
+                  }}</mat-icon>
+                </button>
+              </mat-form-field>
+              <div>
+                <button
+                  mat-button
+                  matStepperNext
+                  mat-raised-button
+                  style="background-color: #94c6ce; color: #fff"
+                >
+                  Next
+                </button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="secondFormGroup" label="Your address">
+            <form [formGroup]="secondFormGroup">
+              <mat-form-field>
+                <mat-label>Address</mat-label>
+                <input ngModel name="user_address" id="user_address" matInput formControlName="secondCtrl" required />
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Postal code</mat-label>
+                <input ngModel name="user_postalCode" id="user_postalCode" matInput formControlName="secondCtrl1" required />
+              </mat-form-field>
+              <div>
+                <button
+                  mat-button
+                  matStepperPrevious
+                  mat-raised-button
+                  style="
+                    margin-right: 20px;
+                    background-color: #ffffff;
+                    color: rgb(184, 184, 184);
+                  "
+                >
+                  Back
+                </button>
+                <button
+                  mat-button
+                  matStepperNext
+                  mat-raised-button
+                  style="background-color: #94c6ce; color: #fff"
+                >
+                  Next
+                </button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="thirdFormGroup" label="Bank details">
+            <form [formGroup]="thirdFormGroup">
+              <mat-form-field>
+                <mat-label>Bank account number</mat-label>
+                <input ngModel name="user_accountNo" id="user_accountNo" matInput formControlName="thirdCtrl" required />
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Beneficiary</mat-label>
+                <input ngModel name="user_beneficiary" id="user_beneficiary" matInput formControlName="thirdCtrl1" required />
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Banks name</mat-label>
+                <input ngModel name="user_bank" id="user_bank" matInput formControlName="thirdCtrl2" required />
+              </mat-form-field>
+              <div>
+                <button
+                  mat-button
+                  matStepperPrevious
+                  mat-raised-button
+                  style="
+                    margin-right: 20px;
+                    background-color: #ffffff;
+                    color: rgb(184, 184, 184);
+                  "
+                >
+                  Back
+                </button>
+                <button
+                  mat-button
+                  matStepperNext
+                  mat-raised-button
+                  style="background-color: #94c6ce; color: #fff"
+                >
+                  Next
+                </button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Done</ng-template>
+            <p>You are now done.</p>
             <div>
               <button
                 mat-button
@@ -105,81 +175,17 @@
                 Back
               </button>
               <button
+                type="submit"
                 mat-button
-                matStepperNext
                 mat-raised-button
                 style="background-color: #94c6ce; color: #fff"
               >
-                Next
+                Done
               </button>
             </div>
-          </form>
-        </mat-step>
-        <mat-step [stepControl]="thirdFormGroup" label="Bank details">
-          <form [formGroup]="thirdFormGroup">
-            <mat-form-field>
-              <mat-label>Bank account number</mat-label>
-              <input matInput formControlName="thirdCtrl" required />
-            </mat-form-field>
-            <mat-form-field>
-              <mat-label>Beneficiary</mat-label>
-              <input matInput formControlName="thirdCtrl" required />
-            </mat-form-field>
-            <mat-form-field>
-              <mat-label>Banks name</mat-label>
-              <input matInput formControlName="thirdCtrl" required />
-            </mat-form-field>
-            <div>
-              <button
-                mat-button
-                matStepperPrevious
-                mat-raised-button
-                style="
-                  margin-right: 20px;
-                  background-color: #ffffff;
-                  color: rgb(184, 184, 184);
-                "
-              >
-                Back
-              </button>
-              <button
-                mat-button
-                matStepperNext
-                mat-raised-button
-                style="background-color: #94c6ce; color: #fff"
-              >
-                Next
-              </button>
-            </div>
-          </form>
-        </mat-step>
-        <mat-step>
-          <ng-template matStepLabel>Done</ng-template>
-          <p>You are now done.</p>
-          <div>
-            <button
-              mat-button
-              matStepperPrevious
-              mat-raised-button
-              style="
-                margin-right: 20px;
-                background-color: #ffffff;
-                color: rgb(184, 184, 184);
-              "
-            >
-              Back
-            </button>
-            <button
-              mat-button
-              (click)="done()"
-              mat-raised-button
-              style="background-color: #94c6ce; color: #fff"
-            >
-              Done
-            </button>
-          </div>
-        </mat-step>
-      </mat-horizontal-stepper>
+          </mat-step>
+        </mat-horizontal-stepper>
+      </form>
     </mat-card>
   </main>
 </div>

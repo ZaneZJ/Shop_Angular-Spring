@@ -65,6 +65,10 @@ public class User implements Serializable {
     @Column
     private String status;
 
+    @Column
+    @NotBlank(message = "password can not be null")
+    private String password;
+
 
 //    public User(String username, String name, String surname, String phoneNo, String address, String email, String postalCode, String pictureMain, Set<Pictures> pictures, Bank accountNo, Set<Service> services, LoyaltyType type) {
 //        this.username = username;
@@ -79,6 +83,7 @@ public class User implements Serializable {
 //        this.accountNo = accountNo;
 //        this.services = services;
 //        this.type = type;
+
 //    }
 
     public Long getUserId() {
@@ -172,6 +177,13 @@ public class User implements Serializable {
         this.status = status;
     }
 
+    public String getPassword() {
+        return password;
+    }
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     @Override
     public String toString() {
         return new org.apache.commons.lang.builder.ToStringBuilder(this)
@@ -188,6 +200,7 @@ public class User implements Serializable {
                 .append("services", services)
                 .append("loyaltyType", loyaltyType)
                 .append("status", status)
+                .append("password", password)
                 .toString();
     }
 }

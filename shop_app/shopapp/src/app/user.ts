@@ -1,16 +1,18 @@
+import { Bank } from "./bank";
 import { Service } from "./service";
 
 export interface User {
-    userId: number;
-    username: string;
-    name: string;
-    surname: string;
-    phoneNo: string;
-    address: string;
-    postalCode: string;
-    pictureMain: string;
-    accountId: number;
-    // FIXME: returns Set of strings
-    services: Service[];
-    type: string;
+    user_userId: number;
+    user_username: string;
+    user_name: string;
+    user_surname: string;
+    user_phoneNo: string;
+    user_address: string;
+    user_postalCode: string;
+    user_pictureMain: string;
+    user_accountId: Bank[];
+    user_services: Service[];
+    user_loyaltyType: string;
+    user_status: string;
+    user_password: string;
 }
