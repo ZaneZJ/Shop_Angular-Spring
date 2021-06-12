@@ -3,11 +3,20 @@
     <!-- START of Nav Bar -->
 
     <ul class="navbar navbody" id="navbar-zindex">
-      <img src="assets/logo.png" alt="logo" width="170" href="main" />
-      <li style="float: right">
-        <!-- TODO: if user is logged in the show initials but if not show signIn and signUp buttons -->
-        <a class="profile-button" href="profile">ZJ</a>
-      </li>
+      <button class="logo-btn" onclick="window.location.href='http://localhost:4200/main';">
+        <img src="assets/logo.png" alt="logo" width="200" /></button>
+
+        <li style="float: right;">
+          <!-- TODO: on click log out -->
+          
+            <button
+              mat-raised-button
+              style="background-color: #ffffff; color: rgb(167, 167, 167)"
+            >
+              Log out
+            </button>
+          
+          </li>
     </ul>
 
     <!-- END of Nav Bar -->
@@ -217,7 +226,7 @@
           <div class="add-services-btn">
             <!-- TODO: on button click move to add service -->
             <button
-              (click)="addService()"
+              onclick="window.location.href='http://localhost:4200/addService';"
               mat-raised-button
               style="background-color: #ffffff; color: rgb(170, 170, 170)"
             >
@@ -229,10 +238,14 @@
     </div>
 
     <!-- END of Profile -->
+    <div class="footer" style="margin-top: 100px;">
+      <div>
+        <p style="color: #aaaaaa; text-align-last: center; font-size: 13px;"><br>Contact info:<br>+371 22334455<br>sellyouridea@gmail.com</p>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="footer"></div>
 
 <!-- 
 <div

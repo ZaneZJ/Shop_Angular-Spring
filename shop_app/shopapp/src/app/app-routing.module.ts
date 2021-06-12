@@ -9,6 +9,7 @@ import { ProfileAllSeeComponent } from './profileAllSee/profileAllSee.component'
 import { AddServiceComponent } from './addService/addService.component';
 import { DisplayServiceComponent } from './displayService/displayService.component';
 import { ServiceViewComponent } from './serviceView/serviceView.component';
+import { ReviewComponent } from './review/review.component';
 
 const routes: Routes = [
   {
@@ -46,6 +47,10 @@ const routes: Routes = [
   {
     path: 'serviceView',
     component: ServiceViewComponent
+  },
+  {
+    path: 'review',
+    component: ReviewComponent
   }
 ];
 

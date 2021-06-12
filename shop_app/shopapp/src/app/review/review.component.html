@@ -1,0 +1,54 @@
+<div class="main-background main-background-fade">
+    <!-- START of Nav Bar -->
+  
+    <ul class="navbar navbody" id="navbar-zindex">
+        <button class="logo-btn" onclick="window.location.href='http://localhost:4200/main';">
+            <img src="assets/logo.png" alt="logo" width="200" /></button>
+      <li style="float: right">
+        <!-- TODO: if user is logged in the show but if not show signIn and signUp buttons -->
+        <a class="profile-button" href="profile"><mat-icon style="vertical-align: text-bottom;">person</mat-icon></a>
+        
+      </li>
+    </ul>
+  
+    <!-- END of Nav Bar -->
+  
+    <main>
+
+        <mat-card class="example-card">
+          <p style="color: grey; font-size: 20px;">Leave a review</p>
+        <!-- Rating -->
+        <mat-slider
+            required
+            thumbLabel
+            [displayWith]="formatLabel"
+            tickInterval="1000"
+            step="1000"
+            min="0"
+            max="100000"
+            aria-label="units">
+        </mat-slider>
+        <!-- Review text -->
+        <mat-form-field class="example-full-width">
+            <mat-label>Leave a comment</mat-label>
+            <textarea matInput required placeholder="Ex. It makes me feel..."></textarea>
+          </mat-form-field>
+
+          <div>
+            <button
+              mat-raised-button
+              style="background-color: #94c6ce; color: #fff"
+            >
+              Done
+            </button>
+          </div>
+        
+      </mat-card>
+    </main>
+  </div>
+
+  <div class="footer">
+    <div>
+      <p style="color: #aaaaaa; text-align-last: center; font-size: 13px;"><br>Contact info:<br>+371 22334455<br>sellyouridea@gmail.com</p>
+    </div>
+  </div>

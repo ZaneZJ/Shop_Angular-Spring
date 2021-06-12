@@ -11,6 +11,7 @@ import { FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
   styleUrls: ['./signUp.component.css'],
 })
 export class SignUpComponent implements OnInit {
+
   public users: User[];
 
   isLinear = false;
@@ -45,7 +46,7 @@ export class SignUpComponent implements OnInit {
   }
 
   close() {
-    window.location.href = 'localhost:4200/main';
+    window.location.href = 'http://localhost:4200/main';
   }
 
   ngOnInit() {

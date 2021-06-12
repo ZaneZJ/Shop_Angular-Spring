@@ -1,3 +1,21 @@
+mat-slider {
+    width: 300px;
+  }
+
+  .mat-accent .mat-slider-track-fill, .mat-accent .mat-slider-thumb, .mat-accent .mat-slider-thumb-label {
+    background-color: #84cdd6
+  }
+
+/* START of Footer */
+
+.footer {
+  height: 100px;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+}
+
+/* END of Footer */
+
 mat-card {
   margin: auto;
   /* max-width: 500px; */
@@ -17,16 +35,6 @@ mat-form-field {
   background-attachment: fixed;
   height: 100%;
 }
-
-/* START of Footer */
-
-.footer {
-  height: 100px;
-  width: 100%;
-  background-color: rgb(255, 255, 255);
-}
-
-/* END of Footer */
 
 /* START of Nav Bar */
 
@@ -83,9 +91,9 @@ mat-form-field {
 .logo {
   /* <img src="./images/logo/logo.jpg" alt="logo" width="100"/> */
   /* background: url(./images/logo/logo.jpg) no-repeat;
-      background-size: contain; */
+        background-size: contain; */
   /* height: 100%;
-      width: 100px; */
+        width: 100px; */
 }
 
 .profile-button {
@@ -96,6 +104,7 @@ mat-form-field {
   text-decoration: none;
   color: white;
   border-radius: 20px;
+  /* vertical-align: text-bottom; */
 }
 
 .profile-button:hover {

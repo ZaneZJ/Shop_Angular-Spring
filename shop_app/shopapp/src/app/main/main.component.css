@@ -110,6 +110,11 @@ mat-card {
 
 /* START of Nav Bar */
 
+.logo-btn {
+  background-color: transparent;
+  border: transparent;
+}
+
 .navbody {
   font-size: 18px;
 }

@@ -54,20 +54,13 @@
   <!-- START of Nav Bar -->
 
   <ul class="navbar navbody" id="navbar-zindex">
-    <img src="assets/logo.png" alt="logo" width="170" href="main" />
+    <button class="logo-btn" onclick="window.location.href='http://localhost:4200/main';">
+      <img src="assets/logo.png" alt="logo" width="200" /></button>
     <li class="navli">
-      <!-- FIXME: place in the center -->
-      <input
-        type="text"
-        id="findService"
-        name="fname"
-        placeholder="Find Service"
-        class="navbar-search"
-      />
-    </li>
+
     <li style="float: right">
       <!-- TODO: if user is logged in the show initials but if not show signIn and signUp buttons -->
-      <a class="profile-button" href="profile">ZJ</a>
+      <a class="profile-button" href="profile" style="padding-left: 9px; padding-right: 9px;"><mat-icon style="vertical-align: text-bottom;">person</mat-icon></a>
     </li>
   </ul>
 
@@ -109,14 +102,14 @@
           <!-- FIXME: rederect to the right page doesn't work backwards!!!! -->
 
           <button
-            (click)="signUp()"
+          onclick="window.location.href='http://localhost:4200/signUp';"
             mat-raised-button
             style="background-color: #94c6ce; color: #fff"
           >
             Sign Up
           </button>
           <button
-            (click)="signIn()"
+          onclick="window.location.href='http://localhost:4200/signIn';"
             mat-raised-button
             style="background-color: #94c6ce; color: #fff; margin-left: 20px"
           >
@@ -224,7 +217,11 @@
 
   <!-- END of Services -->
 
-  <div class="footer"></div>
+  <div class="footer">
+    <div>
+      <p style="color: #aaaaaa; text-align-last: center; font-size: 13px;"><br>Contact info:<br>+371 22334455<br>sellyouridea@gmail.com</p>
+    </div>
+  </div>
 
   <!-- jQuery -->
   <script src="js/vendor/jquery-3.3.1.min.js"></script>

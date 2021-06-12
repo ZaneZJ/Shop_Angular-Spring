@@ -17,6 +17,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSliderModule} from '@angular/material/slider';
 
 const modules = [
     MatCardModule, 
@@ -36,7 +37,8 @@ const modules = [
     MatAutocompleteModule,
     BrowserModule,
     FormsModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSliderModule
 ];
 
 @NgModule({

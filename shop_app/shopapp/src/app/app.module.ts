@@ -25,6 +25,7 @@ import { PicturesService } from './pictures.service';
 import { InstanceService } from './instance.service';
 import { ChatService } from './chat.service';
 import { BankService } from './bank.service';
+import { ReviewComponent } from './review/review.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { BankService } from './bank.service';
     ProfileAllSeeComponent,
     AddServiceComponent,
     DisplayServiceComponent,
-    ServiceViewComponent
+    ServiceViewComponent,
+    ReviewComponent
   ],
   imports: [
     BrowserModule,
