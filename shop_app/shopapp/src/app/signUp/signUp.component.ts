@@ -4,6 +4,7 @@ import { User } from '../user';
 import { UserService } from '../user.service';
 import { RouterLinkWithHref } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
+import { Bank } from '../bank';
 
 @Component({
   selector: 'app-signUp',
@@ -13,6 +14,7 @@ import { FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
 export class SignUpComponent implements OnInit {
 
   public users: User[];
+  public banks: Bank[];
 
   isLinear = false;
   firstFormGroup!: FormGroup;
@@ -33,12 +35,15 @@ export class SignUpComponent implements OnInit {
   user_beneficiary: string = '';
   user_bank: string = '';
 
+
+
   constructor(
     private userService: UserService,
     private _formBuilder: FormBuilder
   ) {
     // Initialization inside the constructor
     this.users = [];
+    this.banks = [];
   }
 
   signUp() {
@@ -87,7 +92,13 @@ export class SignUpComponent implements OnInit {
 
   public onAddUser(addUserForm: NgForm): void {
     // document!.getElementById('add-user-form')!.click();
-    this.userService.addUser(addUserForm.value).subscribe(
+    console.log("addUserForm:");
+    console.log(addUserForm);
+    console.log("addUserForm.value:");
+    console.log(addUserForm.value);
+    console.log("addUserForm.form.value:");
+    console.log(addUserForm.form.value);
+    this.userService.addUser(addUserForm.form.value).subscribe(
       (response: User) => {
         console.log(response);
         this.getUsers();
