@@ -1,3 +1,5 @@
+import { Service } from "./service";
+
 export interface User {
     userId: number;
     username: string;
@@ -9,6 +11,6 @@ export interface User {
     pictureMain: string;
     accountId: number;
     // FIXME: returns Set of strings
-    services: number;
+    services: Service[];
     type: string;
 }
