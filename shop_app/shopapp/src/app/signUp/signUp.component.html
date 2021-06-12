@@ -16,48 +16,53 @@
           >Sign Up</mat-card-title
         >
       </mat-card-header>
-      <form #addUserForm="ngForm" (ngSubmit)="onAddUser(addUserForm)">
+      <!-- <form #addUserForm="ngForm" (ngSubmit)="onAddUser(addUserForm)"> -->
+        <!-- <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" ngModel name="name" class="form-control" id="name" placeholder="Name" required>
+        </div>      
+        <div class="modal-footer">
+          <button [disabled]="addUserForm.invalid" type="submit" class="btn btn-primary" >Save changes</button>
+       </div> -->
         <mat-horizontal-stepper [linear]="!isLinear" #stepper>
-          <mat-step [stepControl]="firstFormGroup">
-            <form [formGroup]="firstFormGroup">
-              <!-- FIXME: all have to be filled -->
+          <mat-step [stepControl]="userDetailsForm">
+            <form [formGroup]="userDetailsForm">
               <ng-template matStepLabel>User</ng-template>
               <mat-form-field>
-                <mat-label for="user_username">Username</mat-label>
-                <input type="text" ngModel name="user_username" id="user_username" matInput formControlName="firstCtrl" required />
+                <mat-label for="username">Username</mat-label>
+                <input type="text" ngModel name="username" id="username" formControlName="username" matInput required />
               </mat-form-field>
               <mat-form-field>
-                <mat-label for="user_name">Name</mat-label>
-                <input type="text" ngModel name="user_name" id="user_name" matInput formControlName="firstCtrl1" required />
+                <mat-label for="name">Name</mat-label>
+                <input type="text" ngModel name="name" id="name" matInput formControlName="name" required />
               </mat-form-field>
               <mat-form-field>
-                <mat-label for="user_surname">Surname</mat-label>
-                <input type="text" ngModel name="user_surname" id="user_surname" matInput formControlName="firstCtrl2" required />
+                <mat-label for="surname">Surname</mat-label>
+                <input type="text" ngModel name="surname" id="surname" matInput formControlName="surname" required />
               </mat-form-field>
               <mat-form-field>
-                <mat-label for="user_email">Email address</mat-label>
-                <input type="string" ngModel name="user_email" id="user_email" matInput formControlName="firstCtrl3" required />
+                <mat-label for="email">Email address</mat-label>
+                <input type="email" ngModel name="email" id="email" matInput formControlName="email" required />
               </mat-form-field>
               <mat-form-field>
-                <mat-label for="user_phoneNo">Phone</mat-label>
-                <input type="text" ngModel name="user_phoneNo" id="user_phoneNo" matInput formControlName="firstCtrl4" required />
+                <mat-label for="phoneNo">Phone</mat-label>
+                <input type="text" ngModel name="phoneNo" id="phoneNo" matInput formControlName="phoneNo" required />
               </mat-form-field>
               <mat-form-field>
-                <mat-label for="user_pictureMain">Your pictures URL</mat-label>
-                <input type="text" ngModel name="user_pictureMain" id="user_pictureMain" matInput formControlName="firstCtrl5" required />
+                <mat-label for="pictureMain">Your pictures URL</mat-label>
+                <input type="text" ngModel name="pictureMain" id="pictureMain" matInput formControlName="pictureMain" />
               </mat-form-field>
               <mat-form-field>
-                <mat-label for="user_password">Password</mat-label>
+                <mat-label for="password">Password</mat-label>
                 <!-- FIXME: figure out what to do! -->
                 <input
                   type="text"
                   ngModel
-                  id="user_password" 
-                  name="user_password"
-                  [(ngModel)]="user_password"
+                  id="password" 
+                  name="password"
                   matInput
                   [type]="hide ? 'password' : 'text'"
-                  formControlName="firstCtrl6"
+                  formControlName="password"
                   required
                 />
                 <button
@@ -74,6 +79,7 @@
               </mat-form-field>
               <div>
                 <button
+                  type="submit"
                   mat-button
                   matStepperNext
                   mat-raised-button
@@ -84,15 +90,15 @@
               </div>
             </form>
           </mat-step>
-          <mat-step [stepControl]="secondFormGroup" label="Your address">
-            <form [formGroup]="secondFormGroup">
+          <mat-step [stepControl]="addressForm" label="Your address">
+            <form [formGroup]="addressForm">
               <mat-form-field>
-                <mat-label for="user_address">Address</mat-label>
-                <input type="text" ngModel name="user_address" id="user_address" matInput formControlName="secondCtrl" required />
+                <mat-label for="address">Address</mat-label>
+                <input type="text" ngModel name="address" id="address" matInput formControlName="address" required />
               </mat-form-field>
               <mat-form-field>
-                <mat-label for="user_postalCode">Postal code</mat-label>
-                <input type="text" ngModel name="user_postalCode" id="user_postalCode" matInput formControlName="secondCtrl1" required />
+                <mat-label for="postalCode">Postal code</mat-label>
+                <input type="text" ngModel name="postalCode" id="postalCode" matInput formControlName="postalCode" required />
               </mat-form-field>
               <div>
                 <button
@@ -118,19 +124,19 @@
               </div>
             </form>
           </mat-step>
-          <mat-step [stepControl]="thirdFormGroup" label="Bank details">
-            <form [formGroup]="thirdFormGroup">
+          <mat-step [stepControl]="bankForm" label="Bank details">
+            <form [formGroup]="bankForm">
               <mat-form-field>
-                <mat-label for="bank_accountNo">Bank account number</mat-label>
-                <input type="text" ngModel name="bank_accountNo" id="bank_accountNo" matInput formControlName="thirdCtrl" required />
+                <mat-label for="accountNo">Bank account number</mat-label>
+                <input type="text" ngModel name="accountNo" id="accountNo" matInput formControlName="accountNo" required />
               </mat-form-field>
               <mat-form-field>
-                <mat-label for="bank_beneficiary">Beneficiary</mat-label>
-                <input type="text" ngModel name="bank_beneficiary" id="bank_beneficiary" matInput formControlName="thirdCtrl1" required />
+                <mat-label for="beneficiary">Beneficiary</mat-label>
+                <input type="text" ngModel name="beneficiary" id="beneficiary" matInput formControlName="beneficiary" required />
               </mat-form-field>
               <mat-form-field>
-                <mat-label for="bank_bank">Banks name</mat-label>
-                <input type="text" ngModel name="bank_bank" id="bank_bank" matInput formControlName="thirdCtrl2" required />
+                <mat-label for="bank">Banks name</mat-label>
+                <input type="text" ngModel name="bank" id="bank" matInput formControlName="bank" required />
               </mat-form-field>
               <div>
                 <button
@@ -173,17 +179,17 @@
                 Back
               </button>
               <button
-                type="submit"
+                (click)="submitAll()"
                 mat-button
                 mat-raised-button
                 style="background-color: #94c6ce; color: #fff"
               >
-                Done
+                Submit
               </button>
             </div>
           </mat-step>
         </mat-horizontal-stepper>
-      </form>
+      <!-- </form> -->
     </mat-card>
   </main>
 

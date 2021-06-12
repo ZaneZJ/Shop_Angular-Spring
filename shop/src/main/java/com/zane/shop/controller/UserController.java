@@ -31,14 +31,14 @@ public class UserController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<User> addUser(@RequestBody User username) {
-        User newUser = userService.addUser(username);
+    public ResponseEntity<User> addUser(@RequestBody User user) {
+        User newUser = userService.addUser(user);
         return new ResponseEntity<>(newUser, HttpStatus.CREATED);
     }
 
     @PutMapping("/update")
-    public ResponseEntity<User> updateUser(@RequestBody User username) {
-        User updateUser = userService.updateUser(username);
+    public ResponseEntity<User> updateUser(@RequestBody User user) {
+        User updateUser = userService.updateUser(user);
         return new ResponseEntity<>(updateUser, HttpStatus.OK);
     }
 

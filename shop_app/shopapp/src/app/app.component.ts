@@ -81,9 +81,9 @@ export class AppComponent implements OnInit {
     console.log(key);
     const results: User[] = [];
     for (const user of this.users) {
-      if (user.user_name.toLowerCase().indexOf(key.toLowerCase()) !== -1
-      || user.user_surname.toLowerCase().indexOf(key.toLowerCase()) !== -1
-      || user.user_username.toLowerCase().indexOf(key.toLowerCase()) !== -1) {
+      if (user.name.toLowerCase().indexOf(key.toLowerCase()) !== -1
+      || user.surname.toLowerCase().indexOf(key.toLowerCase()) !== -1
+      || user.username.toLowerCase().indexOf(key.toLowerCase()) !== -1) {
         results.push(user);
       }
     }

@@ -51,9 +51,10 @@ public class User implements Serializable {
     @Column
     private String pictureMain;
 
-    @OneToOne
+//    adds new bank with the details
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn
-    private Bank accountId;
+    private Bank bank;
 
     @OneToMany(mappedBy = "serviceId")
     private Set<Service> services;
@@ -149,11 +150,11 @@ public class User implements Serializable {
         this.pictureMain = pictureMain;
     }
 
-    public Bank getAccountId() {
-        return accountId;
+    public Bank getBank() {
+        return bank;
     }
-    public void setAccountId(Bank accountId) {
-        this.accountId = accountId;
+    public void setBank(Bank bank) {
+        this.bank = bank;
     }
 
     public Set<Service> getServices() {
@@ -196,7 +197,7 @@ public class User implements Serializable {
                 .append("email", email)
                 .append("postalCode", postalCode)
                 .append("pictureMain", pictureMain)
-                .append("accountId", accountId)
+                .append("bank", bank)
                 .append("services", services)
                 .append("loyaltyType", loyaltyType)
                 .append("status", status)

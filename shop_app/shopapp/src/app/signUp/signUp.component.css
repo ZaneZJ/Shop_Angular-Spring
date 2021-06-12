@@ -1,3 +1,14 @@
+/* START of view media */
+
+@media screen and (max-width: 700px) {
+  .example-card {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+/* END of view media */
+
 mat-card {
   margin: auto;
   /* max-width: 500px; */

@@ -5,6 +5,7 @@ import { UserService } from '../user.service';
 import { RouterLinkWithHref } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
 import { Bank } from '../bank';
+import { CdkStepper } from '@angular/cdk/stepper';
 
 @Component({
   selector: 'app-signUp',
@@ -17,25 +18,12 @@ export class SignUpComponent implements OnInit {
   public banks: Bank[];
 
   isLinear = false;
-  firstFormGroup!: FormGroup;
-  secondFormGroup!: FormGroup;
-  thirdFormGroup!: FormGroup;
+  userDetailsForm!: FormGroup;
+  addressForm!: FormGroup;
+  bankForm!: FormGroup;
   hide = true;
 
-  user_password: string = '';
-  user_username: string = '';
-  user_name: string = '';
-  user_surname: string = '';
-  user_phoneNo: string = '';
-  user_address: string = '';
-  user_email: string = '';
-  user_postalCode: string = '';
-  user_pictureMain: string = '';
-  bank_accountNo: string = '';
-  bank_beneficiary: string = '';
-  bank_bank: string = '';
-
-
+  stepper!: CdkStepper;
 
   constructor(
     private userService: UserService,
@@ -46,9 +34,7 @@ export class SignUpComponent implements OnInit {
     this.banks = [];
   }
 
-  signUp() {
-    alert(this.user_username + ' ' + this.user_password);
-  }
+  signUp() { }
 
   close() {
     window.location.href = 'http://localhost:4200/main';
@@ -57,23 +43,23 @@ export class SignUpComponent implements OnInit {
   ngOnInit() {
     this.getUsers();
 
-    this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ['', Validators.required],
-      firstCtrl1: ['', Validators.required],
-      firstCtrl2: ['', Validators.required],
-      firstCtrl3: ['', Validators.required],
-      firstCtrl4: ['', Validators.required],
-      firstCtrl5: ['', Validators.required],
-      firstCtrl6: ['', Validators.required],
+    this.userDetailsForm = this._formBuilder.group({
+      username: ['', Validators.required],
+      name: ['', Validators.required],
+      surname: ['', Validators.required],
+      email: ['', Validators.required],
+      phoneNo: ['', Validators.required],
+      pictureMain: [''],
+      password: ['', Validators.required],
     });
-    this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required],
-      secondCtrl1: ['', Validators.required],
+    this.addressForm = this._formBuilder.group({
+      address: ['', Validators.required],
+      postalCode: ['', Validators.required],
     });
-    this.thirdFormGroup = this._formBuilder.group({
-      thirdCtrl: ['', Validators.required],
-      thirdCtrl1: ['', Validators.required],
-      thirdCtrl2: ['', Validators.required],
+    this.bankForm = this._formBuilder.group({
+      accountNo: ['', Validators.required],
+      beneficiary: ['', Validators.required],
+      bank: ['', Validators.required],
     });
   }
 
@@ -90,25 +76,33 @@ export class SignUpComponent implements OnInit {
 
   // Add User 
 
-  public onAddUser(addUserForm: NgForm): void {
-    // document!.getElementById('add-user-form')!.click();
-    console.log("addUserForm:");
-    console.log(addUserForm);
-    console.log("addUserForm.value:");
-    console.log(addUserForm.value);
-    console.log("addUserForm.form.value:");
-    console.log(addUserForm.form.value);
-    this.userService.addUser(addUserForm.form.value).subscribe(
+  public submitAll() {
+    [this.userDetailsForm, this.addressForm, this.bankForm].forEach((form) => {
+      console.log(form);
+    })
+
+    const user: User = {
+      ...this.userDetailsForm.value, 
+      ...this.addressForm.value,
+      bank: this.bankForm.value,
+      loyaltyType: 'BRONZE',
+      status: 'ACTIVE'
+    }
+
+    console.log(user);
+
+    this.userService.addUser(user).subscribe(
       (response: User) => {
         console.log(response);
         this.getUsers();
-        addUserForm.reset();
+        this.stepper.reset();
       },
       (error: HttpErrorResponse) => {
         alert(error.message);
-        addUserForm.reset();
+        this.stepper.reset();
       }
     );
+
   }
 
 }
