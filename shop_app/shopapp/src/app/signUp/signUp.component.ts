@@ -8,10 +8,9 @@ import { FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
 @Component({
   selector: 'app-signUp',
   templateUrl: './signUp.component.html',
-  styleUrls: ['./signUp.component.css']
+  styleUrls: ['./signUp.component.css'],
 })
 export class SignUpComponent implements OnInit {
-
   public users: User[];
 
   isLinear = false;
@@ -20,47 +19,48 @@ export class SignUpComponent implements OnInit {
   thirdFormGroup!: FormGroup;
   hide = true;
 
-  username: string = "";
-  password: string = "";
-  name: string = "";
-  surname: string = "";
-  phoneNo: string = "";
-  address: string = "";
-  email: string = "";
-  postalCode: string = "";
-  pictureMain: string = "";
-  accountNo: string = "";
-  beneficiary: string = "";
-  bank: string = "";
+  username: string = '';
+  password: string = '';
+  name: string = '';
+  surname: string = '';
+  phoneNo: string = '';
+  address: string = '';
+  email: string = '';
+  postalCode: string = '';
+  pictureMain: string = '';
+  accountNo: string = '';
+  beneficiary: string = '';
+  bank: string = '';
 
-  constructor(private userService: UserService, private _formBuilder: FormBuilder){
+  constructor(
+    private userService: UserService,
+    private _formBuilder: FormBuilder
+  ) {
     // Initialization inside the constructor
     this.users = [];
   }
 
   signUp() {
-    alert(this.username + " " + this.password);
+    alert(this.username + ' ' + this.password);
   }
 
   close() {
-    window.location.href = "localhost:4200/main";
+    window.location.href = 'localhost:4200/main';
   }
 
-  done() {
-    
-  }
+  done() {}
 
   ngOnInit() {
     this.getUsers();
 
     this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ['', Validators.required]
+      firstCtrl: ['', Validators.required],
     });
     this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required]
+      secondCtrl: ['', Validators.required],
     });
     this.thirdFormGroup = this._formBuilder.group({
-      thirdCtrl: ['', Validators.required]
+      thirdCtrl: ['', Validators.required],
     });
   }
 
@@ -72,7 +72,7 @@ export class SignUpComponent implements OnInit {
       (error: HttpErrorResponse) => {
         alert(error.message);
       }
-    )
+    );
   }
 
   public onAddUser(addForm: NgForm): void {

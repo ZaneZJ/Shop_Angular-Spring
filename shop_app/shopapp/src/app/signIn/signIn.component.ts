@@ -7,25 +7,23 @@ import { FormGroup, FormControl } from '@angular/forms';
 @Component({
   selector: 'app-signIn',
   templateUrl: './signIn.component.html',
-  styleUrls: ['./signIn.component.css']
-
+  styleUrls: ['./signIn.component.css'],
 })
 export class SignInComponent implements OnInit {
-
   public users: User[];
 
   hide = true;
 
-  username: string = "";
-  password: string = "";
+  username: string = '';
+  password: string = '';
 
-  constructor(private userService: UserService){
+  constructor(private userService: UserService) {
     // Initialization inside the constructor
     this.users = [];
   }
 
   signIn() {
-    alert(this.username + " " + this.password);
+    alert(this.username + ' ' + this.password);
   }
 
   ngOnInit() {
@@ -40,7 +38,6 @@ export class SignInComponent implements OnInit {
       (error: HttpErrorResponse) => {
         alert(error.message);
       }
-    )
+    );
   }
-
 }

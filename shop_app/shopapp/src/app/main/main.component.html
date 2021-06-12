@@ -54,16 +54,22 @@
   <!-- START of Nav Bar -->
 
   <ul class="navbar navbody" id="navbar-zindex">
-    <img src="assets/logo.png" alt="logo" width="170" href="main"/>
+    <img src="assets/logo.png" alt="logo" width="170" href="main" />
     <li class="navli">
-        <!-- FIXME: place in the center -->
-        <input type="text" id="findService" name="fname" placeholder="Find Service" class="navbar-search" >
+      <!-- FIXME: place in the center -->
+      <input
+        type="text"
+        id="findService"
+        name="fname"
+        placeholder="Find Service"
+        class="navbar-search"
+      />
     </li>
     <li style="float: right">
-        <!-- TODO: if user is logged in the show initials but if not show signIn and signUp buttons -->
-        <a class="profile-button" href="profile">ZJ</a>
+      <!-- TODO: if user is logged in the show initials but if not show signIn and signUp buttons -->
+      <a class="profile-button" href="profile">ZJ</a>
     </li>
-</ul>
+  </ul>
 
   <!-- END of Nav Bar -->
 
@@ -91,7 +97,9 @@
     <div class="container">
       <div class="row no-gutters align-items-center">
         <div class="col-lg-5 text-center text-lg-left banner-text">
-          <h1 class="white-text"  style="padding-top: 60px;">Find the Service <br />for your needs</h1>
+          <h1 class="white-text" style="padding-top: 60px">
+            Find the Service <br />for your needs
+          </h1>
           <p class="larger-txt white-text">
             Offer your services to customers worldwide
             <br />
@@ -100,8 +108,20 @@
           <!-- FIXME: show the sign up only when user is not authorised -->
           <!-- FIXME: rederect to the right page doesn't work backwards!!!! -->
 
-          <button (click)="signUp()" mat-raised-button style="background-color: #94c6ce; color: #fff;">Sign Up</button>
-          <button (click)="signIn()" mat-raised-button style="background-color: #94c6ce; color: #fff; margin-left: 20px;">Sign In</button>
+          <button
+            (click)="signUp()"
+            mat-raised-button
+            style="background-color: #94c6ce; color: #fff"
+          >
+            Sign Up
+          </button>
+          <button
+            (click)="signIn()"
+            mat-raised-button
+            style="background-color: #94c6ce; color: #fff; margin-left: 20px"
+          >
+            Sign In
+          </button>
         </div>
       </div>
     </div>
@@ -114,91 +134,63 @@
   <div id="service-zindex" class="service">
     <!-- START of Search/Filter -->
 
-    <div class="service-search" >
+    <div class="service-search">
       <mat-card class="example-card">
-      <mat-tab-group dynamicHeight>
-        <mat-tab label="All">
-          <div class="example-large-box mat-elevation-z4">
-            Large content
-          </div>
-        </mat-tab>
-        <mat-tab label="Programming">
-          <div class="example-large-box mat-elevation-z4">
-            Large content
-          </div>
-        </mat-tab>
-        <mat-tab label="Design">
-          <div class="example-large-box mat-elevation-z4">
-            Large content
-          </div>
-        </mat-tab>
-        <mat-tab label="Graphics">
-          <div class="example-large-box mat-elevation-z4">
-            Large content
-          </div>
-        </mat-tab>
-        <mat-tab label="Music">
-          <div class="example-large-box mat-elevation-z4">
-            Large content
-          </div>
-        </mat-tab>
-        <mat-tab label="Video">
-          <div class="example-large-box mat-elevation-z4">
-            Large content
-          </div>
-        </mat-tab>
-        <mat-tab label="Education">
-          <div class="example-large-box mat-elevation-z4">
-            Large content
-          </div>
-        </mat-tab>
-        <mat-tab label="Translation">
-          <div class="example-large-box mat-elevation-z4">
-            Large content
-          </div>
-        </mat-tab>
-        <mat-tab label="Writing">
-          <div class="example-large-box mat-elevation-z4">
-            Large content
-          </div>
-        </mat-tab>
-        <mat-tab label="Lifestyle">
-          <div class="example-large-box mat-elevation-z4">
-            Large content
-          </div>
-        </mat-tab>
-        <mat-tab label="Health">
-          <div class="example-large-box mat-elevation-z4">
-            Large content
-          </div>
-        </mat-tab>
-        <mat-tab label="Business">
-          <div class="example-large-box mat-elevation-z4">
-            Large content
-          </div>
-        </mat-tab>
-      
-      </mat-tab-group>
-    </mat-card>
-		
-	  <!-- TODO: add filtering as ||| at the end -->
+        <mat-tab-group dynamicHeight>
+          <mat-tab label="All">
+            <div class="example-large-box mat-elevation-z4">Large content</div>
+          </mat-tab>
+          <mat-tab label="Programming">
+            <div class="example-large-box mat-elevation-z4">Large content</div>
+          </mat-tab>
+          <mat-tab label="Design">
+            <div class="example-large-box mat-elevation-z4">Large content</div>
+          </mat-tab>
+          <mat-tab label="Graphics">
+            <div class="example-large-box mat-elevation-z4">Large content</div>
+          </mat-tab>
+          <mat-tab label="Music">
+            <div class="example-large-box mat-elevation-z4">Large content</div>
+          </mat-tab>
+          <mat-tab label="Video">
+            <div class="example-large-box mat-elevation-z4">Large content</div>
+          </mat-tab>
+          <mat-tab label="Education">
+            <div class="example-large-box mat-elevation-z4">Large content</div>
+          </mat-tab>
+          <mat-tab label="Translation">
+            <div class="example-large-box mat-elevation-z4">Large content</div>
+          </mat-tab>
+          <mat-tab label="Writing">
+            <div class="example-large-box mat-elevation-z4">Large content</div>
+          </mat-tab>
+          <mat-tab label="Lifestyle">
+            <div class="example-large-box mat-elevation-z4">Large content</div>
+          </mat-tab>
+          <mat-tab label="Health">
+            <div class="example-large-box mat-elevation-z4">Large content</div>
+          </mat-tab>
+          <mat-tab label="Business">
+            <div class="example-large-box mat-elevation-z4">Large content</div>
+          </mat-tab>
+        </mat-tab-group>
+      </mat-card>
+
+      <!-- TODO: add filtering as ||| at the end -->
     </div>
 
     <!-- END of Search/Filter -->
 
     <!-- START of Service Display -->
 
-    <div>
-	</div>
+    <div></div>
 
     <!-- END of Service Display -->
   </div>
 
   <!-- END of Services -->
 
-  <div class="footer">
-
-  </div>
+  <div class="footer"></div>
 
   <!-- jQuery -->
   <script src="js/vendor/jquery-3.3.1.min.js"></script>

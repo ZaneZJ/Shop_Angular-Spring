@@ -2,23 +2,22 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import { UserService } from '../user.service';
-import {FormControl} from '@angular/forms';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent implements OnInit {
-
   public users: User[];
 
   public deleteUser!: User;
 
   step = 0;
 
-  currentPassword = new FormControl("password");
-  newPassword = new FormControl("password");
+  currentPassword = new FormControl('password');
+  newPassword = new FormControl('password');
 
   setStep(index: number) {
     this.step = index;
@@ -50,13 +49,13 @@ export class ProfileComponent implements OnInit {
     // update to new password
   }
 
-  // FIXME: 
+  // FIXME:
 
   addService() {
     // rederect to URL to add service
   }
-  
-  constructor(private userService: UserService){
+
+  constructor(private userService: UserService) {
     // Initialization inside the constructor
     this.users = [];
   }
@@ -73,7 +72,7 @@ export class ProfileComponent implements OnInit {
       (error: HttpErrorResponse) => {
         alert(error.message);
       }
-    )
+    );
   }
 
   public onDeleteUser(userId: number): void {
@@ -87,5 +86,4 @@ export class ProfileComponent implements OnInit {
       }
     );
   }
-
 }
