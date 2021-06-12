@@ -16,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProfileAllSeeComponent } from './profileAllSee/profileAllSee.component';
 import { AddServiceComponent } from './addService/addService.component';
 import { DisplayServiceComponent } from './displayService/displayService.component';
+import { ServiceViewComponent } from './serviceView/serviceView.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { DisplayServiceComponent } from './displayService/displayService.compone
     EditProfileComponent,
     ProfileAllSeeComponent,
     AddServiceComponent,
-    DisplayServiceComponent
+    DisplayServiceComponent,
+    ServiceViewComponent
   ],
   imports: [
     BrowserModule,
@@ -36,9 +38,9 @@ import { DisplayServiceComponent } from './displayService/displayService.compone
     ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

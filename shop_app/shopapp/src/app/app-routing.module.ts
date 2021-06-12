@@ -8,6 +8,7 @@ import { EditProfileComponent } from './editProfile/editProfile.component';
 import { ProfileAllSeeComponent } from './profileAllSee/profileAllSee.component';
 import { AddServiceComponent } from './addService/addService.component';
 import { DisplayServiceComponent } from './displayService/displayService.component';
+import { ServiceViewComponent } from './serviceView/serviceView.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path: 'displayService',
     component: DisplayServiceComponent
+  },
+  {
+    path: 'serviceView',
+    component: ServiceViewComponent
   }
 ];
 

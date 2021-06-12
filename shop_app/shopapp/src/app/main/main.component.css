@@ -5,6 +5,69 @@ button:focus {
   outline: none;
 }
 
+/* START of Service */
+
+.service-div-child-container {
+  display: inline-block;
+  position: relative;
+}
+
+.service-button {
+
+}
+
+.img {
+  object-fit: cover;
+  height: 50px;
+  width: 50px;
+  /* margin-left: auto;
+    margin-right: auto; */
+  border-radius: 50px;
+  margin-top: 215px;
+  margin-left: 105px;
+}
+
+.picture-main {
+  /* padding-top: -60px; */
+  /* background-color: aqua; */
+  overflow: hidden;
+  padding-left: 110px;
+}
+
+.service-username {
+  margin-top: 235px;
+  color: #8cb0b6;
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+.service-title {
+  margin-left: 10px;
+  margin-top: 215px;
+}
+
+.service-picture-main {
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+.img-service-picture-main {
+  object-fit: cover;
+  height: 187px;
+  width: 255px;
+}
+
+.service-div-container {
+  text-align: center;
+  display: block;
+}
+
+.child {
+  position: absolute;
+}
+
+/* END of Service */
+
 /* START of Footer */
 
 .footer {
@@ -28,8 +91,6 @@ mat-card {
 .example-small-box,
 .example-large-box {
   display: flex;
-  align-items: center;
-  justify-content: center;
   margin: 16px;
   padding: 16px;
   border-radius: 8px;
