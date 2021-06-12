@@ -23,31 +23,31 @@
               <!-- FIXME: all have to be filled -->
               <ng-template matStepLabel>User</ng-template>
               <mat-form-field>
-                <mat-label>Username</mat-label>
+                <mat-label for="user_username">Username</mat-label>
                 <input type="text" ngModel name="user_username" id="user_username" matInput formControlName="firstCtrl" required />
               </mat-form-field>
               <mat-form-field>
-                <mat-label>Name</mat-label>
+                <mat-label for="user_name">Name</mat-label>
                 <input type="text" ngModel name="user_name" id="user_name" matInput formControlName="firstCtrl1" required />
               </mat-form-field>
               <mat-form-field>
-                <mat-label>Surname</mat-label>
+                <mat-label for="user_surname">Surname</mat-label>
                 <input type="text" ngModel name="user_surname" id="user_surname" matInput formControlName="firstCtrl2" required />
               </mat-form-field>
               <mat-form-field>
-                <mat-label>Email address</mat-label>
-                <input type="email" ngModel name="user_email" id="user_email" matInput formControlName="firstCtrl3" required />
+                <mat-label for="user_email">Email address</mat-label>
+                <input type="string" ngModel name="user_email" id="user_email" matInput formControlName="firstCtrl3" required />
               </mat-form-field>
               <mat-form-field>
-                <mat-label>Phone</mat-label>
+                <mat-label for="user_phoneNo">Phone</mat-label>
                 <input type="text" ngModel name="user_phoneNo" id="user_phoneNo" matInput formControlName="firstCtrl4" required />
               </mat-form-field>
               <mat-form-field>
-                <mat-label>Your pictures URL</mat-label>
+                <mat-label for="user_pictureMain">Your pictures URL</mat-label>
                 <input type="text" ngModel name="user_pictureMain" id="user_pictureMain" matInput formControlName="firstCtrl5" required />
               </mat-form-field>
               <mat-form-field>
-                <mat-label>Password</mat-label>
+                <mat-label for="user_password">Password</mat-label>
                 <!-- FIXME: figure out what to do! -->
                 <input
                   type="text"
@@ -87,11 +87,11 @@
           <mat-step [stepControl]="secondFormGroup" label="Your address">
             <form [formGroup]="secondFormGroup">
               <mat-form-field>
-                <mat-label>Address</mat-label>
+                <mat-label for="user_address">Address</mat-label>
                 <input type="text" ngModel name="user_address" id="user_address" matInput formControlName="secondCtrl" required />
               </mat-form-field>
               <mat-form-field>
-                <mat-label>Postal code</mat-label>
+                <mat-label for="user_postalCode">Postal code</mat-label>
                 <input type="text" ngModel name="user_postalCode" id="user_postalCode" matInput formControlName="secondCtrl1" required />
               </mat-form-field>
               <div>
@@ -121,16 +121,16 @@
           <mat-step [stepControl]="thirdFormGroup" label="Bank details">
             <form [formGroup]="thirdFormGroup">
               <mat-form-field>
-                <mat-label>Bank account number</mat-label>
-                <input type="text" ngModel name="user_accountNo" id="user_accountNo" matInput formControlName="thirdCtrl" required />
+                <mat-label for="bank_accountNo">Bank account number</mat-label>
+                <input type="text" ngModel name="bank_accountNo" id="bank_accountNo" matInput formControlName="thirdCtrl" required />
               </mat-form-field>
               <mat-form-field>
-                <mat-label>Beneficiary</mat-label>
-                <input type="text" ngModel name="user_beneficiary" id="user_beneficiary" matInput formControlName="thirdCtrl1" required />
+                <mat-label for="bank_beneficiary">Beneficiary</mat-label>
+                <input type="text" ngModel name="bank_beneficiary" id="bank_beneficiary" matInput formControlName="thirdCtrl1" required />
               </mat-form-field>
               <mat-form-field>
-                <mat-label>Banks name</mat-label>
-                <input type="text" ngModel name="user_bank" id="user_bank" matInput formControlName="thirdCtrl2" required />
+                <mat-label for="bank_bank">Banks name</mat-label>
+                <input type="text" ngModel name="bank_bank" id="bank_bank" matInput formControlName="thirdCtrl2" required />
               </mat-form-field>
               <div>
                 <button

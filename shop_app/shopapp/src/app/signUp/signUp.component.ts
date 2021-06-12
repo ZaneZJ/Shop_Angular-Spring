@@ -31,9 +31,9 @@ export class SignUpComponent implements OnInit {
   user_email: string = '';
   user_postalCode: string = '';
   user_pictureMain: string = '';
-  user_accountNo: string = '';
-  user_beneficiary: string = '';
-  user_bank: string = '';
+  bank_accountNo: string = '';
+  bank_beneficiary: string = '';
+  bank_bank: string = '';
 
 
 
