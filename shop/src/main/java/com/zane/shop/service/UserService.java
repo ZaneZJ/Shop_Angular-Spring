@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Component
@@ -69,10 +70,25 @@ public class UserService {
                 .orElseThrow(() -> new UsernameNotFoundException("Username: " + username + " was not found!"));
     }
 
+    public User signIn(String username, String password) {
+        Optional<User> userO = userRepo.findByUsername(username);
+        User user = userO.get();
+        String pass = user.getPassword();
+        if (user == null) {
+            return null;
+        }
+        if (pass.equals(password) == false) {
+            return null;
+        }
+        return user;
+    }
+
     public User addUser(User user) {
         // FIXME: insert it manually
 //        user.setUsername(UUID.randomUUID().toString());
         return userRepo.save(user);
     }
+
+
 
 }

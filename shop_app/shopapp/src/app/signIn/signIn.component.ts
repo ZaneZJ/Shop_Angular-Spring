@@ -2,7 +2,10 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import { UserService } from '../user.service';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
+import { stringify } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-signIn',
@@ -16,24 +19,30 @@ export class SignInComponent implements OnInit {
 
   username: string = '';
   password: string = '';
+  signInForm!: FormGroup;
 
-  constructor(private userService: UserService) {
+  constructor(
+    private userService: UserService, 
+    private cookieService: CookieService,
+    private _formBuilder: FormBuilder) {
     // Initialization inside the constructor
     this.users = [];
   }
 
-  signIn() {
-    alert(this.username + ' ' + this.password);
-  }
-
   ngOnInit() {
-    this.getUsers();
+    this.signInForm = this._formBuilder.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required],
+    });
   }
 
-  public getUsers(): void {
-    this.userService.getUser().subscribe(
-      (response: User[]) => {
-        this.users = response;
+  public signIn(): void {
+    console.log(this.signInForm.value);
+    this.userService.signInUser(this.signInForm.value["username"], "password").subscribe(
+      (response: User) => {
+        console.log(response);
+        this.cookieService.set( "username" , response.username );
+        window.location.href='http://localhost:4200/main';
       },
       (error: HttpErrorResponse) => {
         alert(error.message);

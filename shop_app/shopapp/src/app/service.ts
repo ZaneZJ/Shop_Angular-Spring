@@ -8,10 +8,10 @@ export interface Service {
     serviceId: number;
     instances: Instance[];
     title: string;
-    description: number;
+    description: string;
     theme: string;
     reviews: Review[];
     chats: Chat[];
-    username: User;
+    user: User;
     pictures: Pictures[];
 }

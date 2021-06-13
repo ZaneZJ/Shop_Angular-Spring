@@ -21,11 +21,11 @@ export class EditProfileComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getUsers();
+    this.getAllUsers();
   }
 
-  public getUsers(): void {
-    this.userService.getUser().subscribe(
+  public getAllUsers(): void {
+    this.userService.getAllUsers().subscribe(
       (response: User[]) => {
         this.users = response;
       },
@@ -39,7 +39,7 @@ export class EditProfileComponent implements OnInit {
     this.userService.updateUser(user).subscribe(
       (response: User) => {
         console.log(response);
-        this.getUsers();
+        this.getAllUsers();
       },
       (error: HttpErrorResponse) => {
         alert(error.message);

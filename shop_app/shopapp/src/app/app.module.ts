@@ -26,6 +26,7 @@ import { InstanceService } from './instance.service';
 import { ChatService } from './chat.service';
 import { BankService } from './bank.service';
 import { ReviewComponent } from './review/review.component';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { ReviewComponent } from './review/review.component';
     PicturesService,
     InstanceService,
     ChatService,
-    BankService
+    BankService,
+    CookieService
   ],
   bootstrap: [AppComponent],
 })

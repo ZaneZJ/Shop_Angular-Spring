@@ -4,6 +4,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
@@ -16,19 +17,15 @@ public class Instance implements Serializable {
     private Long instanceId;
 
     @Column
-    @Length(min = 0)
     private Double price;
 
     @Column
-    @NotBlank(message = "time can not be null")
     private String time;
 
     @Column
-    @Length(min = 1, max = 5)
     private Integer listedAs;
 
     @Column
-    @NotBlank(message = "info can not be null")
     private String info;
 
 //    public Instance(Long instanceId, Double price, String time, Integer listedAs, String info) {

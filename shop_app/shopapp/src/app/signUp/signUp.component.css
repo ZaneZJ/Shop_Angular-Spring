@@ -9,6 +9,10 @@
 
 /* END of view media */
 
+.file-input {
+  display: none;
+}
+
 mat-card {
   margin: auto;
   /* max-width: 500px; */

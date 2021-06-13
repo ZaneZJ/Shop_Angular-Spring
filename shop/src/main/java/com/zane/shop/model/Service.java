@@ -17,8 +17,7 @@ public class Service implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long serviceId;
 
-    @OneToMany
-    @NotBlank(message = "instances can not be null")
+    @OneToMany(cascade = CascadeType.ALL)
     private Set<Instance> instances;
 
     @Column
@@ -38,10 +37,9 @@ public class Service implements Serializable {
     @OneToMany(mappedBy = "chatId")
     private Set<Chat> chats;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn
-    @NotBlank(message = "username can not be null")
-    private User username;
+    private User user;
 
     @OneToMany(mappedBy = "pictureId")
     private Set<Pictures> pictures;
@@ -106,11 +104,11 @@ public class Service implements Serializable {
         this.chats = chats;
     }
 
-    public User getUsername() {
-        return username;
+    public User getUser() {
+        return user;
     }
-    public void setUsername(User username) {
-        this.username = username;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public Set<Pictures> getPictures() {
@@ -130,7 +128,7 @@ public class Service implements Serializable {
                 .append("theme", theme)
                 .append("reviews", reviews)
                 .append("chats", chats)
-                .append("username", username)
+                .append("user", user)
                 .append("pictures", pictures)
                 .toString();
     }

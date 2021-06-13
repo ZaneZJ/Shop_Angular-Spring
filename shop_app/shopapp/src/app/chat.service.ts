@@ -12,7 +12,7 @@ export class ChatService {
 
     constructor(private http: HttpClient) { }
 
-    // public getUser(): Observable<User[]> {
+    // public getAllUsers(): Observable<User[]> {
     //     return this.http.get<User[]>(`${this.apiServerUrl}/shop/all`);
     // }
 

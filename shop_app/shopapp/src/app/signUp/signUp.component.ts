@@ -1,4 +1,4 @@
-import { HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import { UserService } from '../user.service';
@@ -6,6 +6,7 @@ import { RouterLinkWithHref } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
 import { Bank } from '../bank';
 import { CdkStepper } from '@angular/cdk/stepper';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-signUp',
@@ -13,6 +14,8 @@ import { CdkStepper } from '@angular/cdk/stepper';
   styleUrls: ['./signUp.component.css'],
 })
 export class SignUpComponent implements OnInit {
+
+  fileName = '';
 
   public users: User[];
   public banks: Bank[];
@@ -27,7 +30,9 @@ export class SignUpComponent implements OnInit {
 
   constructor(
     private userService: UserService,
-    private _formBuilder: FormBuilder
+    private _formBuilder: FormBuilder,
+    private cookieService: CookieService,
+    private http: HttpClient
   ) {
     // Initialization inside the constructor
     this.users = [];
@@ -41,7 +46,6 @@ export class SignUpComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getUsers();
 
     this.userDetailsForm = this._formBuilder.group({
       username: ['', Validators.required],
@@ -61,17 +65,7 @@ export class SignUpComponent implements OnInit {
       beneficiary: ['', Validators.required],
       bank: ['', Validators.required],
     });
-  }
 
-  public getUsers(): void {
-    this.userService.getUser().subscribe(
-      (response: User[]) => {
-        this.users = response;
-      },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
-      }
-    );
   }
 
   // Add User 
@@ -94,12 +88,10 @@ export class SignUpComponent implements OnInit {
     this.userService.addUser(user).subscribe(
       (response: User) => {
         console.log(response);
-        this.getUsers();
-        this.stepper.reset();
+        this.cookieService.set( "username" , response.username );
       },
       (error: HttpErrorResponse) => {
         alert(error.message);
-        this.stepper.reset();
       }
     );
 

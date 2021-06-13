@@ -25,7 +25,7 @@ public class UserController {
     }
 
     @GetMapping("/find/{username}")
-    public ResponseEntity<User> getUsersByUsername(@PathVariable("username") String username) {
+    public ResponseEntity<User> getUserByUsername(@PathVariable("username") String username) {
         User user = userService.findByUsername(username);
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
@@ -46,6 +46,12 @@ public class UserController {
     public ResponseEntity<?> deleteUser(@PathVariable("userId") Long userId) {
         userService.deleteUser(userId);
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @GetMapping("/signIn/{username}/{password}")
+    public ResponseEntity<?> signInUser(@PathVariable("username") String username, @PathVariable("password") String password) {
+        User result = userService.signIn(username, password);
+        return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
 }

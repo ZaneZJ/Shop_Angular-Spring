@@ -12,19 +12,23 @@ export class ServiceService {
 
     constructor(private http: HttpClient) { }
 
-    // public getUser(): Observable<User[]> {
-    //     return this.http.get<User[]>(`${this.apiServerUrl}/shop/all`);
-    // }
+    public getAllServices(): Observable<Service[]> {
+        return this.http.get<Service[]>(`${this.apiServerUrl}/shop/service/all`);
+    }
 
-    // public addUser(user: User): Observable<User> {
-    //     return this.http.post<User>(`${this.apiServerUrl}/shop/add`, user);
-    // }
+    public getServicesByTheme(theme: string): Observable<Service[]> {
+        return this.http.get<Service[]>(`${this.apiServerUrl}/shop/service/all/${theme}`);
+    }
+
+    public addService(service: Service): Observable<Service> {
+        return this.http.post<Service>(`${this.apiServerUrl}/shop/service/add`, service);
+    }
 
     // public updateUser(user: User): Observable<User> {
     //     return this.http.put<User>(`${this.apiServerUrl}/shop/update`, user);
     // }
 
-    // public deleteUser(userId: number): Observable<void> {
-    //     return this.http.delete<void>(`${this.apiServerUrl}/shop/delete/${userId}`);
-    // }
+    public deleteService(username: string, serviceId: number): Observable<void> {
+        return this.http.delete<void>(`${this.apiServerUrl}/shop/service/delete/${username}/${serviceId}`);
+    }
 }

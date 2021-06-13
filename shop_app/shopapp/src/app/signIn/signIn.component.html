@@ -15,36 +15,42 @@
           >Sign In</mat-card-title
         >
       </mat-card-header>
-      <mat-card-content>
-        <mat-form-field appearance="fill">
-          <mat-label>Username</mat-label>
-          <input matInput [(ngModel)]="username" />
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-          <mat-label>Password</mat-label>
-          <input
-            [(ngModel)]="password"
-            matInput
-            [type]="hide ? 'password' : 'text'"
-          />
+      <form [formGroup]="signInForm">
+        <mat-card-content>
+          <mat-form-field appearance="fill">
+            <mat-label for="username">Username</mat-label>
+            <input type="text" ngModel name="username" id="username" formControlName="username" matInput required />
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label for="password">Password</mat-label>
+            <input
+              ngModel
+              id="password"
+              formControllerName="password"
+              name="password"
+              matInput
+              [type]="hide ? 'password' : 'text'"
+              required
+            />
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide"
+            >
+              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+            </button>
+          </mat-form-field>
           <button
-            mat-icon-button
-            matSuffix
-            (click)="hide = !hide"
-            [attr.aria-label]="'Hide password'"
-            [attr.aria-pressed]="hide"
+            (click)="signIn()"
+            mat-raised-button
+            style="background-color: #94c6ce; color: #fff"
           >
-            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+            Sign In
           </button>
-        </mat-form-field>
-        <button
-          (click)="signIn()"
-          mat-raised-button
-          style="background-color: #94c6ce; color: #fff"
-        >
-          Sign In
-        </button>
-      </mat-card-content>
+        </mat-card-content>
+      </form>
     </mat-card>
   </main>
 

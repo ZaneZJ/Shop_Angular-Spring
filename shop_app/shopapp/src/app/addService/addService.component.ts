@@ -13,6 +13,14 @@ import {
 import { MatChipInputEvent } from '@angular/material/chips';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
+import { FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { Service } from '../service';
+import { Instance } from '../instance';
+import { Pictures } from '../pictures';
+import { CdkStepper } from '@angular/cdk/stepper';
+import { ServiceService } from '../service.service';
+import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-addService',
@@ -20,14 +28,23 @@ import { map, startWith } from 'rxjs/operators';
   styleUrls: ['./addService.component.css'],
 })
 export class AddServiceComponent implements OnInit {
-  public users: User[];
 
-  title: string = '';
-  description: string = '';
-  theme: string = '';
+  public users: User[];
+  public servicess: Service[];
+  public instances: Instance[];
+  public picturess: Pictures[];
+
+  mainServiceForm!: FormGroup;
+  instanceOneForm!: FormGroup;
+  instanceTwoForm!: FormGroup;
+  instanceThreeForm!: FormGroup;
+
+  stepper!: CdkStepper;
 
   // MatPaginator Inputs
   length = 0;
+
+  username!: string;
 
   visible = true;
   selectable = true;
@@ -50,12 +67,31 @@ export class AddServiceComponent implements OnInit {
     'Business',
   ];
 
+  // title: string = '';
+  // description: string = '';
+  // theme: string = '';
+
   @ViewChild('serviceInput') serviceInput!: ElementRef<HTMLInputElement>;
   @ViewChild('auto') matAutocomplete!: MatAutocomplete;
 
-  constructor(private userService: UserService) {
+  constructor(
+    private serviceService: ServiceService, 
+    private userService: UserService, 
+    private _formBuilder: FormBuilder,
+    private cookieService: CookieService,
+    private router: Router
+    ) {
     // Initialization inside the constructor
     this.users = [];
+    this.servicess = [];
+    this.instances = [];
+    this.picturess = [];
+
+    this.username = this.cookieService.get('username');
+    if(!this.username) {
+      this.router.navigate(['/signIn']);
+    }
+
     this.filteredServices = this.serviceCtrl.valueChanges.pipe(
       startWith(null),
       map((service: string | null) =>
@@ -103,11 +139,33 @@ export class AddServiceComponent implements OnInit {
   createService() {}
 
   ngOnInit() {
-    this.getUsers();
+    this.getAllUsers();
+
+    this.mainServiceForm = this._formBuilder.group({
+      title: ['', Validators.required],
+      description: ['', Validators.required],
+      theme: ['', Validators.required],
+      // TODO: add img
+    });
+    this.instanceOneForm = this._formBuilder.group({
+      price: ['', Validators.required],
+      time: ['', Validators.required],
+      info: ['', Validators.required],
+    });
+    this.instanceTwoForm = this._formBuilder.group({
+      price: ['', Validators.required],
+      time: ['', Validators.required],
+      info: ['', Validators.required],
+    });
+    this.instanceThreeForm = this._formBuilder.group({
+      price: ['', Validators.required],
+      time: ['', Validators.required],
+      info: ['', Validators.required],
+    });
   }
 
-  public getUsers(): void {
-    this.userService.getUser().subscribe(
+  public getAllUsers(): void {
+    this.userService.getAllUsers().subscribe(
       (response: User[]) => {
         this.users = response;
       },
@@ -117,18 +175,87 @@ export class AddServiceComponent implements OnInit {
     );
   }
 
-  public onAddUser(addForm: NgForm): void {
-    document!.getElementById('add-user-form')!.click();
-    this.userService.addUser(addForm.value).subscribe(
-      (response: User) => {
-        console.log(response);
-        this.getUsers();
-        addForm.reset();
+  // public getUserByUsername(find: string): void {
+  //   this.userService.getUserByUsername(find).subscribe(
+  //     (response: User) => {
+        
+  //     },
+  //     (error: HttpErrorResponse) => {
+  //       alert(error.message);
+  //     }
+  //   );
+  // }
+
+  public getAllServices(): void {
+    this.serviceService.getAllServices().subscribe(
+      (response: Service[]) => {
+        this.servicess = response;
       },
       (error: HttpErrorResponse) => {
         alert(error.message);
-        addForm.reset();
       }
     );
   }
+
+  public submitAll() {
+    [this.mainServiceForm, this.instanceOneForm, this.instanceTwoForm, this.instanceThreeForm].forEach((form) => {
+      console.log(form);
+    })
+
+    // FIXME: get user that's logged on and assign to it!
+
+    // can run the function in the future
+    this.userService.getUserByUsername(this.username).subscribe(
+      (user: User) => {
+        const service: Service = {
+          ...this.mainServiceForm.value,
+          user: user,
+          instances: [this.instanceOneForm.value, this.instanceTwoForm.value, this.instanceThreeForm.value]
+        }
+    
+        console.log(service);
+        console.log("before service is created");
+    
+        this.serviceService.addService(service).subscribe(
+          (response: Service) => {
+            console.log(response);
+            console.log("created service");
+            this.getAllServices();
+          },
+          (error: HttpErrorResponse) => {
+            console.log("failed to create service");
+            alert(error.message);
+          }
+        );
+      }, 
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    )
+  }
+
+  // public serviceTest(user: User) {
+  //   const service: Service = {
+  //     ...this.mainServiceForm.value,
+  //     user: user,
+  //     instances: [this.instanceOneForm.value, this.instanceTwoForm.value, this.instanceThreeForm.value]
+  //   }
+
+  //   console.log(service);
+  //   console.log("before service is created");
+
+  //   this.serviceService.addService(service).subscribe(
+  //     (response: Service) => {
+  //       console.log(response);
+  //       console.log("created service");
+  //       this.getAllServices();
+  //       this.stepper.reset();
+  //     },
+  //     (error: HttpErrorResponse) => {
+  //       console.log("failed to create service");
+  //       alert(error.message);
+  //       this.stepper.reset();
+  //     }
+  //   );
+  // }
 }

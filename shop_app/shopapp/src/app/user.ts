@@ -16,5 +16,6 @@ export interface User {
     services: Service[];
     loyaltyType: string;
     status: string;
+    role: string;
     password: string;
 }

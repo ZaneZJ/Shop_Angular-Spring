@@ -19,11 +19,11 @@ export class ServiceViewComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getUsers();
+    this.getAllUsers();
   }
 
-  public getUsers(): void {
-    this.userService.getUser().subscribe(
+  public getAllUsers(): void {
+    this.userService.getAllUsers().subscribe(
       (response: User[]) => {
         this.users = response;
       },

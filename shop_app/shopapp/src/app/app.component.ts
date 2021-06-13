@@ -23,11 +23,11 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getUsers();
+    this.getAllUsers();
   }
 
-  public getUsers(): void {
-    this.userService.getUser().subscribe(
+  public getAllUsers(): void {
+    this.userService.getAllUsers().subscribe(
       (response: User[]) => {
         this.users = response;
       },
@@ -43,7 +43,7 @@ export class AppComponent implements OnInit {
   //   this.userService.addUser(addForm.value).subscribe(
   //     (response: User) => {
   //       console.log(response);
-  //       this.getUsers();
+  //       this.getAllUsers();
   //       addForm.reset();
   //     },
   //     (error: HttpErrorResponse) => {
@@ -57,7 +57,7 @@ export class AppComponent implements OnInit {
     this.userService.updateUser(user).subscribe(
       (response: User) => {
         console.log(response);
-        this.getUsers();
+        this.getAllUsers();
       },
       (error: HttpErrorResponse) => {
         alert(error.message);
@@ -69,7 +69,7 @@ export class AppComponent implements OnInit {
     this.userService.deleteUser(userId).subscribe(
       (response: void) => {
         console.log(response);
-        this.getUsers();
+        this.getAllUsers();
       },
       (error: HttpErrorResponse) => {
         alert(error.message);
@@ -89,7 +89,7 @@ export class AppComponent implements OnInit {
     }
     this.users = results;
     if (results.length === 0 || !key) {
-      this.getUsers();
+      this.getAllUsers();
     }
   }
 

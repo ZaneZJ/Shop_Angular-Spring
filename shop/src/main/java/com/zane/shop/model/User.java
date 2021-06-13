@@ -70,6 +70,9 @@ public class User implements Serializable {
     @NotBlank(message = "password can not be null")
     private String password;
 
+    @Column(length = 32, columnDefinition = "varchar(32) default 'USER'")
+    @Enumerated(value = EnumType.STRING)
+    private UserRole role = UserRole.USER;
 
 //    public User(String username, String name, String surname, String phoneNo, String address, String email, String postalCode, String pictureMain, Set<Pictures> pictures, Bank accountNo, Set<Service> services, LoyaltyType type) {
 //        this.username = username;
@@ -185,6 +188,11 @@ public class User implements Serializable {
         this.password = password;
     }
 
+    public UserRole getRole() { return role; }
+    public void setRole(UserRole role) {
+        this.role = role;
+    }
+
     @Override
     public String toString() {
         return new org.apache.commons.lang.builder.ToStringBuilder(this)
@@ -202,6 +210,7 @@ public class User implements Serializable {
                 .append("loyaltyType", loyaltyType)
                 .append("status", status)
                 .append("password", password)
+                .append("role", role)
                 .toString();
     }
 }
