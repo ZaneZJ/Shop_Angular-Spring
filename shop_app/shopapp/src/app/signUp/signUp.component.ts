@@ -2,7 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import { UserService } from '../user.service';
-import { RouterLinkWithHref } from '@angular/router';
+import { Router, RouterLinkWithHref } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
 import { Bank } from '../bank';
 import { CdkStepper } from '@angular/cdk/stepper';
@@ -28,15 +28,25 @@ export class SignUpComponent implements OnInit {
 
   stepper!: CdkStepper;
 
+  username!: string;
+
+  
+
   constructor(
     private userService: UserService,
     private _formBuilder: FormBuilder,
     private cookieService: CookieService,
-    private http: HttpClient
-  ) {
+    private http: HttpClient,
+    private router: Router
+    ) {
     // Initialization inside the constructor
     this.users = [];
     this.banks = [];
+
+    this.username = this.cookieService.get('username');
+    if(this.username) {
+      this.router.navigate(['/main']);
+    }
   }
 
   signUp() { }

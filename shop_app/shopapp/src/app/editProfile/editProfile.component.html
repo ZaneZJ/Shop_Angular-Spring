@@ -1,7 +1,15 @@
 <input type="file" name="photo" value="" class="form-control w-50 bg-light" id="photo" />
 
 
+<div>
+  <label for="new-hero">Hero name: </label>
+  <input id="new-hero" #heroName />
 
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button class="add-button" (click)="add(heroName.value); heroName.value=''">
+    Add hero
+  </button>
+</div>
 
 
 <!-- Edit Modal -->

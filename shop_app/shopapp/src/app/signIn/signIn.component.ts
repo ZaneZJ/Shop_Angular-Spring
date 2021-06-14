@@ -1,4 +1,4 @@
-import { HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import { UserService } from '../user.service';
@@ -6,6 +6,7 @@ import { FormControl } from '@angular/forms';
 import { FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { stringify } from '@angular/compiler/src/util';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signIn',
@@ -17,16 +18,26 @@ export class SignInComponent implements OnInit {
 
   hide = true;
 
-  username: string = '';
-  password: string = '';
+  // username: string = '';
+  // password: string = '';
   signInForm!: FormGroup;
+
+  username!: string;
 
   constructor(
     private userService: UserService, 
     private cookieService: CookieService,
-    private _formBuilder: FormBuilder) {
+    private _formBuilder: FormBuilder,
+    private http: HttpClient,
+    private router: Router
+    ) {
     // Initialization inside the constructor
     this.users = [];
+
+    this.username = this.cookieService.get('username');
+    if(this.username) {
+      this.router.navigate(['/main']);
+    }
   }
 
   ngOnInit() {

@@ -7,6 +7,14 @@
   }
 }
 
+@media screen and (max-width: 600px) {
+  .img {
+    /* margin-right: 10px; */
+    /* margin-right: 100% !important; */
+  }
+}
+
+
 /* END of view media */
 
 .background-main {

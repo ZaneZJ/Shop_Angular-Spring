@@ -54,13 +54,22 @@
   <!-- START of Nav Bar -->
 
   <ul class="navbar navbody" id="navbar-zindex">
-    <button class="logo-btn" onclick="window.location.href='http://localhost:4200/main';">
-      <img src="assets/logo.png" alt="logo" width="200" /></button>
-    <li class="navli">
+    <button
+      class="logo-btn"
+      onclick="window.location.href='http://localhost:4200/main';"
+    >
+      <img src="assets/logo.png" alt="logo" width="200" />
+    </button>
+    <li class="navli"></li>
 
     <li style="float: right">
       <!-- TODO: if user is logged in the show initials but if not show signIn and signUp buttons -->
-      <a class="profile-button" href="profile" style="padding-left: 9px; padding-right: 9px;"><mat-icon style="vertical-align: text-bottom;">person</mat-icon></a>
+      <a
+        class="profile-button"
+        href="profile"
+        style="padding-left: 9px; padding-right: 9px"
+        ><mat-icon style="vertical-align: text-bottom">person</mat-icon></a
+      >
     </li>
   </ul>
 
@@ -102,14 +111,16 @@
           <!-- FIXME: rederect to the right page doesn't work backwards!!!! -->
 
           <button
-          onclick="window.location.href='http://localhost:4200/signUp';"
+            id="hide"
+            onclick="window.location.href='http://localhost:4200/signUp';"
             mat-raised-button
             style="background-color: #94c6ce; color: #fff"
           >
             Sign Up
           </button>
           <button
-          onclick="window.location.href='http://localhost:4200/signIn';"
+            id="hide"
+            onclick="window.location.href='http://localhost:4200/signIn';"
             mat-raised-button
             style="background-color: #94c6ce; color: #fff; margin-left: 20px"
           >
@@ -134,37 +145,36 @@
             <div class="service-div-container">
               <!-- FIXME: add path to {{id}} http://localhost:4200/ServiceView{ServiceId}-->
               <div class="service-div-child-container">
-              <button
-                mat-raised-button
-                class="example-large-box mat-elevation-z4 service-button"
-                onclick="window.location.href='http://localhost:4200/serviceView';"
-              >
-                <div style="position: relative">
-                  <div class="child service-title">
-                    <p>Title</p>
-                    <br />
+                <button
+                  mat-raised-button
+                  class="example-large-box mat-elevation-z4 service-button"
+                  onclick="window.location.href='http://localhost:4200/serviceView';"
+                >
+                  <div style="position: relative">
+                    <div class="child service-title">
+                      <p>Title</p>
+                      <br />
+                    </div>
+                    <div class="child service-username">
+                      <p>Username</p>
+                    </div>
+                    <div class="child service-picture-main">
+                      <img
+                        src="/../assets/servicePictureMainTEST.png"
+                        alt="servicePicture"
+                        class="img-service-picture-main"
+                      />
+                    </div>
+                    <div class="picture-main child">
+                      <img
+                        src="/../assets/pictureMain1.PNG"
+                        alt="pictureMain"
+                        class="img"
+                      />
+                    </div>
                   </div>
-                  <div class="child service-username">
-                    <p>Username</p>
-                  </div>
-                  <div class="child service-picture-main">
-                    <img
-                      src="/../assets/servicePictureMainTEST.png"
-                      alt="servicePicture"
-                      class="img-service-picture-main"
-                    />
-                  </div>
-                  <div class="picture-main child">
-                    <img
-                      src="/../assets/pictureMain1.PNG"
-                      alt="pictureMain"
-                      class="img"
-                    />
-                  </div>
-                </div>
-              </button>
+                </button>
               </div>
-              
             </div>
           </mat-tab>
           <mat-tab label="Programming">
@@ -219,7 +229,9 @@
 
   <div class="footer">
     <div>
-      <p style="color: #aaaaaa; text-align-last: center; font-size: 13px;"><br>Contact info:<br>+371 22334455<br>sellyouridea@gmail.com</p>
+      <p style="color: #aaaaaa; text-align-last: center; font-size: 13px">
+        <br />Contact info:<br />+371 22334455<br />sellyouridea@gmail.com
+      </p>
     </div>
   </div>
 

@@ -1,8 +1,10 @@
-import { HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import { UserService } from '../user.service';
 import { FormControl } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -15,9 +17,35 @@ export class ProfileComponent implements OnInit {
   public deleteUser!: User;
 
   step = 0;
-
+  
   currentPassword = new FormControl('password');
   newPassword = new FormControl('password');
+
+  username!: string;
+  // value: string = this.cookieService.get('username');
+
+  constructor(
+    private userService: UserService,
+    private cookieService: CookieService,
+    private http: HttpClient,
+    private router: Router
+    ) {
+    // Initialization inside the constructor
+    this.users = [];
+
+    this.username = this.cookieService.get('username');
+    if(this.username) {
+      this.router.navigate(['/main']);
+    }
+  }
+
+  onLogOut() {
+    console.log("before");
+    console.log(this.cookieService.get('username'));
+    this.cookieService.delete('username');
+    console.log("after");
+    console.log(this.cookieService.get('username'));
+  }
 
   setStep(index: number) {
     this.step = index;
@@ -55,10 +83,6 @@ export class ProfileComponent implements OnInit {
     // rederect to URL to add service
   }
 
-  constructor(private userService: UserService) {
-    // Initialization inside the constructor
-    this.users = [];
-  }
 
   ngOnInit() {
     this.getAllUsers();

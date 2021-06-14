@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import { UserService } from '../user.service';
 import { NgForm } from '@angular/forms';
+import { catchError, map, tap } from 'rxjs/operators';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-editProfile',
@@ -46,5 +48,14 @@ export class EditProfileComponent implements OnInit {
       }
     );
   }
+
+  // add(name: string): void {
+  //   name = name.trim();
+  //   if (!name) { return; }
+  //   this.heroService.addHero({ name } as Hero)
+  //     .subscribe(hero => {
+  //       this.heroes.push(hero);
+  //     });
+  // }
 
 }

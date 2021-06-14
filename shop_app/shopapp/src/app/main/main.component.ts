@@ -1,8 +1,11 @@
-import { HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import { UserService } from '../user.service';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
+import { Variable } from '@angular/compiler/src/render3/r3_ast';
 
 @Component({
   selector: 'app-main',
@@ -12,9 +15,23 @@ import { NgForm } from '@angular/forms';
 export class MainComponent implements OnInit {
   public users: User[];
 
-  constructor(private userService: UserService) {
+  username!: string;
+
+  constructor(
+    private userService: UserService,
+    private cookieService: CookieService,
+    private http: HttpClient,
+    private router: Router) {
     // Initialization inside the constructor
     this.users = [];
+
+    this.username = this.cookieService.get('username');
+    if(this.username) {
+      // function demoDisplay() {
+      //   document.getElementById("hide")!.style.display = "none";
+      // }
+    }
+
   }
 
   signUp() {
