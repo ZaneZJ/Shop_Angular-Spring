@@ -1,11 +1,13 @@
-import { HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import { UserService } from '../user.service';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, NgForm } from '@angular/forms';
 import { catchError, map, tap } from 'rxjs/operators';
 import { HttpClientModule } from '@angular/common/http';
-
+import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
+ 
 @Component({
   selector: 'app-editProfile',
   templateUrl: './editProfile.component.html',
@@ -16,10 +18,18 @@ export class EditProfileComponent implements OnInit {
   public users: User[];
     
   public editUser!: User;
+  username!: string;
 
-  constructor(private userService: UserService){
+  constructor(
+    private userService: UserService,
+    private cookieService: CookieService,
+    private _formBuilder: FormBuilder,
+    private http: HttpClient,
+    private router: Router){
     // Initialization inside the constructor
     this.users = [];
+
+    this.username = this.cookieService.get('username');
   }
 
   ngOnInit() {

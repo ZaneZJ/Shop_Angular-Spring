@@ -34,9 +34,9 @@ export class ProfileComponent implements OnInit {
     this.users = [];
 
     this.username = this.cookieService.get('username');
-    if(this.username) {
-      this.router.navigate(['/main']);
-    }
+    // if(this.username) {
+    //   this.router.navigate(['/main']);
+    // }
   }
 
   onLogOut() {

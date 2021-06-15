@@ -1,6 +1,7 @@
 package com.zane.shop.model;
 
 import com.zane.shop.constants.LoyaltyType;
+import com.zane.shop.constants.UserRole;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
@@ -71,7 +72,7 @@ public class User implements Serializable {
     private String password;
 
     @Column(length = 32, columnDefinition = "varchar(32) default 'USER'")
-    @Enumerated(value = EnumType.STRING)
+    @Enumerated(EnumType.STRING)
     private UserRole role = UserRole.USER;
 
 //    public User(String username, String name, String surname, String phoneNo, String address, String email, String postalCode, String pictureMain, Set<Pictures> pictures, Bank accountNo, Set<Service> services, LoyaltyType type) {

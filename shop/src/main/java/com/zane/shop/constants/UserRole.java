@@ -1,4 +1,4 @@
-package com.zane.shop.model;
+package com.zane.shop.constants;
 
 public enum UserRole {
     ADMIN,
