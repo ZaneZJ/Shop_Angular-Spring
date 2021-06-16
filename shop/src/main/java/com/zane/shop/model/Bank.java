@@ -24,7 +24,7 @@ public class Bank implements Serializable {
 
     @Column
     @NotBlank(message = "bank can not be null")
-    private String bank;
+    private String textBanks;
 
 //    public Bank(Long accountNo, String beneficiary, String bank) {
 //        this.accountNo = accountNo;
@@ -53,11 +53,11 @@ public class Bank implements Serializable {
         this.beneficiary = beneficiary;
     }
 
-    public String getBank() {
-        return bank;
+    public String getTextBanks() {
+        return textBanks;
     }
-    public void setBank(String bank) {
-        this.bank = bank;
+    public void setTextBanks(String textBanks) {
+        this.textBanks = textBanks;
     }
 
     @Override
@@ -66,7 +66,7 @@ public class Bank implements Serializable {
                 .append("accountId", accountId)
                 .append("accountNo", accountNo)
                 .append("beneficiary", beneficiary)
-                .append("bank", bank)
+                .append("textBanks", textBanks)
                 .toString();
     }
 }

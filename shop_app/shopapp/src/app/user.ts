@@ -12,7 +12,7 @@ export interface User {
     postalCode: string;
     email: string;
     pictureMain: string;
-    bank: Bank[];
+    bank: Bank;
     services: Service[];
     loyaltyType: string;
     status: string;

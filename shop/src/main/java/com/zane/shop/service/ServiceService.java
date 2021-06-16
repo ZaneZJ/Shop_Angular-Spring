@@ -59,8 +59,8 @@ public class ServiceService {
     }
 
     public Service addServiceToUser(String username, Service service) {
-//        User user = userValidator.checkUsernameExists(username);
-//        service.setUser(user);
+        User user = userValidator.checkUsernameExists(username);
+        service.setUser(user);
         serviceRepo.save(service);
         return service;
     }

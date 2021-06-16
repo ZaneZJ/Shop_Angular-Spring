@@ -13,5 +13,5 @@ export interface Service {
     reviews: Review[];
     chats: Chat[];
     user: User;
-    pictures: Pictures[];
+    pictures?: Pictures[];    
 }

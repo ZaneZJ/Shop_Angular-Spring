@@ -12,7 +12,7 @@ export class PicturesService {
 
     constructor(private http: HttpClient) { }
 
-    // public getAllUsers(): Observable<User[]> {
+    // public getAllPicturess(): Observable<User[]> {
     //     return this.http.get<User[]>(`${this.apiServerUrl}/shop/all`);
     // }
 

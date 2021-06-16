@@ -1,21 +1,23 @@
-<h5 class="modal-title">Edit Employee {{editUser?.username}}</h5>
-<h5 class="modal-title">Edit Employee {{users[1]?.username}}</h5>
-<h5 class="modal-title">Edit Employee {{username}}</h5>
-
-<!-- <div ng-repeat="(key, value) in controller.greeting.custinfo">
-  <h3 class="modal-title">Edit Employee {{}}{{username}}</h3>
-</div> -->
-<!-- <ul>
-  <li ng-repeat="(key, value) in users">User: {{users[key].username}}</li>
-</ul>
-
-<div ng-app>
-  <div ng-controller="EditProfileComponent">
-    <p><code>{{users}}</code></p>
-    <table>
-      <tr ng-repeat="(key, value) in users">
-        <td>{{key}}</td><td>{{value}}</td>
-      </tr>
-    </table>
+<div class="row">
+  <div *ngFor="let user of users" class="col-md-6 col-xl-3">
+     <div class="card m-b-30">
+        <div class="card-body row">
+          <div class="col-6">
+             <a href=""><img src="{{user?.pictureMain}}" alt="" class="img-fluid rounded-circle w-60"></a>
+          </div>
+           <div class="col-6 card-title align-self-center mb-0">
+              <h5>{{user?.name}}</h5>
+              <p class="m-0">{{user?.username}}</p>
+           </div>
+        </div>
+        <ul class="list-group list-group-flush">
+           <li class="list-group-item"><i class="fa fa-envelope float-right"></i>{{user?.email}}</li>
+           <li class="list-group-item"><i class="fa fa-phone float-right"></i>Phone : {{user?.phoneNo}}</li>
+        </ul>
+        <div class="card-body">
+           <div class="float-right btn-group btn-group-sm">
+           </div>
+        </div>
+     </div>
   </div>
-</div> -->
+</div>

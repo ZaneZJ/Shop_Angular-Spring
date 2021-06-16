@@ -22,16 +22,17 @@ public class Review implements Serializable {
     @Column
     private String reviewText;
 
-    @OneToOne
-    @JoinColumn(name = "userId")
-    @NotBlank(message = "username can not be null")
-    private User username;
+    @Column
+    private String userReviewFrom;
 
-//    public Review(Long reviewId, Integer rated, String reviewText, User username) {
+    @Column
+    private String userReviewTo;
+
+//    public Review(Long reviewId, Integer rated, String reviewText, User user) {
 //        this.reviewId = reviewId;
 //        this.rated = rated;
 //        this.reviewText = reviewText;
-//        this.user = username;
+//        this.user = user;
 //    }
 
     public Long getReviewId() {
@@ -55,11 +56,18 @@ public class Review implements Serializable {
         this.reviewText = reviewText;
     }
 
-    public User getUsername() {
-        return username;
+    public String getUserReviewFrom() {
+        return userReviewFrom;
     }
-    public void setUsername(User username) {
-        this.username = username;
+    public void setUserReviewFrom(String userReviewFrom) {
+        this.userReviewFrom = userReviewFrom;
+    }
+
+    public String getUserReviewTo() {
+        return userReviewTo;
+    }
+    public void setUserReviewTo(String userReviewTo) {
+        this.userReviewTo = userReviewTo;
     }
 
     @Override
@@ -68,7 +76,8 @@ public class Review implements Serializable {
                 .append("reviewId", reviewId)
                 .append("rated", rated)
                 .append("reviewText", reviewText)
-                .append("username", username)
+                .append("userReviewFrom", userReviewFrom)
+                .append("userReviewTo", userReviewTo)
                 .toString();
     }
 }

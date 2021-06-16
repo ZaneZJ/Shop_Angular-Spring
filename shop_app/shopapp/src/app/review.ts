@@ -4,5 +4,6 @@ export interface Review {
     reviewId: number;
     rated: number;
     reviewText: string;
-    username: User;
+    userReviewFrom: string;
+    userReviewTo: string;
 }

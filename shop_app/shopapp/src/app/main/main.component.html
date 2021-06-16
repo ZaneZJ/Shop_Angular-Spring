@@ -144,7 +144,10 @@
           <mat-tab label="All">
             <div class="service-div-container">
               <!-- FIXME: add path to {{id}} http://localhost:4200/ServiceView{ServiceId}-->
-              <div class="service-div-child-container">
+
+
+
+              <!-- <div class="service-div-child-container">
                 <button
                   mat-raised-button
                   class="example-large-box mat-elevation-z4 service-button"
@@ -174,7 +177,51 @@
                     </div>
                   </div>
                 </button>
+              </div> -->
+
+
+
+              <div *ngFor="let service of services" class="service-div-child-container">
+                <button
+                  mat-raised-button
+                  class="example-large-box mat-elevation-z4 service-button"
+                  onclick="window.location.href='http://localhost:4200/serviceView';"
+                >
+                  <div style="position: relative">
+                    <div class="child service-title">
+                      <p>{{service?.title}}</p>
+                      <br />
+                    </div>
+                    <div class="child service-username">
+                      <p>{{service?.user?.username}}</p>
+                    </div>
+                    <div class="child service-picture-main" *ngFor="let picture of service?.pictures | slice:0:1;">
+                      <img
+                        src={{picture.picture}}
+                        alt="servicePicture"
+                        class="img-service-picture-main"
+                      />
+                    </div>
+                    <!-- <div class="child service-picture-main">
+                      <img
+                        src={{service?.user?.pictureMain}}
+                        alt="servicePicture"
+                        class="img-service-picture-main"
+                      />
+                    </div> -->
+                    <div class="picture-main child">
+                      <img
+                        src={{service?.user?.pictureMain}}
+                        alt="pictureMain"
+                        class="img"
+                      />
+                    </div>
+                  </div>
+                </button>
               </div>
+
+
+
             </div>
           </mat-tab>
           <mat-tab label="Programming">
@@ -286,64 +333,3 @@
     crossorigin="anonymous"
   ></script>
 </body>
-
-<!-- <div class="container" id="main-container">
-  <div class="row">
-    <div *ngFor="let user of users" class="col-md-6 col-xl-3"> -->
-<!-- Cards with Users -->
-<!-- <div class="card m-b-30">
-        <div class="card-body row">
-          <div class="col-6"> -->
-<!-- Image for the cards = pictureMain -->
-<!-- By using user? I'm making sure that user exists before accessing it's attributes -->
-<!-- <a href=""
-              ><img
-                src="{{ user?.pictureMain }}"
-                alt=""
-                class="img-fluid rounded-circle w-60"
-            /></a>
-          </div>
-          <div class="col-6 card-title align-self-center mb-0">
-            <h5>{{ user?.username }}</h5>
-            <p class="m-0">{{ user?.name }} {{ user?.surname }}</p>
-          </div>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <i class="fa fa-envelope float-right"></i>{{ user?.email }}
-          </li>
-          <li class="list-group-item">
-            <i class="fa fa-phone float-right"></i>Phone : {{ user?.phoneNo }}
-          </li>
-        </ul>
-        <div class="card-body">
-          <div class="float-right btn-group btn-group-sm">
-            <a
-              (click)="onOpenModal(user, 'edit')"
-              class="btn btn-primary tooltips"
-              data-placement="top"
-              data-original-title="Edit"
-              ><i class="fa fa-pencil"></i>
-            </a>
-            <a
-              (click)="onOpenModal(user, 'delete')"
-              class="btn btn-secondary tooltips"
-              data-placement="top"
-              data-original-title="Delete"
-              ><i class="fa fa-times"></i
-            ></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
-<!-- Notification for no users -->
-
-<!-- <div *ngIf="users?.length == 0" class="col-lg-12 col-md-12 col-xl-12">
-    <div class="alert alert-info" role="alert">
-      <h4 class="alert-heading">NO USERS!</h4>
-      <p>No Users were found.</p>
-    </div>
-  </div>
-</div> -->

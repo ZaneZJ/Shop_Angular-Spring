@@ -52,6 +52,7 @@ export class SignInComponent implements OnInit {
     this.userService.signInUser(this.signInForm.value["username"], "password").subscribe(
       (response: User) => {
         console.log(response);
+        // this.cookieService.set( "username" , response.username );
         this.cookieService.set( "username" , response.username );
         window.location.href='http://localhost:4200/main';
       },

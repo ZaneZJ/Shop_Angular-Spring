@@ -17,6 +17,146 @@
 
 /* END of view media */
 
+/* START of Service */
+
+.service-div-container {
+  text-align: center;
+  display: block;
+}
+
+.service-div-child-container-profile {
+  display: inline-block;
+  position: relative;
+}
+
+.service-button-profile {
+
+}
+
+.img-service-profile {
+  object-fit: cover;
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  margin-top: 215px;
+  margin-left: 105px;
+}
+
+.picture-main-profile {
+  overflow: hidden;
+  padding-left: 90px;
+}
+
+.service-username-profile {
+  margin-top: 235px;
+  color: #8cb0b6;
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+.service-title-profile {
+  margin-left: 10px;
+  margin-top: 215px;
+}
+
+.service-picture-main-profile {
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+.img-service-picture-main-profile {
+  object-fit: cover;
+  height: 187px;
+  width: 235px;
+}
+
+.service-div-container-profile {
+  text-align: center;
+  display: block;
+}
+
+.child-profile {
+  position: absolute;
+}
+
+/* END of Service */
+
+/* START of Service Fields */
+
+mat-card {
+  margin: auto;
+  /* max-width: 500px; */
+  max-width: 100%;
+  margin-top: 25px;
+  margin-bottom: 35px;
+}
+
+.example-small-box-profile,
+.example-large-box-profile {
+  display: flex;
+  margin: 16px;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.example-small-box-profile {
+  height: 100px;
+  width: 100px;
+}
+
+.example-large-box-profile {
+  height: 300px;
+  width: 280px;
+}
+
+/* END of Service Fields */
+
+/* START of Service */
+
+#service-zindex-profile {
+  z-index: 98 !important;
+}
+
+.service-profile {
+  background-color: #fff;
+  display: block;
+}
+
+.service-search-profile {
+  padding-right: 40px;
+  padding-left: 40px;
+  padding-top: 16px;
+  padding-bottom: 5px;
+  background-color: #94c6ce;
+  color: #fff;
+}
+
+.serviceul-profile {
+  text-align: center;
+  list-style: none;
+  padding-bottom: 40px;
+  width: 50%;
+  margin: auto;
+}
+
+.serviceli-profile {
+  float: left;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: middle;
+}
+
+.serviceli-profile a {
+  display: block;
+  color: rgb(135, 160, 180);
+  text-align: center;
+  text-decoration: none;
+}
+
+/* END of Service */
+
 .background-main {
   background-color: rgb(211, 211, 211);
   /* height: 100%; */

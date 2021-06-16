@@ -41,7 +41,7 @@ public class Service implements Serializable {
     @JoinColumn
     private User user;
 
-    @OneToMany(mappedBy = "pictureId")
+    @OneToMany(cascade = CascadeType.ALL)
     private Set<Pictures> pictures;
 
 //    public Service(Long serviceId, Set<Instance> instances, String title, String description, String theme, Set<Review> reviews, Set<Chat> chats, User username) {
