@@ -29,7 +29,7 @@ public class Service implements Serializable {
     private String description;
 
     @Column
-    private String theme;
+    private String[] theme;
 
     @OneToMany(mappedBy = "reviewId")
     private Set<Review> reviews;
@@ -83,10 +83,10 @@ public class Service implements Serializable {
         this.description = description;
     }
 
-    public String getTheme() {
+    public String[] getTheme() {
         return theme;
     }
-    public void setTheme(String theme) {
+    public void setTheme(String[] theme) {
         this.theme = theme;
     }
 

@@ -3,12 +3,18 @@
     <!-- START of Nav Bar -->
 
     <ul class="navbar navbody" id="navbar-zindex">
-        <button class="logo-btn" onclick="window.location.href='http://localhost:4200/main';">
-            <img src="assets/logo.png" alt="logo" width="200" /></button>
-          <li class="navli">
+      <button
+        class="logo-btn"
+        onclick="window.location.href='http://localhost:4200/main';"
+      >
+        <img src="assets/logo.png" alt="logo" width="200" />
+      </button>
+      <li class="navli"></li>
       <li style="float: right">
         <!-- TODO: if user is logged in the show but if not show signIn and signUp buttons -->
-        <a class="profile-button" href="profile"><mat-icon style="vertical-align: text-bottom;">person</mat-icon></a>
+        <a class="profile-button" href="profile" *ngIf="isLoggedIn"
+          ><mat-icon style="vertical-align: text-bottom">person</mat-icon></a
+        >
       </li>
     </ul>
 
@@ -20,7 +26,7 @@
       <mat-card class="example-card">
         <div class="picture-main">
           <img
-            src="/../assets/pictureMain1.PNG"
+            src={{service.user.pictureMain}}
             alt="pictureMain"
             class="img"
           />
@@ -30,56 +36,126 @@
             class="user-text"
             style="color: #aaaaaa; margin-top: 45px; margin-bottom: -5px"
           >
-            Username
+            {{service.user.username}}
           </p>
-          <p
-            class="user-text"
-            style="color: #94c6ce; text-decoration: solid; font-size: 25px"
-          >
-            Zane Jansone
-          </p>
+          <div style="text-align-last: center;">
+            <a
+              onclick="window.location.href='http://localhost:4200/profileAllSee';"
+              class="user-text"
+              style="color: #94c6ce; text-decoration: solid; font-size: 25px; "
+            >
+            {{service.user.name}} {{service.user.surname}}
+          </a>
+          </div>
         </div>
         <div></div>
 
         <div>
+          <hr />
           <p
             class="user-text"
-            style="color: #aaaaaa; margin-top: 30px; font-size: 25px"
+            style="color: #aaaaaa; margin-top: 20px; font-size: 25px"
           >
-            Title of the Service
+          {{service.title}}
           </p>
-          <div></div>
+          <div class="description">
+            <p>
+              {{service.description}}
+            </p>
+          </div>
+          <hr />
         </div>
 
         <!-- Adding all immages -->
-        <div class="img-div-container">
-          <div mat-raised-button class="service-picture-main">
+        <div class="img-div-container" > 
+          <div mat-raised-button class="service-picture-main" *ngFor="let picture of service?.pictures">
             <img
-              src="/../assets/servicePictureMainTEST.png"
+              src="{{picture.picture}}"
               alt="servicePicture"
               class="img-service-picture-main"
             />
           </div>
-          <div mat-raised-button class="service-picture-main">
-            <img
-              src="/../assets/servicePictureMainTEST.png"
-              alt="servicePicture"
-              class="img-service-picture-main"
-            />
+
+          <hr />
+          <div class="instance-div-outside">
+            <div mat-raised-button class="instance-div" *ngFor="let instances of service?.instances">
+              <p class="price">{{instances.price}} EUR</p>
+              <hr />
+              <p class="time">{{instances.time}}</p>
+              <hr />
+              <p class="description">{{instances.info}}</p>
+              <div style="margin-bottom: 20px">
+                <button
+                  mat-raised-button
+                  style="background-color: #94c6ce; color: #fff"
+                >
+                  Buy
+                </button>
+              </div>
+            </div>
+            <!-- <div mat-raised-button class="instance-div">
+              <p class="price">100 EUR</p>
+              <hr />
+              <p class="time">2 week</p>
+              <hr />
+              <p class="description">3 pages</p>
+              <div style="margin-bottom: 20px">
+                <button
+                  mat-raised-button
+                  style="background-color: #94c6ce; color: #fff"
+                >
+                  Buy
+                </button>
+              </div>
+            </div>
+            <div mat-raised-button class="instance-div">
+              <p class="price">200 EUR</p>
+              <hr />
+              <p class="time">6 weeks</p>
+              <hr />
+              <p class="description">Whole website</p>
+              <div style="margin-bottom: 20px">
+                <button
+                  mat-raised-button
+                  style="background-color: #94c6ce; color: #fff"
+                >
+                  Buy
+                </button>
+              </div>
+            </div> -->
           </div>
-          <div mat-raised-button class="service-picture-main">
-            <img
-              src="/../assets/servicePictureMainTEST.png"
-              alt="servicePicture"
-              class="img-service-picture-main"
-            />
-          </div>
-          <div mat-raised-button class="service-picture-main">
-            <img
-              src="/../assets/servicePictureMainTEST.png"
-              alt="servicePicture"
-              class="img-service-picture-main"
-            />
+
+          <hr />
+
+          <div>
+            <p class="review-title">Reviews</p>
+
+            <div>
+              <div>
+                <mat-icon style="color: #94c6ce">grade</mat-icon>
+                <mat-icon style="color: #94c6ce">grade</mat-icon>
+                <mat-icon style="color: #94c6ce">grade</mat-icon>
+                <mat-icon style="color: #94c6ce">grade</mat-icon>
+                <mat-icon style="color: #94c6ce">grade</mat-icon>
+              </div>
+              <p style="margin-left: 20px; margin-right: 20px">
+                Amazing service and seller, I would buy it for a second time.
+                Fat delivery and high quality!
+              </p>
+            </div>
+            <div>
+              <div>
+                <mat-icon style="color: #94c6ce">grade</mat-icon>
+                <mat-icon style="color: #94c6ce">grade</mat-icon>
+                <mat-icon style="color: #94c6ce">grade</mat-icon>
+                <mat-icon style="color: #94c6ce">grade</mat-icon>
+                <mat-icon style="color: #94c6ce">grade</mat-icon>
+              </div>
+              <p style="margin-left: 20px; margin-right: 20px">
+                Amazing service and seller, I would buy it for a second time.
+                Fat delivery and high quality!
+              </p>
+            </div>
           </div>
         </div>
       </mat-card>
@@ -87,12 +163,12 @@
 
     <!-- END of Profile -->
 
-    <div class="footer" style="margin-top: 100px;">
-        <div>
-          <p style="color: #aaaaaa; text-align-last: center; font-size: 13px;"><br>Contact info:<br>+371 22334455<br>sellyouridea@gmail.com</p>
-        </div>
+    <div class="footer" style="margin-top: 100px">
+      <div>
+        <p style="color: #aaaaaa; text-align-last: center; font-size: 13px">
+          <br />Contact info:<br />+371 22334455<br />sellyouridea@gmail.com
+        </p>
       </div>
+    </div>
   </div>
 </div>
-
-

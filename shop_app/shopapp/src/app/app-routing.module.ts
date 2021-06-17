@@ -45,7 +45,7 @@ const routes: Routes = [
     component: DisplayServiceComponent
   },
   {
-    path: 'serviceView',
+    path: 'serviceView/:service',
     component: ServiceViewComponent
   },
   {

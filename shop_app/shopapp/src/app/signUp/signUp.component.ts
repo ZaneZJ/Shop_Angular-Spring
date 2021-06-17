@@ -63,7 +63,7 @@ export class SignUpComponent implements OnInit {
       surname: ['', Validators.required],
       email: ['', Validators.required],
       phoneNo: ['', Validators.required],
-      pictureMain: [''],
+      pictureMain: ['', Validators.required],
       password: ['', Validators.required],
     });
     this.addressForm = this._formBuilder.group({

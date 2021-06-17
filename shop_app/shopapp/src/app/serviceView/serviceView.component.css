@@ -1,3 +1,51 @@
+/* START of the reviews */
+
+.review-title {
+  text-align-last: center;
+  color: rgb(180, 180, 180);
+  font-size: 20px;
+}
+
+/* END of the reviews */
+
+/* START of the instances */
+
+.description {
+  text-align-last: center;
+  color: rgb(180, 180, 180);
+}
+
+.instance-div {
+  background-color: #f0f0f0;
+  width: 190px;
+  border-radius: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.instance-div-outside {
+  display: inline-flex;
+}
+
+.price {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #94c6ce;
+}
+
+.time {
+  font-size: 18px;
+  color: #afafaf;
+}
+
+.description {
+  font-size: 18px;
+  color: #7a7a7a;
+}
+
+/* END of the instances */
+
 /* START of view media */
 
 @media screen and (max-width: 700px) {

@@ -1,5 +1,5 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { User } from '../user';
 import { Pictures } from '../pictures';
 import { Service } from '../service';
@@ -22,6 +22,7 @@ export class MainComponent implements OnInit {
   public services?: Service[];
   public picturess: Pictures[];
 
+  @Input() isLoggedIn: boolean;
 
   username!: string;
 
@@ -37,13 +38,19 @@ export class MainComponent implements OnInit {
     this.services = [];
     this.picturess = [];
 
+    
     this.username = this.cookieService.get('username');
+    this.isLoggedIn = !!this.username;
     if(this.username) {
-      // function demoDisplay() {
-      //   document.getElementById("hide")!.style.display = "none";
-      // }
+      function demoDisplay() {
+        document.getElementById("hide")!.style.display = "none";
+      }
     }
 
+  }
+
+  public goToService(id: number) {    
+    window.location.replace('http://localhost:4200/serviceView/' + id);
   }
 
   signUp() {

@@ -65,6 +65,7 @@
     <li style="float: right">
       <!-- TODO: if user is logged in the show initials but if not show signIn and signUp buttons -->
       <a
+        *ngIf="isLoggedIn"
         class="profile-button"
         href="profile"
         style="padding-left: 9px; padding-right: 9px"
@@ -111,6 +112,7 @@
           <!-- FIXME: rederect to the right page doesn't work backwards!!!! -->
 
           <button
+            *ngIf="!isLoggedIn"
             id="hide"
             onclick="window.location.href='http://localhost:4200/signUp';"
             mat-raised-button
@@ -119,12 +121,22 @@
             Sign Up
           </button>
           <button
+            *ngIf="!isLoggedIn"
             id="hide"
             onclick="window.location.href='http://localhost:4200/signIn';"
             mat-raised-button
             style="background-color: #94c6ce; color: #fff; margin-left: 20px"
           >
             Sign In
+          </button>
+          <button
+            *ngIf="isLoggedIn"
+            id="hide"
+            onclick="window.location.href='http://localhost:4200/addService';"
+            mat-raised-button
+            style="background-color: #94c6ce; color: #fff;"
+          >
+            Add Service
           </button>
         </div>
       </div>
@@ -185,7 +197,7 @@
                 <button
                   mat-raised-button
                   class="example-large-box mat-elevation-z4 service-button"
-                  onclick="window.location.href='http://localhost:4200/serviceView';"
+                  (click)="goToService(service.serviceId)"
                 >
                   <div style="position: relative">
                     <div class="child service-title">
@@ -202,13 +214,6 @@
                         class="img-service-picture-main"
                       />
                     </div>
-                    <!-- <div class="child service-picture-main">
-                      <img
-                        src={{service?.user?.pictureMain}}
-                        alt="servicePicture"
-                        class="img-service-picture-main"
-                      />
-                    </div> -->
                     <div class="picture-main child">
                       <img
                         src={{service?.user?.pictureMain}}

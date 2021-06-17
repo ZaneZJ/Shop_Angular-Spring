@@ -1,5 +1,6 @@
 package com.zane.shop.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.zane.shop.constants.LoyaltyType;
 import com.zane.shop.constants.UserRole;
 import org.hibernate.validator.constraints.Length;
@@ -13,9 +14,6 @@ import java.util.Set;
 @Entity
 @Table(name = "user")
 public class User implements Serializable {
-
-    // TODO: add hidden password
-    // TODO: set upp roles
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

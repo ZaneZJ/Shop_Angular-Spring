@@ -3,11 +3,16 @@
     <!-- START of Nav Bar -->
 
     <ul class="navbar navbody" id="navbar-zindex">
-      <button class="logo-btn" onclick="window.location.href='http://localhost:4200/main';">
-        <img src="assets/logo.png" alt="logo" width="200" /></button>
+      <button
+        class="logo-btn"
+        onclick="window.location.href='http://localhost:4200/main';"
+      >
+        <img src="assets/logo.png" alt="logo" width="200" />
+      </button>
       <li style="float: right">
-        <!-- TODO: if user is logged in the show initials but if not show signIn and signUp buttons -->
-        <a class="profile-button" href="profile"><mat-icon style="vertical-align: text-bottom;">person</mat-icon></a>
+        <a class="profile-button" href="profile" *ngIf="isLoggedIn"
+          ><mat-icon style="vertical-align: text-bottom">person</mat-icon></a
+        >
       </li>
     </ul>
 
@@ -49,16 +54,68 @@
           </p>
           <div></div>
         </div>
+
+        <div class="service-div-container">
+
+
+          <div
+            *ngFor="let service of services"
+            class="service-div-child-container-profile"
+          >
+            <button
+              mat-raised-button
+              class="
+                example-large-box-profile
+                mat-elevation-z4
+                service-button-profile
+              "
+              onclick="window.location.href='http://localhost:4200/serviceView';"
+            >
+              <div style="position: relative">
+                <div class="child-profile service-title-profile">
+                  <p>{{ service?.title }}</p>
+                  <br />
+                </div>
+                <div class="child-profile service-username-profile">
+                  <p>{{ service?.user?.username }}</p>
+                </div>
+                <div
+                  class="child-profile service-picture-main-profile"
+                  *ngFor="let picture of service?.pictures | slice: 0:1"
+                >
+                  <img
+                    src="{{ picture.picture }}"
+                    alt="servicePicture"
+                    class="img-service-picture-main-profile"
+                  />
+                </div>
+                <div class="picture-main-profile child-profile">
+                  <img
+                    src="{{ service?.user?.pictureMain }}"
+                    alt="pictureMain"
+                    class="img-service-profile"
+                  />
+                </div>
+              </div>
+            </button>
+          </div>
+
+
+        </div>
+
       </mat-card>
     </div>
+
+    
 
     <!-- END of Profile -->
 
     <div class="footer" style="margin-top: 100px">
       <div>
-        <p style="color: #aaaaaa; text-align-last: center; font-size: 13px;"><br>Contact info:<br>+371 22334455<br>sellyouridea@gmail.com</p>
+        <p style="color: #aaaaaa; text-align-last: center; font-size: 13px">
+          <br />Contact info:<br />+371 22334455<br />sellyouridea@gmail.com
+        </p>
       </div>
     </div>
   </div>
 </div>
-
