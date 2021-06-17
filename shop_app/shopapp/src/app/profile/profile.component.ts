@@ -26,6 +26,7 @@ export class ProfileComponent implements OnInit {
   updateAddressForm!: FormGroup;
   updateUserForm!: FormGroup;
 
+  @Input() isEnglish: boolean;
   
   step = 0;
   
@@ -52,11 +53,16 @@ export class ProfileComponent implements OnInit {
     this.banks = [];
 
     this.username = this.cookieService.get('username');
+    this.isEnglish = true;
     this.userService.getUserByUsername(this.username).subscribe(user => this.currentUser = user);
     // if(this.username) {
     //   this.router.navigate(['/main']);
     // }
 
+  }
+
+  changeLanguage() {
+    this.isEnglish = !this.isEnglish;
   }
 
   ngOnInit() {

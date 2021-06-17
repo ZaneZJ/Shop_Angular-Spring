@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { User } from '../user';
 import { UserService } from '../user.service';
 import { NgForm } from '@angular/forms';
@@ -38,6 +38,8 @@ export class AddServiceComponent implements OnInit {
   instanceOneForm!: FormGroup;
   instanceTwoForm!: FormGroup;
   instanceThreeForm!: FormGroup;
+
+  @Input() isEnglish: boolean;
 
   stepper!: CdkStepper;
 
@@ -88,6 +90,7 @@ export class AddServiceComponent implements OnInit {
     this.picturess = [];
 
     this.username = this.cookieService.get('username');
+    this.isEnglish = true;
     if(!this.username) {
       this.router.navigate(['/signIn']);
     }
@@ -98,6 +101,10 @@ export class AddServiceComponent implements OnInit {
         service ? this._filter(service) : this.allServices.slice()
       )
     );
+  }
+
+  changeLanguage() {
+    this.isEnglish = !this.isEnglish;
   }
 
   add(event: MatChipInputEvent): void {

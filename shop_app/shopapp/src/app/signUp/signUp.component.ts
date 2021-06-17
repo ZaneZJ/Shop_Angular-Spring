@@ -1,5 +1,5 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { User } from '../user';
 import { UserService } from '../user.service';
 import { Router, RouterLinkWithHref } from '@angular/router';
@@ -29,8 +29,7 @@ export class SignUpComponent implements OnInit {
   stepper!: CdkStepper;
 
   username!: string;
-
-  
+  @Input() isEnglish: boolean;
 
   constructor(
     private userService: UserService,
@@ -43,10 +42,16 @@ export class SignUpComponent implements OnInit {
     this.users = [];
     this.banks = [];
 
+    this.isEnglish = true;
+
     this.username = this.cookieService.get('username');
     if(this.username) {
       this.router.navigate(['/main']);
     }
+  }
+
+  changeLanguage() {
+    this.isEnglish = !this.isEnglish;
   }
 
   signUp() { }
@@ -73,7 +78,7 @@ export class SignUpComponent implements OnInit {
     this.bankForm = this._formBuilder.group({
       accountNo: ['', Validators.required],
       beneficiary: ['', Validators.required],
-      bank: ['', Validators.required],
+      textBanks: ['', Validators.required],
     });
 
   }

@@ -17,6 +17,7 @@ export class ProfileAllSeeComponent implements OnInit {
   public services: Service[];
 
   @Input() isLoggedIn: boolean;
+  @Input() isEnglish: boolean;
   username!: string;
 
   constructor(
@@ -31,11 +32,16 @@ export class ProfileAllSeeComponent implements OnInit {
 
     this.username = this.cookieService.get('username');
     this.isLoggedIn = !!this.username;
+    this.isEnglish = true;
     if(this.username) {
       function demoDisplay() {
         document.getElementById("hide")!.style.display = "none";
       }
     }
+  }
+
+  changeLanguage() {
+    this.isEnglish = !this.isEnglish;
   }
 
   ngOnInit() {

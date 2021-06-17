@@ -1,5 +1,5 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { User } from '../user';
 import { UserService } from '../user.service';
 import { FormControl } from '@angular/forms';
@@ -18,11 +18,10 @@ export class SignInComponent implements OnInit {
 
   hide = true;
 
-  // username: string = '';
-  // password: string = '';
   signInForm!: FormGroup;
 
   username!: string;
+  @Input() isEnglish: boolean;
 
   constructor(
     private userService: UserService, 
@@ -35,9 +34,14 @@ export class SignInComponent implements OnInit {
     this.users = [];
 
     this.username = this.cookieService.get('username');
+    this.isEnglish = true;
     if(this.username) {
       this.router.navigate(['/main']);
     }
+  }
+
+  changeLanguage() {
+    this.isEnglish = !this.isEnglish;
   }
 
   ngOnInit() {

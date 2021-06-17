@@ -23,7 +23,7 @@ public class Bank implements Serializable {
     private String beneficiary;
 
     @Column
-    @NotBlank(message = "bank can not be null")
+    @NotBlank(message = "textBanks can not be null")
     private String textBanks;
 
 //    public Bank(Long accountNo, String beneficiary, String bank) {

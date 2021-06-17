@@ -1,436 +1,812 @@
-<div class="background-main">
-  <div class="background">
-    <!-- START of Nav Bar -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
 
-    <ul class="navbar navbody" id="navbar-zindex">
-      <button
-        class="logo-btn"
-        onclick="window.location.href='http://localhost:4200/main';"
-      >
-        <img src="assets/logo.png" alt="logo" width="200" />
-      </button>
+<div *ngIf="isEnglish">
+  <div class="background-main">
+    <div class="background">
+      <!-- START of Nav Bar -->
 
-      <li style="float: right">
-        <!-- TODO: on click log out -->
-
+      <ul class="navbar navbody" id="navbar-zindex">
         <button
-          (click)="onLogOut()"
-          mat-raised-button
-          style="background-color: #ffffff; color: rgb(167, 167, 167)"
+          class="logo-btn"
+          onclick="window.location.href='http://localhost:4200/main';"
         >
-          Log out
+          <img src="assets/logo.png" alt="logo" width="200" />
         </button>
-      </li>
-    </ul>
 
-    <!-- END of Nav Bar -->
+        <li style="float: right">
+          <!-- TODO: on click log out -->
 
-    <!-- START of Profile -->
-
-    <div>
-      <mat-card class="example-card">
-        <div class="picture-main">
-          <img
-            src="{{ currentUser.pictureMain }}"
-            alt="pictureMain"
-            class="img"
-          />
-        </div>
-        <div>
-          <p
-            class="modal-title"
-            class="user-text"
-            style="color: #aaaaaa; margin-top: 45px; margin-bottom: -5px"
+          <button
+            (click)="onLogOut()"
+            mat-raised-button
+            style="background-color: #ffffff; color: rgb(167, 167, 167)"
           >
-            {{ currentUser.username }}
-          </p>
-          <p
-            class="modal-title"
-            class="user-text"
-            style="color: #94c6ce; text-decoration: solid; font-size: 25px"
-          >
-            {{ currentUser.name }} {{ currentUser.surname }}
-          </p>
-        </div>
-        <div>
-          <mat-accordion class="example-headers-align">
-            <mat-expansion-panel (opened)="setStep(0)" hideToggle>
-              <mat-expansion-panel-header>
-                <mat-panel-title> Personal data </mat-panel-title>
-                <mat-panel-description>
-                  Email - Phone - Picture
-                  <mat-icon>account_circle</mat-icon>
-                </mat-panel-description>
-              </mat-expansion-panel-header>
-              <form [formGroup]="updateUserForm">
-                <!-- Insert email from DB -->
-                <mat-form-field>
-                  <mat-label for="newEmail">{{ currentUser.email }}</mat-label>
-                  <input
-                    matInput
-                    type="text"
-                    ngModel
-                    name="newEmail"
-                    id="newEmail"
-                    formControlName="newEmail"
-                  />
-                </mat-form-field>
+            Log out
+          </button>
+        </li>
+      </ul>
 
-                <!-- Insert phone from DB -->
-                <mat-form-field>
-                  <mat-label for="newPhoneNo">{{
-                    currentUser.phoneNo
-                  }}</mat-label>
-                  <input
-                    matInput
-                    type="text"
-                    ngModel
-                    name="newPhoneNo"
-                    id="newPhoneNo"
-                    formControlName="newPhoneNo"
-                  />
-                </mat-form-field>
+      <!-- END of Nav Bar -->
 
-                <!-- Insert picture from DB -->
-                <mat-form-field>
-                  <mat-label foe="newPictureMain">{{
-                    currentUser.pictureMain
-                  }}</mat-label>
-                  <input
-                    matInput
-                    type="text"
-                    ngModel
-                    name="newPictureMain"
-                    id="newPictureMain"
-                    formControlName="newPictureMain"
-                  />
-                </mat-form-field>
-              </form>
+      <!-- START of Profile -->
 
-              <mat-action-row>
-                <button
-                  mat-button
-                  color="primary"
-                  (click)="nextStep()"
-                  (click)="saveEmailPhoneURL()"
-                  mat-raised-button
-                  style="background-color: #94c6ce; color: #fff"
-                >
-                  Save New Changes
-                </button>
-              </mat-action-row>
-            </mat-expansion-panel>
-
-            <mat-expansion-panel
-              [expanded]="step === 1"
-              (opened)="setStep(1)"
-              hideToggle
-            >
-              <mat-expansion-panel-header>
-                <mat-panel-title> Location </mat-panel-title>
-                <mat-panel-description>
-                  Address - Postal Code
-                  <mat-icon>map</mat-icon>
-                </mat-panel-description>
-              </mat-expansion-panel-header>
-              <form [formGroup]="updateAddressForm">
-                <!-- Insert address from DB -->
-                <mat-form-field>
-                  <mat-label for="newAddress">{{
-                    currentUser.address
-                  }}</mat-label>
-                  <input
-                    matInput
-                    type="text"
-                    ngModel
-                    name="newAddress"
-                    id="newAddress"
-                    formControlName="newAddress"
-                  />
-                </mat-form-field>
-
-                <!-- Insert post code from DB -->
-                <mat-form-field>
-                  <mat-label for="newPostalCode">{{
-                    currentUser.postalCode
-                  }}</mat-label>
-                  <input
-                    matInput
-                    type="text"
-                    ngModel
-                    name="newPostalCode"
-                    id="newPostalCode"
-                    formControlName="newPostalCode"
-                  />
-                </mat-form-field>
-              </form>
-
-              <mat-action-row>
-                <button
-                  mat-button
-                  color="primary"
-                  (click)="nextStep()"
-                  (click)="saveAddressPostCode()"
-                  mat-raised-button
-                  style="background-color: #94c6ce; color: #fff"
-                >
-                  Save New Changes
-                </button>
-              </mat-action-row>
-            </mat-expansion-panel>
-
-            <mat-expansion-panel
-              [expanded]="step === 2"
-              (opened)="setStep(2)"
-              hideToggle
-            >
-              <mat-expansion-panel-header>
-                <mat-panel-title> Billing data </mat-panel-title>
-                <mat-panel-description>
-                  Account Number - Beneficiary - Bank
-                  <mat-icon>monetization_on</mat-icon>
-                </mat-panel-description>
-              </mat-expansion-panel-header>
-              <form [formGroup]="updateBanksForm">
-                <!-- Insert banks account no from DB -->
-                <mat-form-field>
-                  <mat-label for="newAccountNo">{{
-                    currentUser.bank.accountNo
-                  }}</mat-label>
-                  <input
-                    matInput
-                    type="text"
-                    ngModel
-                    name="newAccountNo"
-                    id="newAccountNo"
-                    formControlName="newAccountNo"
-                  />
-                </mat-form-field>
-
-                <!-- Insert beneficiary from DB -->
-                <mat-form-field>
-                  <mat-label for="newBeneficiary">{{
-                    currentUser.bank.beneficiary
-                  }}</mat-label>
-                  <input
-                    matInput
-                    type="text"
-                    ngModel
-                    name="newBeneficiary"
-                    id="newBeneficiary"
-                    formControlName="newBeneficiary"
-                  />
-                </mat-form-field>
-
-                <!-- Insert bank from DB -->
-                <mat-form-field>
-                  <mat-label for="newTextBanks">{{
-                    currentUser.bank.textBanks
-                  }}</mat-label>
-                  <input
-                    matInput
-                    type="text"
-                    ngModel
-                    name="newTextBanks"
-                    id="newTextBanks"
-                    formControlName="newTextBanks"
-                  />
-                </mat-form-field>
-              </form>
-
-              <mat-action-row>
-                <button
-                  mat-button
-                  color="primary"
-                  (click)="nextStep()"
-                  (click)="saveBanksInfo()"
-                  mat-raised-button
-                  style="background-color: #94c6ce; color: #fff"
-                >
-                  Save New Changes
-                </button>
-              </mat-action-row>
-            </mat-expansion-panel>
-
-            <mat-expansion-panel
-              [expanded]="step === 3"
-              (opened)="setStep(3)"
-              hideToggle
-            >
-              <mat-expansion-panel-header>
-                <mat-panel-title> Password </mat-panel-title>
-                <mat-panel-description>
-                  Change Password
-                  <mat-icon>dialpad</mat-icon>
-                </mat-panel-description>
-              </mat-expansion-panel-header>
-
-              <form [formGroup]="updatePasswordForm">
-                <!-- Check if the old passwor is correct -->
-                <mat-form-field class="example-user-input">
-                  <mat-label for="currentPassword">Current Password</mat-label>
-                  <input
-                    matInput
-                    type="text"
-                    ngModel
-                    name="currentPassword"
-                    id="currentPassword"
-                    formControlName="currentPassword"
-                    matInput
-                    required
-                  />
-                  <mat-hint></mat-hint>
-                </mat-form-field>
-
-                <!-- Change to new password -->
-                <mat-form-field class="example-user-input">
-                  <mat-label for="newPassword">New Password</mat-label>
-                  <input
-                    matInput
-                    type="text"
-                    ngModel
-                    name="newPassword"
-                    id="newPassword"
-                    formControlName="newPassword"
-                    matInput
-                    required
-                  />
-                  <mat-hint></mat-hint>
-                </mat-form-field>
-              </form>
-
-              <mat-action-row>
-                <button
-                  (click)="nextStep()"
-                  (click)="savePassword()"
-                  mat-raised-button
-                  style="background-color: #94c6ce; color: #fff"
-                >
-                  Save Password
-                </button>
-              </mat-action-row>
-            </mat-expansion-panel>
-          </mat-accordion>
-        </div>
-
-        <div>
-          <p
-            class="user-text"
-            style="color: #aaaaaa; margin-top: 30px; font-size: 20px"
-          >
-            Services
-          </p>
-          <div class="add-services-btn">
-            <button
-              onclick="window.location.href='http://localhost:4200/addService';"
-              mat-raised-button
-              style="background-color: #ffffff; color: rgb(170, 170, 170)"
-            >
-              Add Service
-            </button>
+      <div>
+        <mat-card class="example-card">
+          <div class="picture-main">
+            <img
+              src="{{ currentUser.pictureMain }}"
+              alt="pictureMain"
+              class="img"
+            />
           </div>
-        </div>
+          <div>
+            <p
+              class="modal-title"
+              class="user-text"
+              style="color: #aaaaaa; margin-top: 45px; margin-bottom: -5px"
+            >
+              {{ currentUser.username }}
+            </p>
+            <p
+              class="modal-title"
+              class="user-text"
+              style="color: #94c6ce; text-decoration: solid; font-size: 25px"
+            >
+              {{ currentUser.name }} {{ currentUser.surname }}
+            </p>
+          </div>
+          <div>
+            <mat-accordion class="example-headers-align">
+              <mat-expansion-panel (opened)="setStep(0)" hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title> Personal data </mat-panel-title>
+                  <mat-panel-description>
+                    Email - Phone - Picture
+                    <mat-icon>account_circle</mat-icon>
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <form [formGroup]="updateUserForm">
+                  <!-- Insert email from DB -->
+                  <mat-form-field>
+                    <mat-label for="newEmail">{{
+                      currentUser.email
+                    }}</mat-label>
+                    <input
+                      matInput
+                      type="text"
+                      ngModel
+                      name="newEmail"
+                      id="newEmail"
+                      formControlName="newEmail"
+                    />
+                  </mat-form-field>
 
-        <div class="service-div-container">
-          <div
-            *ngFor="let service of services"
-            class="service-div-child-container-profile"
-          >
-            <div *ngIf="service.user.username == this.username">
-              <button
-                mat-raised-button
-                class="
-                  example-large-box-profile
-                  mat-elevation-z4
-                  service-button-profile
-                "
-                onclick="window.location.href='http://localhost:4200/serviceView';"
-              >
-                <div style="position: relative">
-                  <div class="child-profile service-title-profile">
-                    <p>{{ service?.title }}</p>
-                    <br />
-                  </div>
-                  <div class="child-profile service-username-profile">
-                    <p>{{ service?.user?.username }}</p>
-                  </div>
-                  <div
-                    class="child-profile service-picture-main-profile"
-                    *ngFor="let picture of service?.pictures | slice: 0:1"
+                  <!-- Insert phone from DB -->
+                  <mat-form-field>
+                    <mat-label for="newPhoneNo">{{
+                      currentUser.phoneNo
+                    }}</mat-label>
+                    <input
+                      matInput
+                      type="text"
+                      ngModel
+                      name="newPhoneNo"
+                      id="newPhoneNo"
+                      formControlName="newPhoneNo"
+                    />
+                  </mat-form-field>
+
+                  <!-- Insert picture from DB -->
+                  <mat-form-field>
+                    <mat-label foe="newPictureMain">{{
+                      currentUser.pictureMain
+                    }}</mat-label>
+                    <input
+                      matInput
+                      type="text"
+                      ngModel
+                      name="newPictureMain"
+                      id="newPictureMain"
+                      formControlName="newPictureMain"
+                    />
+                  </mat-form-field>
+                </form>
+
+                <mat-action-row>
+                  <button
+                    mat-button
+                    color="primary"
+                    (click)="nextStep()"
+                    (click)="saveEmailPhoneURL()"
+                    mat-raised-button
+                    style="background-color: #94c6ce; color: #fff"
                   >
-                    <img
-                      src="{{ picture.picture }}"
-                      alt="servicePicture"
-                      class="img-service-picture-main-profile"
+                    Save New Changes
+                  </button>
+                </mat-action-row>
+              </mat-expansion-panel>
+
+              <mat-expansion-panel
+                [expanded]="step === 1"
+                (opened)="setStep(1)"
+                hideToggle
+              >
+                <mat-expansion-panel-header>
+                  <mat-panel-title> Location </mat-panel-title>
+                  <mat-panel-description>
+                    Address - Postal Code
+                    <mat-icon>map</mat-icon>
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <form [formGroup]="updateAddressForm">
+                  <!-- Insert address from DB -->
+                  <mat-form-field>
+                    <mat-label for="newAddress">{{
+                      currentUser.address
+                    }}</mat-label>
+                    <input
+                      matInput
+                      type="text"
+                      ngModel
+                      name="newAddress"
+                      id="newAddress"
+                      formControlName="newAddress"
                     />
-                  </div>
-                  <div class="picture-main-profile child-profile">
-                    <img
-                      src="{{ service?.user?.pictureMain }}"
-                      alt="pictureMain"
-                      class="img-service-profile"
+                  </mat-form-field>
+
+                  <!-- Insert post code from DB -->
+                  <mat-form-field>
+                    <mat-label for="newPostalCode">{{
+                      currentUser.postalCode
+                    }}</mat-label>
+                    <input
+                      matInput
+                      type="text"
+                      ngModel
+                      name="newPostalCode"
+                      id="newPostalCode"
+                      formControlName="newPostalCode"
                     />
-                  </div>
-                </div>
+                  </mat-form-field>
+                </form>
+
+                <mat-action-row>
+                  <button
+                    mat-button
+                    color="primary"
+                    (click)="nextStep()"
+                    (click)="saveAddressPostCode()"
+                    mat-raised-button
+                    style="background-color: #94c6ce; color: #fff"
+                  >
+                    Save New Changes
+                  </button>
+                </mat-action-row>
+              </mat-expansion-panel>
+
+              <mat-expansion-panel
+                [expanded]="step === 2"
+                (opened)="setStep(2)"
+                hideToggle
+              >
+                <mat-expansion-panel-header>
+                  <mat-panel-title> Billing data </mat-panel-title>
+                  <mat-panel-description>
+                    Account Number - Beneficiary - Bank
+                    <mat-icon>monetization_on</mat-icon>
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <form [formGroup]="updateBanksForm">
+                  <!-- Insert banks account no from DB -->
+                  <mat-form-field>
+                    <mat-label for="newAccountNo">{{
+                      currentUser.bank.accountNo
+                    }}</mat-label>
+                    <input
+                      matInput
+                      type="text"
+                      ngModel
+                      name="newAccountNo"
+                      id="newAccountNo"
+                      formControlName="newAccountNo"
+                    />
+                  </mat-form-field>
+
+                  <!-- Insert beneficiary from DB -->
+                  <mat-form-field>
+                    <mat-label for="newBeneficiary">{{
+                      currentUser.bank.beneficiary
+                    }}</mat-label>
+                    <input
+                      matInput
+                      type="text"
+                      ngModel
+                      name="newBeneficiary"
+                      id="newBeneficiary"
+                      formControlName="newBeneficiary"
+                    />
+                  </mat-form-field>
+
+                  <!-- Insert bank from DB -->
+                  <mat-form-field>
+                    <mat-label for="newTextBanks">{{
+                      currentUser.bank.textBanks
+                    }}</mat-label>
+                    <input
+                      matInput
+                      type="text"
+                      ngModel
+                      name="newTextBanks"
+                      id="newTextBanks"
+                      formControlName="newTextBanks"
+                    />
+                  </mat-form-field>
+                </form>
+
+                <mat-action-row>
+                  <button
+                    mat-button
+                    color="primary"
+                    (click)="nextStep()"
+                    (click)="saveBanksInfo()"
+                    mat-raised-button
+                    style="background-color: #94c6ce; color: #fff"
+                  >
+                    Save New Changes
+                  </button>
+                </mat-action-row>
+              </mat-expansion-panel>
+
+              <mat-expansion-panel
+                [expanded]="step === 3"
+                (opened)="setStep(3)"
+                hideToggle
+              >
+                <mat-expansion-panel-header>
+                  <mat-panel-title> Password </mat-panel-title>
+                  <mat-panel-description>
+                    Change Password
+                    <mat-icon>dialpad</mat-icon>
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <form [formGroup]="updatePasswordForm">
+                  <!-- Check if the old passwor is correct -->
+                  <mat-form-field class="example-user-input">
+                    <mat-label for="currentPassword"
+                      >Current Password</mat-label
+                    >
+                    <input
+                      matInput
+                      type="text"
+                      ngModel
+                      name="currentPassword"
+                      id="currentPassword"
+                      formControlName="currentPassword"
+                      matInput
+                      required
+                    />
+                    <mat-hint></mat-hint>
+                  </mat-form-field>
+
+                  <!-- Change to new password -->
+                  <mat-form-field class="example-user-input">
+                    <mat-label for="newPassword">New Password</mat-label>
+                    <input
+                      matInput
+                      type="text"
+                      ngModel
+                      name="newPassword"
+                      id="newPassword"
+                      formControlName="newPassword"
+                      matInput
+                      required
+                    />
+                    <mat-hint></mat-hint>
+                  </mat-form-field>
+                </form>
+
+                <mat-action-row>
+                  <button
+                    (click)="nextStep()"
+                    (click)="savePassword()"
+                    mat-raised-button
+                    style="background-color: #94c6ce; color: #fff"
+                  >
+                    Save Password
+                  </button>
+                </mat-action-row>
+              </mat-expansion-panel>
+            </mat-accordion>
+          </div>
+
+          <div>
+            <p
+              class="user-text"
+              style="color: #aaaaaa; margin-top: 30px; font-size: 20px"
+            >
+              Services
+            </p>
+            <div class="add-services-btn">
+              <button
+                onclick="window.location.href='http://localhost:4200/addService';"
+                mat-raised-button
+                style="background-color: #ffffff; color: rgb(170, 170, 170)"
+              >
+                Add Service
               </button>
             </div>
           </div>
+
+          <div class="service-div-container">
+            <div
+              *ngFor="let service of services"
+              class="service-div-child-container-profile"
+            >
+              <div *ngIf="service.user.username == this.username">
+                <button
+                  mat-raised-button
+                  class="
+                    example-large-box-profile
+                    mat-elevation-z4
+                    service-button-profile
+                  "
+                  onclick="window.location.href='http://localhost:4200/serviceView';"
+                >
+                  <div style="position: relative">
+                    <div class="child-profile service-title-profile">
+                      <p>{{ service?.title }}</p>
+                      <br />
+                    </div>
+                    <div class="child-profile service-username-profile">
+                      <p>{{ service?.user?.username }}</p>
+                    </div>
+                    <div
+                      class="child-profile service-picture-main-profile"
+                      *ngFor="let picture of service?.pictures | slice: 0:1"
+                    >
+                      <img
+                        src="{{ picture.picture }}"
+                        alt="servicePicture"
+                        class="img-service-picture-main-profile"
+                      />
+                    </div>
+                    <div class="picture-main-profile child-profile">
+                      <img
+                        src="{{ service?.user?.pictureMain }}"
+                        alt="pictureMain"
+                        class="img-service-profile"
+                      />
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </mat-card>
+      </div>
+      <!-- END of Profile -->
+      <div class="footer" style="margin-top: 100px">
+        <button (click)="changeLanguage()" mat-raised-button style="position: absolute; margin-top: 30px; margin-left: 30px; color: #b2b2b2;">Change language</button>
+    
+        <div>
+          <p style="color: #aaaaaa; text-align-last: center; font-size: 13px">
+            <br />Contact info:<br />+371 22334455<br />sellyouridea@gmail.com
+          </p>
         </div>
-      </mat-card>
-    </div>
-    <!-- END of Profile -->
-    <div class="footer" style="margin-top: 100px">
-      <div>
-        <p style="color: #aaaaaa; text-align-last: center; font-size: 13px">
-          <br />Contact info:<br />+371 22334455<br />sellyouridea@gmail.com
-        </p>
       </div>
     </div>
   </div>
 </div>
 
-<!-- 
-<div
-class="modal fade"
-id="deleteUserModal"
-tabindex="-1"
-role="dialog"
-aria-labelledby="deleteModelLabel"
-aria-hidden="true"
->
-<div class="modal-dialog" role="document">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h5 class="modal-title" id="deleteModelLabel">Delete User</h5>
-      <button
-        type="button"
-        class="close"
-        data-dismiss="modal"
-        aria-label="Close"
-      >
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body">
-      <p>Are you sure you want to delete user {{ deleteUser?.name }}?</p>
-      <div class="modal-footer">
+<!-- ====================Change language==================== -->
+
+<div *ngIf="!isEnglish">
+  <div class="background-main">
+    <div class="background">
+      <!-- START of Nav Bar -->
+
+      <ul class="navbar navbody" id="navbar-zindex">
         <button
-          type="button"
-          class="btn btn-secondary"
-          data-dismiss="modal"
+          class="logo-btn"
+          onclick="window.location.href='http://localhost:4200/main';"
         >
-          No
+          <img src="assets/logo.png" alt="logo" width="200" />
         </button>
-        <button
-          (click)="onDeleteEmloyee(deleteUser?.id)"
-          class="btn btn-danger"
-          data-dismiss="modal"
-        >
-          Yes
-        </button>
+
+        <li style="float: right">
+          <!-- TODO: on click log out -->
+
+          <button
+            (click)="onLogOut()"
+            mat-raised-button
+            style="background-color: #ffffff; color: rgb(167, 167, 167)"
+          >
+            Izrakstīties
+          </button>
+        </li>
+      </ul>
+
+      <!-- END of Nav Bar -->
+
+      <!-- START of Profile -->
+
+      <div>
+        <mat-card class="example-card">
+          <div class="picture-main">
+            <img
+              src="{{ currentUser.pictureMain }}"
+              alt="pictureMain"
+              class="img"
+            />
+          </div>
+          <div>
+            <p
+              class="modal-title"
+              class="user-text"
+              style="color: #aaaaaa; margin-top: 45px; margin-bottom: -5px"
+            >
+              {{ currentUser.username }}
+            </p>
+            <p
+              class="modal-title"
+              class="user-text"
+              style="color: #94c6ce; text-decoration: solid; font-size: 25px"
+            >
+              {{ currentUser.name }} {{ currentUser.surname }}
+            </p>
+          </div>
+          <div>
+            <mat-accordion class="example-headers-align">
+              <mat-expansion-panel (opened)="setStep(0)" hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title> Personas dati </mat-panel-title>
+                  <mat-panel-description>
+                    Epasts - Telefona nummurs - Profila bilde
+                    <mat-icon>account_circle</mat-icon>
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <form [formGroup]="updateUserForm">
+                  <!-- Insert email from DB -->
+                  <mat-form-field>
+                    <mat-label for="newEmail">{{
+                      currentUser.email
+                    }}</mat-label>
+                    <input
+                      matInput
+                      type="text"
+                      ngModel
+                      name="newEmail"
+                      id="newEmail"
+                      formControlName="newEmail"
+                    />
+                  </mat-form-field>
+
+                  <!-- Insert phone from DB -->
+                  <mat-form-field>
+                    <mat-label for="newPhoneNo">{{
+                      currentUser.phoneNo
+                    }}</mat-label>
+                    <input
+                      matInput
+                      type="text"
+                      ngModel
+                      name="newPhoneNo"
+                      id="newPhoneNo"
+                      formControlName="newPhoneNo"
+                    />
+                  </mat-form-field>
+
+                  <!-- Insert picture from DB -->
+                  <mat-form-field>
+                    <mat-label foe="newPictureMain">{{
+                      currentUser.pictureMain
+                    }}</mat-label>
+                    <input
+                      matInput
+                      type="text"
+                      ngModel
+                      name="newPictureMain"
+                      id="newPictureMain"
+                      formControlName="newPictureMain"
+                    />
+                  </mat-form-field>
+                </form>
+
+                <mat-action-row>
+                  <button
+                    mat-button
+                    color="primary"
+                    (click)="nextStep()"
+                    (click)="saveEmailPhoneURL()"
+                    mat-raised-button
+                    style="background-color: #94c6ce; color: #fff"
+                  >
+                    Saglabāt Izmaiņas
+                  </button>
+                </mat-action-row>
+              </mat-expansion-panel>
+
+              <mat-expansion-panel
+                [expanded]="step === 1"
+                (opened)="setStep(1)"
+                hideToggle
+              >
+                <mat-expansion-panel-header>
+                  <mat-panel-title> Adrese </mat-panel-title>
+                  <mat-panel-description>
+                    Mājas adrese - Pasta indekss
+                    <mat-icon>map</mat-icon>
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <form [formGroup]="updateAddressForm">
+                  <!-- Insert address from DB -->
+                  <mat-form-field>
+                    <mat-label for="newAddress">{{
+                      currentUser.address
+                    }}</mat-label>
+                    <input
+                      matInput
+                      type="text"
+                      ngModel
+                      name="newAddress"
+                      id="newAddress"
+                      formControlName="newAddress"
+                    />
+                  </mat-form-field>
+
+                  <!-- Insert post code from DB -->
+                  <mat-form-field>
+                    <mat-label for="newPostalCode">{{
+                      currentUser.postalCode
+                    }}</mat-label>
+                    <input
+                      matInput
+                      type="text"
+                      ngModel
+                      name="newPostalCode"
+                      id="newPostalCode"
+                      formControlName="newPostalCode"
+                    />
+                  </mat-form-field>
+                </form>
+
+                <mat-action-row>
+                  <button
+                    mat-button
+                    color="primary"
+                    (click)="nextStep()"
+                    (click)="saveAddressPostCode()"
+                    mat-raised-button
+                    style="background-color: #94c6ce; color: #fff"
+                  >
+                    Saglabāt izmaiņas
+                  </button>
+                </mat-action-row>
+              </mat-expansion-panel>
+
+              <mat-expansion-panel
+                [expanded]="step === 2"
+                (opened)="setStep(2)"
+                hideToggle
+              >
+                <mat-expansion-panel-header>
+                  <mat-panel-title> Bankas dati </mat-panel-title>
+                  <mat-panel-description>
+                    Bankas nummurs - Saņēmēja vārds - Nosaukums
+                    <mat-icon>monetization_on</mat-icon>
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <form [formGroup]="updateBanksForm">
+                  <!-- Insert banks account no from DB -->
+                  <mat-form-field>
+                    <mat-label for="newAccountNo">{{
+                      currentUser.bank.accountNo
+                    }}</mat-label>
+                    <input
+                      matInput
+                      type="text"
+                      ngModel
+                      name="newAccountNo"
+                      id="newAccountNo"
+                      formControlName="newAccountNo"
+                    />
+                  </mat-form-field>
+
+                  <!-- Insert beneficiary from DB -->
+                  <mat-form-field>
+                    <mat-label for="newBeneficiary">{{
+                      currentUser.bank.beneficiary
+                    }}</mat-label>
+                    <input
+                      matInput
+                      type="text"
+                      ngModel
+                      name="newBeneficiary"
+                      id="newBeneficiary"
+                      formControlName="newBeneficiary"
+                    />
+                  </mat-form-field>
+
+                  <!-- Insert bank from DB -->
+                  <mat-form-field>
+                    <mat-label for="newTextBanks">{{
+                      currentUser.bank.textBanks
+                    }}</mat-label>
+                    <input
+                      matInput
+                      type="text"
+                      ngModel
+                      name="newTextBanks"
+                      id="newTextBanks"
+                      formControlName="newTextBanks"
+                    />
+                  </mat-form-field>
+                </form>
+
+                <mat-action-row>
+                  <button
+                    mat-button
+                    color="primary"
+                    (click)="nextStep()"
+                    (click)="saveBanksInfo()"
+                    mat-raised-button
+                    style="background-color: #94c6ce; color: #fff"
+                  >
+                    Saglabāt izmaiņas
+                  </button>
+                </mat-action-row>
+              </mat-expansion-panel>
+
+              <mat-expansion-panel
+                [expanded]="step === 3"
+                (opened)="setStep(3)"
+                hideToggle
+              >
+                <mat-expansion-panel-header>
+                  <mat-panel-title> Parole </mat-panel-title>
+                  <mat-panel-description>
+                    Mainīt paroli
+                    <mat-icon>dialpad</mat-icon>
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <form [formGroup]="updatePasswordForm">
+                  <!-- Check if the old passwor is correct -->
+                  <mat-form-field class="example-user-input">
+                    <mat-label for="currentPassword"
+                      >Esošā parole</mat-label
+                    >
+                    <input
+                      matInput
+                      type="text"
+                      ngModel
+                      name="currentPassword"
+                      id="currentPassword"
+                      formControlName="currentPassword"
+                      matInput
+                      required
+                    />
+                    <mat-hint></mat-hint>
+                  </mat-form-field>
+
+                  <!-- Change to new password -->
+                  <mat-form-field class="example-user-input">
+                    <mat-label for="newPassword">Jaunā parole</mat-label>
+                    <input
+                      matInput
+                      type="text"
+                      ngModel
+                      name="newPassword"
+                      id="newPassword"
+                      formControlName="newPassword"
+                      matInput
+                      required
+                    />
+                    <mat-hint></mat-hint>
+                  </mat-form-field>
+                </form>
+
+                <mat-action-row>
+                  <button
+                    (click)="nextStep()"
+                    (click)="savePassword()"
+                    mat-raised-button
+                    style="background-color: #94c6ce; color: #fff"
+                  >
+                    Saglabāt Paroli
+                  </button>
+                </mat-action-row>
+              </mat-expansion-panel>
+            </mat-accordion>
+          </div>
+
+          <div>
+            <p
+              class="user-text"
+              style="color: #aaaaaa; margin-top: 30px; font-size: 20px"
+            >
+              Pakalpojumi
+            </p>
+            <div class="add-services-btn">
+              <button
+                onclick="window.location.href='http://localhost:4200/addService';"
+                mat-raised-button
+                style="background-color: #ffffff; color: rgb(170, 170, 170)"
+              >
+                Pievienot pakalpojumu
+              </button>
+            </div>
+          </div>
+
+          <div class="service-div-container">
+            <div
+              *ngFor="let service of services"
+              class="service-div-child-container-profile"
+            >
+              <div *ngIf="service.user.username == this.username">
+                <button
+                  mat-raised-button
+                  class="
+                    example-large-box-profile
+                    mat-elevation-z4
+                    service-button-profile
+                  "
+                  onclick="window.location.href='http://localhost:4200/serviceView';"
+                >
+                  <div style="position: relative">
+                    <div class="child-profile service-title-profile">
+                      <p>{{ service?.title }}</p>
+                      <br />
+                    </div>
+                    <div class="child-profile service-username-profile">
+                      <p>{{ service?.user?.username }}</p>
+                    </div>
+                    <div
+                      class="child-profile service-picture-main-profile"
+                      *ngFor="let picture of service?.pictures | slice: 0:1"
+                    >
+                      <img
+                        src="{{ picture.picture }}"
+                        alt="servicePicture"
+                        class="img-service-picture-main-profile"
+                      />
+                    </div>
+                    <div class="picture-main-profile child-profile">
+                      <img
+                        src="{{ service?.user?.pictureMain }}"
+                        alt="pictureMain"
+                        class="img-service-profile"
+                      />
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </mat-card>
+      </div>
+      <!-- END of Profile -->
+      <div class="footer" style="margin-top: 100px">
+        <button (click)="changeLanguage()" mat-raised-button style="position: absolute; margin-top: 30px; margin-left: 30px; color: #b2b2b2;">Mainīt valodu</button>
+    
+        <div>
+          <p style="color: #aaaaaa; text-align-last: center; font-size: 13px">
+            <br />Kontaktinformācija:<br />+371 22334455<br />sellyouridea@gmail.com
+          </p>
+        </div>
       </div>
     </div>
   </div>
 </div>
-</div>
-</div> -->
+
+</body>
+</html>

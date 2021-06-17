@@ -17,6 +17,7 @@ import { ServiceService } from '../service.service';
 export class ServiceViewComponent implements OnInit {
 
   @Input() isLoggedIn: boolean;
+  @Input() isEnglish: boolean;
   username!: string;
   service!: Service;
   id!: number;
@@ -31,11 +32,16 @@ export class ServiceViewComponent implements OnInit {
 
     this.username = this.cookieService.get('username');
     this.isLoggedIn = !!this.username;
+    this.isEnglish = true;
     if(this.username) {
       function demoDisplay() {
         document.getElementById("hide")!.style.display = "none";
       }
     }
+  }
+
+  changeLanguage() {
+    this.isEnglish = !this.isEnglish;
   }
 
   ngOnInit() {

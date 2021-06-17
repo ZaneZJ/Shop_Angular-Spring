@@ -1,62 +1,198 @@
-<div class="main-background main-background-fade">
-  <!-- START of Nav Bar -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Sign In</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
 
-  <ul class="navbar navbody" id="navbar-zindex">
-    <button class="logo-btn" onclick="window.location.href='http://localhost:4200/main';">
-      <img src="assets/logo.png" alt="logo" width="200" /></button>
-  </ul>
+<div *ngIf="isEnglish">
+  <div class="main-background main-background-fade" style="height: 700px;">
+    <!-- START of Nav Bar -->
 
-  <!-- END of Nav Bar -->
+    <ul class="navbar navbody" id="navbar-zindex">
+      <button
+        class="logo-btn"
+        onclick="window.location.href='http://localhost:4200/main';"
+      >
+        <img src="assets/logo.png" alt="logo" width="200" />
+      </button>
+    </ul>
 
-  <main>
-    <mat-card class="example-card">
-      <mat-card-header>
-        <mat-card-title style="margin-left: -10px; color: #94c6ce"
-          >Sign In</mat-card-title
-        >
-      </mat-card-header>
-      <form [formGroup]="signInForm">
-        <mat-card-content>
-          <mat-form-field appearance="fill">
-            <mat-label for="username">Username</mat-label>
-            <input type="text" ngModel name="username" id="username" formControlName="username" matInput required />
-          </mat-form-field>
-          <mat-form-field appearance="fill">
-            <mat-label for="password">Password</mat-label>
-            <input
-              ngModel
-              id="password"
-              formControllerName="password"
-              name="password"
-              matInput
-              [type]="hide ? 'password' : 'text'"
-              required
-            />
-            <button
-              mat-icon-button
-              matSuffix
-              (click)="hide = !hide"
-              [attr.aria-label]="'Hide password'"
-              [attr.aria-pressed]="hide"
-            >
-              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
-            </button>
-          </mat-form-field>
-          <button
-            (click)="signIn()"
-            mat-raised-button
-            style="background-color: #94c6ce; color: #fff"
+    <!-- END of Nav Bar -->
+
+    <main>
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title style="margin-left: -10px; color: #94c6ce"
+            >Sign In</mat-card-title
           >
-            Sign In
-          </button>
-        </mat-card-content>
-      </form>
-    </mat-card>
-  </main>
-
-</div>
-<div class="footer">
-  <div>
-    <p style="color: #aaaaaa; text-align-last: center; font-size: 13px;"><br>Contact info:<br>+371 22334455<br>sellyouridea@gmail.com</p>
+        </mat-card-header>
+        <form [formGroup]="signInForm">
+          <mat-card-content>
+            <mat-form-field appearance="fill">
+              <mat-label for="username">Username</mat-label>
+              <input
+                type="text"
+                ngModel
+                name="username"
+                id="username"
+                formControlName="username"
+                matInput
+                required
+              />
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label for="password">Password</mat-label>
+              <input
+                ngModel
+                id="password"
+                formControllerName="password"
+                name="password"
+                matInput
+                [type]="hide ? 'password' : 'text'"
+                required
+              />
+              <button
+                mat-icon-button
+                matSuffix
+                (click)="hide = !hide"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide"
+              >
+                <mat-icon>{{
+                  hide ? "visibility_off" : "visibility"
+                }}</mat-icon>
+              </button>
+            </mat-form-field>
+            <button
+              (click)="signIn()"
+              mat-raised-button
+              style="background-color: #94c6ce; color: #fff"
+            >
+              Sign In
+            </button>
+          </mat-card-content>
+        </form>
+      </mat-card>
+    </main>
+  </div>
+  <div class="footer">
+    <button
+      (click)="changeLanguage()"
+      mat-raised-button
+      style="
+        position: absolute;
+        margin-top: 30px;
+        margin-left: 30px;
+        color: #b2b2b2;
+      "
+    >
+      Change language
+    </button>
+    <div>
+      <p style="color: #aaaaaa; text-align-last: center; font-size: 13px">
+        <br />Contact info:<br />+371 22334455<br />sellyouridea@gmail.com
+      </p>
+    </div>
   </div>
 </div>
+
+<!-- ======================Change language====================== -->
+
+<div *ngIf="!isEnglish">
+  <div class="main-background main-background-fade" style="height: 700px;">
+    <!-- START of Nav Bar -->
+
+    <ul class="navbar navbody" id="navbar-zindex">
+      <button
+        class="logo-btn"
+        onclick="window.location.href='http://localhost:4200/main';"
+      >
+        <img src="assets/logo.png" alt="logo" width="200" />
+      </button>
+    </ul>
+
+    <!-- END of Nav Bar -->
+
+    <main>
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title style="margin-left: -10px; color: #94c6ce"
+            >Pierakstīties</mat-card-title
+          >
+        </mat-card-header>
+        <form [formGroup]="signInForm">
+          <mat-card-content>
+            <mat-form-field appearance="fill">
+              <mat-label for="username">Lietotājs</mat-label>
+              <input
+                type="text"
+                ngModel
+                name="username"
+                id="username"
+                formControlName="username"
+                matInput
+                required
+              />
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label for="password">Parole</mat-label>
+              <input
+                ngModel
+                id="password"
+                formControllerName="password"
+                name="password"
+                matInput
+                [type]="hide ? 'password' : 'text'"
+                required
+              />
+              <button
+                mat-icon-button
+                matSuffix
+                (click)="hide = !hide"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide"
+              >
+                <mat-icon>{{
+                  hide ? "visibility_off" : "visibility"
+                }}</mat-icon>
+              </button>
+            </mat-form-field>
+            <button
+              (click)="signIn()"
+              mat-raised-button
+              style="background-color: #94c6ce; color: #fff"
+            >
+              Pierakstīties
+            </button>
+          </mat-card-content>
+        </form>
+      </mat-card>
+    </main>
+  </div>
+  <div class="footer">
+    <button
+      (click)="changeLanguage()"
+      mat-raised-button
+      style="
+        position: absolute;
+        margin-top: 30px;
+        margin-left: 30px;
+        color: #b2b2b2;
+      "
+    >
+      Mainīt valodu
+    </button>
+    <div>
+      <p style="color: #aaaaaa; text-align-last: center; font-size: 13px">
+        <br />Kontaktinformācija:<br />+371 22334455<br />sellyouridea@gmail.com
+      </p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

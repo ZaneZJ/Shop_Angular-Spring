@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { User } from '../user';
 import { UserService } from '../user.service';
 
@@ -12,9 +12,17 @@ export class ReviewComponent implements OnInit {
 
   public users: User[];
 
+  @Input() isEnglish: boolean;
+
   constructor(private userService: UserService){
     // Initialization inside the constructor
     this.users = [];
+    
+    this.isEnglish = true;
+  }
+
+  changeLanguage() {
+    this.isEnglish = !this.isEnglish;
   }
 
   ngOnInit() {

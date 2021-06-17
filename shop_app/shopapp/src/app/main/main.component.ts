@@ -23,6 +23,7 @@ export class MainComponent implements OnInit {
   public picturess: Pictures[];
 
   @Input() isLoggedIn: boolean;
+  @Input() isEnglish: boolean;
 
   username!: string;
 
@@ -41,6 +42,7 @@ export class MainComponent implements OnInit {
     
     this.username = this.cookieService.get('username');
     this.isLoggedIn = !!this.username;
+    this.isEnglish = true;
     if(this.username) {
       function demoDisplay() {
         document.getElementById("hide")!.style.display = "none";
@@ -59,6 +61,10 @@ export class MainComponent implements OnInit {
 
   signIn() {
     window.location.replace('http://localhost:4200/signIn');
+  }
+
+  changeLanguage() {
+    this.isEnglish = !this.isEnglish;
   }
 
   ngOnInit() {
