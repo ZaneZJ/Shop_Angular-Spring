@@ -31,7 +31,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"username\": \"MikeLux\",\r\n    \"name\": \"Mike\",\r\n    \"surname\": \"Lux\",\r\n    \"phoneNo\": \"22334466\",\r\n    \"address\": \"Street 2\",\r\n    \"email\": \"mike@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"raw": "{\r\n    \"username\": \"MikeLux\",\r\n    \"name\": \"Mike\",\r\n    \"surname\": \"Lux\",\r\n    \"phoneNo\": \"22334466\",\r\n    \"address\": \"Street 2\",\r\n    \"email\": \"mike@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": \"/../assets/pictureMainM1.PNG\",\r\n    \"bank\": {\r\n        \"accountNo\": \"ABCD123225523\",\r\n        \"beneficiary\": \"Mike Lux\",\r\n        \"textBanks\": \"Swedbank\"\r\n    },\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\",\r\n    \"password\": \"password\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -72,7 +72,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"username\": \"SaraXX\",\r\n    \"name\": \"Sara\",\r\n    \"surname\": \"Fox\",\r\n    \"phoneNo\": \"22334477\",\r\n    \"address\": \"Street 3\",\r\n    \"email\": \"sara@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"raw": "{\r\n    \"username\": \"SaraXX\",\r\n    \"name\": \"Sara\",\r\n    \"surname\": \"Fox\",\r\n    \"phoneNo\": \"22334477\",\r\n    \"address\": \"Street 3\",\r\n    \"email\": \"sara@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": \"/../assets/pictureMain2.PNG\",\r\n    \"bank\": {\r\n        \"accountNo\": \"ABCD123321523\",\r\n        \"beneficiary\": \"Sara Fox\",\r\n        \"textBanks\": \"Swedbank\"\r\n    },\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\",\r\n    \"password\": \"password\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -113,7 +113,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"username\": \"Luisss\",\r\n    \"name\": \"Luis\",\r\n    \"surname\": \"Blue\",\r\n    \"phoneNo\": \"22334433\",\r\n    \"address\": \"Street 4\",\r\n    \"email\": \"luis@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"raw": "{\r\n    \"username\": \"Luisss\",\r\n    \"name\": \"Luis\",\r\n    \"surname\": \"Blue\",\r\n    \"phoneNo\": \"22334433\",\r\n    \"address\": \"Street 4\",\r\n    \"email\": \"luis@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": \"/../assets/pictureMainM2.PNG\",\r\n    \"bank\": {\r\n        \"accountNo\": \"ABCD1GH321523\",\r\n        \"beneficiary\": \"Luis Blue\",\r\n        \"textBanks\": \"Swedbank\"\r\n    },\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\",\r\n    \"password\": \"password\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -154,7 +154,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"username\": \"Sally123\",\r\n    \"name\": \"Sally\",\r\n    \"surname\": \"Max\",\r\n    \"phoneNo\": \"22334499\",\r\n    \"address\": \"Street 5\",\r\n    \"email\": \"sally@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"raw": "{\r\n    \"username\": \"Sally123\",\r\n    \"name\": \"Sally\",\r\n    \"surname\": \"Max\",\r\n    \"phoneNo\": \"22334499\",\r\n    \"address\": \"Street 5\",\r\n    \"email\": \"sally@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": \"/../assets/pictureMain3.PNG\",\r\n    \"bank\": {\r\n        \"accountNo\": \"ABCD1GH3445523\",\r\n        \"beneficiary\": \"Sally Max\",\r\n        \"textBanks\": \"Swedbank\"\r\n    },\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\",\r\n    \"password\": \"password\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -195,7 +195,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"username\": \"SamSol\",\r\n    \"name\": \"Sam\",\r\n    \"surname\": \"Sol\",\r\n    \"phoneNo\": \"22334400\",\r\n    \"address\": \"Street 6\",\r\n    \"email\": \"sam@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"raw": "{\r\n    \"username\": \"SamSol\",\r\n    \"name\": \"Sam\",\r\n    \"surname\": \"Sol\",\r\n    \"phoneNo\": \"22334400\",\r\n    \"address\": \"Street 6\",\r\n    \"email\": \"sam@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": \"/../assets/pictureMainM3.PNG\",\r\n    \"bank\": {\r\n        \"accountNo\": \"ABCD1GH3449923\",\r\n        \"beneficiary\": \"Sam Sol\",\r\n        \"textBanks\": \"Swedbank\"\r\n    },\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\",\r\n    \"password\": \"password\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -236,7 +236,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"username\": \"Lisa\",\r\n    \"name\": \"Lisa\",\r\n    \"surname\": \"Robin\",\r\n    \"phoneNo\": \"22332200\",\r\n    \"address\": \"Street 7\",\r\n    \"email\": \"lisa@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"raw": "{\r\n    \"username\": \"Lisa\",\r\n    \"name\": \"Lisa\",\r\n    \"surname\": \"Robin\",\r\n    \"phoneNo\": \"22332200\",\r\n    \"address\": \"Street 7\",\r\n    \"email\": \"lisa@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": \"/../assets/pictureMain4.PNG\",\r\n    \"bank\": {\r\n        \"accountNo\": \"ABCD1GH34TY3523\",\r\n        \"beneficiary\": \"Lisa Robin\",\r\n        \"textBanks\": \"Citadele\"\r\n    },\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\",\r\n    \"password\": \"password\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -277,7 +277,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"username\": \"Robin1\",\r\n    \"name\": \"Robin\",\r\n    \"surname\": \"Dog\",\r\n    \"phoneNo\": \"22331100\",\r\n    \"address\": \"Street 7\",\r\n    \"email\": \"doggydog@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"raw": "{\r\n    \"username\": \"Robin1\",\r\n    \"name\": \"Robin\",\r\n    \"surname\": \"Dog\",\r\n    \"phoneNo\": \"22331100\",\r\n    \"address\": \"Street 7\",\r\n    \"email\": \"doggydog@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": \"/../assets/pictureMainM4.PNG\",\r\n    \"bank\": {\r\n        \"accountNo\": \"ABCD1GH34TY3523\",\r\n        \"beneficiary\": \"Robin Dog\",\r\n        \"textBanks\": \"Citadele\"\r\n    },\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\",\r\n    \"password\": \"password\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -318,7 +318,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"username\": \"TomTom\",\r\n    \"name\": \"Tom\",\r\n    \"surname\": \"First\",\r\n    \"phoneNo\": \"22111100\",\r\n    \"address\": \"Street 8\",\r\n    \"email\": \"tomm@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"raw": "{\r\n    \"username\": \"TomTom\",\r\n    \"name\": \"Tom\",\r\n    \"surname\": \"First\",\r\n    \"phoneNo\": \"22111100\",\r\n    \"address\": \"Street 8\",\r\n    \"email\": \"tomm@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": \"/../assets/pictureMainM5.PNG\",\r\n    \"bank\": {\r\n        \"accountNo\": \"ABCD1GH34TY445P3\",\r\n        \"beneficiary\": \"Tom First\",\r\n        \"textBanks\": \"Citadele\"\r\n    },\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\",\r\n    \"password\": \"password\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -359,7 +359,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"username\": \"Samanta\",\r\n    \"name\": \"Samanta\",\r\n    \"surname\": \"Green\",\r\n    \"phoneNo\": \"22122100\",\r\n    \"address\": \"Street 8\",\r\n    \"email\": \"sammy@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"raw": "{\r\n    \"username\": \"Samanta\",\r\n    \"name\": \"Samanta\",\r\n    \"surname\": \"Green\",\r\n    \"phoneNo\": \"22122100\",\r\n    \"address\": \"Street 8\",\r\n    \"email\": \"sammy@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": \"/../assets/pictureMain5.PNG\",\r\n    \"bank\": {\r\n        \"accountNo\": \"ABCD1G98ID4TY445P3\",\r\n        \"beneficiary\": \"Samanta Green\",\r\n        \"textBanks\": \"Citadele\"\r\n    },\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\",\r\n    \"password\": \"password\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -400,7 +400,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"username\": \"LucyPoke\",\r\n    \"name\": \"Lucy\",\r\n    \"surname\": \"Poke\",\r\n    \"phoneNo\": \"22111199\",\r\n    \"address\": \"Street 10\",\r\n    \"email\": \"lucy@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"raw": "{\r\n    \"username\": \"LucyPoke\",\r\n    \"name\": \"Lucy\",\r\n    \"surname\": \"Poke\",\r\n    \"phoneNo\": \"22111199\",\r\n    \"address\": \"Street 10\",\r\n    \"email\": \"lucy@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": \"/../assets/pictureMain6.PNG\",\r\n    \"bank\": {\r\n        \"accountNo\": \"ABCD1G95TYTY445P3\",\r\n        \"beneficiary\": \"Lucy Poke\",\r\n        \"textBanks\": \"Citadele\"\r\n    },\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\",\r\n    \"password\": \"password\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -441,7 +441,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"username\": \"CarlB\",\r\n    \"name\": \"Carl\",\r\n    \"surname\": \"Black\",\r\n    \"phoneNo\": \"22114499\",\r\n    \"address\": \"Street 11\",\r\n    \"email\": \"carlb@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"raw": "{\r\n    \"username\": \"CarlB\",\r\n    \"name\": \"Carl\",\r\n    \"surname\": \"Black\",\r\n    \"phoneNo\": \"22114499\",\r\n    \"address\": \"Street 11\",\r\n    \"email\": \"carlb@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": \"/../assets/pictureMainM6.PNG\",\r\n    \"bank\": {\r\n        \"accountNo\": \"ABCD1G95TII467445P3\",\r\n        \"beneficiary\": \"Carl Black\",\r\n        \"textBanks\": \"Luminor\"\r\n    },\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\",\r\n    \"password\": \"password\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -482,7 +482,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"username\": \"Nicky123\",\r\n    \"name\": \"Nick\",\r\n    \"surname\": \"Sure\",\r\n    \"phoneNo\": \"22332222\",\r\n    \"address\": \"Street 12\",\r\n    \"email\": \"nicky@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"raw": "{\r\n    \"username\": \"Nicky123\",\r\n    \"name\": \"Nick\",\r\n    \"surname\": \"Sure\",\r\n    \"phoneNo\": \"22332222\",\r\n    \"address\": \"Street 12\",\r\n    \"email\": \"nicky@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": \"/../assets/pictureMainM7.PNG\",\r\n    \"bank\": {\r\n        \"accountNo\": \"ABCD1G95TII8845P3\",\r\n        \"beneficiary\": \"Nick Sure\",\r\n        \"textBanks\": \"Luminor\"\r\n    },\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\",\r\n    \"password\": \"password\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -523,7 +523,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"username\": \"Eddie\",\r\n    \"name\": \"Eduard\",\r\n    \"surname\": \"Nice\",\r\n    \"phoneNo\": \"22335599\",\r\n    \"address\": \"Street 13\",\r\n    \"email\": \"eddie@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"raw": "{\r\n    \"username\": \"Eddie\",\r\n    \"name\": \"Eduard\",\r\n    \"surname\": \"Nice\",\r\n    \"phoneNo\": \"22335599\",\r\n    \"address\": \"Street 13\",\r\n    \"email\": \"eddie@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": \"/../assets/pictureMainM8.PNG\",\r\n    \"bank\": {\r\n        \"accountNo\": \"ABCYIS321TII8845P3\",\r\n        \"beneficiary\": \"Eduard Nice\",\r\n        \"textBanks\": \"Luminor\"\r\n    },\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\",\r\n    \"password\": \"password\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -564,7 +564,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"username\": \"Samantha\",\r\n    \"name\": \"Samantha\",\r\n    \"surname\": \"Rabit\",\r\n    \"phoneNo\": \"22779999\",\r\n    \"address\": \"Street 14\",\r\n    \"email\": \"sammy123@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"raw": "{\r\n    \"username\": \"SamanthaXX\",\r\n    \"name\": \"Samantha\",\r\n    \"surname\": \"Rabit\",\r\n    \"phoneNo\": \"217790299\",\r\n    \"address\": \"Street 14\",\r\n    \"email\": \"sammyxx13@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": \"/../assets/pictureMain7.PNG\",\r\n    \"bank\": {\r\n        \"accountNo\": \"ABCYIS3214ROY845P3\",\r\n        \"beneficiary\": \"Samantha Rabit\",\r\n        \"textBanks\": \"Luminor\"\r\n    },\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\",\r\n    \"password\": \"password\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -605,7 +605,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"username\": \"Marta00\",\r\n    \"name\": \"Marta\",\r\n    \"surname\": \"Dust\",\r\n    \"phoneNo\": \"22339911\",\r\n    \"address\": \"Street 15\",\r\n    \"email\": \"dust@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"raw": "{\r\n    \"username\": \"Marta00\",\r\n    \"name\": \"Marta\",\r\n    \"surname\": \"Dust\",\r\n    \"phoneNo\": \"22339911\",\r\n    \"address\": \"Street 15\",\r\n    \"email\": \"dust@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": \"/../assets/pictureMain8.PNG\",\r\n    \"bank\": {\r\n        \"accountNo\": \"ABCYIS3TT09ROY845P3\",\r\n        \"beneficiary\": \"Marta Dust\",\r\n        \"textBanks\": \"Luminor\"\r\n    },\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\",\r\n    \"password\": \"password\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -646,7 +646,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"username\": \"Lauma\",\r\n    \"name\": \"Lauma\",\r\n    \"surname\": \"Sun\",\r\n    \"phoneNo\": \"22339988\",\r\n    \"address\": \"Street 16\",\r\n    \"email\": \"laumasun@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"SILVER\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"raw": "{\r\n    \"username\": \"Lauma\",\r\n    \"name\": \"Lauma\",\r\n    \"surname\": \"Sun\",\r\n    \"phoneNo\": \"22339988\",\r\n    \"address\": \"Street 16\",\r\n    \"email\": \"laumasun@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": \"/../assets/pictureMain9.PNG\",\r\n    \"bank\": {\r\n        \"accountNo\": \"ABCYIS3TT077UI845P3\",\r\n        \"beneficiary\": \"Lauma Sun\",\r\n        \"textBanks\": \"Luminor\"\r\n    },\r\n    \"loyaltyType\": \"SILVER\",\r\n    \"status\": \"ACTIVE\",\r\n    \"password\": \"password\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -687,7 +687,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"username\": \"Timmy\",\r\n    \"name\": \"Tim\",\r\n    \"surname\": \"Cool\",\r\n    \"phoneNo\": \"22337700\",\r\n    \"address\": \"Street 17\",\r\n    \"email\": \"timmy@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"SILVER\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"raw": "{\r\n    \"username\": \"Timmy\",\r\n    \"name\": \"Tim\",\r\n    \"surname\": \"Cool\",\r\n    \"phoneNo\": \"22337700\",\r\n    \"address\": \"Street 17\",\r\n    \"email\": \"timmy@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": \"/../assets/pictureMainM9.PNG\",\r\n    \"bank\": {\r\n        \"accountNo\": \"ABCYIS3TTKM8I845P3\",\r\n        \"beneficiary\": \"Tim Cool\",\r\n        \"textBanks\": \"Luminor\"\r\n    },\r\n    \"loyaltyType\": \"SILVER\",\r\n    \"status\": \"ACTIVE\",\r\n    \"password\": \"password\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -728,7 +728,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"username\": \"Jane\",\r\n    \"name\": \"Jane\",\r\n    \"surname\": \"Second\",\r\n    \"phoneNo\": \"22337722\",\r\n    \"address\": \"Street 18\",\r\n    \"email\": \"jane@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"SILVER\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"raw": "{\r\n    \"username\": \"Jane\",\r\n    \"name\": \"Jane\",\r\n    \"surname\": \"Second\",\r\n    \"phoneNo\": \"22337722\",\r\n    \"address\": \"Street 18\",\r\n    \"email\": \"jane@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": \"/../assets/pictureMain10.PNG\",\r\n    \"bank\": {\r\n        \"accountNo\": \"ABCYIS3TTKOOP45P3\",\r\n        \"beneficiary\": \"Jane Second\",\r\n        \"textBanks\": \"Swedbank\"\r\n    },\r\n    \"loyaltyType\": \"SILVER\",\r\n    \"status\": \"ACTIVE\",\r\n    \"password\": \"password\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -769,7 +769,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"username\": \"Ian1\",\r\n    \"name\": \"Ian\",\r\n    \"surname\": \"Tree\",\r\n    \"phoneNo\": \"22337733\",\r\n    \"address\": \"Street 19\",\r\n    \"email\": \"iantree@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"GOLD\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"raw": "{\r\n    \"username\": \"Ian1\",\r\n    \"name\": \"Ian\",\r\n    \"surname\": \"Tree\",\r\n    \"phoneNo\": \"22337733\",\r\n    \"address\": \"Street 19\",\r\n    \"email\": \"iantree@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": \"/../assets/pictureMainM10.PNG\",\r\n    \"bank\": {\r\n        \"accountNo\": \"ABCYIS3TTKOOP45P3\",\r\n        \"beneficiary\": \"Ian Tree\",\r\n        \"textBanks\": \"Swedbank\"\r\n    },\r\n    \"loyaltyType\": \"GOLD\",\r\n    \"status\": \"ACTIVE\",\r\n    \"password\": \"password\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -810,7 +810,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"username\": \"Emily\",\r\n    \"name\": \"Emily\",\r\n    \"surname\": \"White\",\r\n    \"phoneNo\": \"22337744\",\r\n    \"address\": \"Street 20\",\r\n    \"email\": \"emily@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"GOLD\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+									"raw": "{\r\n    \"username\": \"Emily\",\r\n    \"name\": \"Emily\",\r\n    \"surname\": \"White\",\r\n    \"phoneNo\": \"22337744\",\r\n    \"address\": \"Street 20\",\r\n    \"email\": \"emily@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": \"/../assets/pictureMain11.PNG\",\r\n    \"bank\": {\r\n        \"accountNo\": \"ABCYIS3T66OLL45P3\",\r\n        \"beneficiary\": \"Emily White\",\r\n        \"textBanks\": \"Citadele\"\r\n    },\r\n    \"loyaltyType\": \"GOLD\",\r\n    \"status\": \"ACTIVE\",\r\n    \"password\": \"password\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -853,7 +853,7 @@
 					"response": []
 				},
 				{
-					"name": "getUsersByUsername",
+					"name": "getUserByUsername",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -867,6 +867,56 @@
 								"shop",
 								"find",
 								"zane123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signIn",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "addUser ADMIN",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"addUser ADMINr. Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"name\": \"admin\",\r\n    \"surname\": \"admin\",\r\n    \"phoneNo\": \"23334455\",\r\n    \"address\": \"admin\",\r\n    \"email\": \"sellyouridea@gmail.com\",\r\n    \"postalCode\": \"admin\",\r\n    \"pictureMain\": null,\r\n    \"status\":\"ACTIVE\",\r\n    \"bank\": null,\r\n    \"services\": [],\r\n    \"password\": \"admin\",\r\n    \"role\": \"ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9000/shop/add",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"shop",
+								"add"
 							]
 						}
 					},
@@ -892,7 +942,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"zane123\",\r\n    \"name\": \"Zane\",\r\n    \"surname\": \"Jansone\",\r\n    \"phoneNo\": \"22334455\",\r\n    \"address\": \"Street 1\",\r\n    \"email\": \"zane@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": null,\r\n    \"accountNo\": null,\r\n    \"services\": [],\r\n    \"loyaltyType\": \"BRONZE\",\r\n    \"status\": \"ACTIVE\"\r\n}",
+							"raw": "{\r\n    \"username\": \"zane123\",\r\n    \"name\": \"Zane\",\r\n    \"surname\": \"Jansone\",\r\n    \"phoneNo\": \"22334455\",\r\n    \"address\": \"Street 1\",\r\n    \"email\": \"zane@gmail.com\",\r\n    \"postalCode\": \"LV1111\",\r\n    \"pictureMain\": \"/../assets/pictureMain1.PNG\",\r\n    \"status\":\"ACTIVE\",\r\n    \"bank\": {\r\n        \"accountNo\": \"ABCD1234566\",\r\n        \"beneficiary\": \"Zane Jansone\",\r\n        \"textBanks\": \"Swedbank\"\r\n    },\r\n    \"password\": \"cGFzc3dvcmQ=\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -973,6 +1023,302 @@
 								"shop",
 								"delete",
 								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Service Controller",
+			"item": [
+				{
+					"name": "Add multiple services",
+					"item": [
+						{
+							"name": "addService 1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"addService 1. Successful POST request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"instances\": [\r\n        {\r\n            \"price\": 30,\r\n            \"time\": \"1 week\",\r\n            \"info\": \"Graphical sesign one page drawing\"\r\n        },\r\n        {\r\n            \"price\": 60,\r\n            \"time\": \"2 weeks\",\r\n            \"info\": \"3 different drawing from different angles\"\r\n        },\r\n        {\r\n            \"price\": 300,\r\n            \"time\": \"2 months\",\r\n            \"info\": \"5 drawings from different angles and 3D model\"\r\n        }\r\n    ],\r\n    \"title\": \"Graphical & 3D design\",\r\n    \"description\": \"I'm offering to make graphical and 3D design for a conseptual building\",\r\n    \"theme\": [\"Graphics\",\"Design\"],\r\n    \"user\": {\r\n        \"username\": \"MikeLux\"\r\n    },\r\n    \"pictures\": [\r\n        {\r\n            \"picture\": \"/../assets/servicePictureMain5.PNG\"\r\n        },\r\n        {\r\n            \"picture\": \"/../assets/servicePictureMain6.PNG\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:9000/shop/service/add",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"shop",
+										"service",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addService 2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"addService 2. Successful POST request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"instances\": [\r\n        {\r\n            \"price\": 200,\r\n            \"time\": \"2 week\",\r\n            \"info\": \"Interior design idea for one room\"\r\n        },\r\n        {\r\n            \"price\": 500,\r\n            \"time\": \"1 month\",\r\n            \"info\": \"Interior design ideas for three room\"\r\n        },\r\n        {\r\n            \"price\": 1000,\r\n            \"time\": \"4 months\",\r\n            \"info\": \"Interior design idea for the whole apartment\"\r\n        }\r\n    ],\r\n    \"title\": \"Interior design\",\r\n    \"description\": \"I'm offering to make a bohemian interior design ideas for your house\",\r\n    \"theme\": [\"Design\"],\r\n    \"user\": {\r\n        \"username\": \"SaraXX\"\r\n    },\r\n    \"pictures\": [\r\n        {\r\n            \"picture\": \"/../assets/servicePictureMain7.PNG\"\r\n        },\r\n        {\r\n            \"picture\": \"/../assets/servicePictureMain8.PNG\"\r\n        },\r\n        {\r\n            \"picture\": \"/../assets/servicePictureMain9.PNG\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:9000/shop/service/add",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"shop",
+										"service",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addService 3",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"addService 3. Successful POST request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"instances\": [\r\n        {\r\n            \"price\": 50,\r\n            \"time\": \"1 week\",\r\n            \"info\": \"3m x 5m\"\r\n        },\r\n        {\r\n            \"price\": 100,\r\n            \"time\": \"2 weeks\",\r\n            \"info\": \"5m x 8m\"\r\n        },\r\n        {\r\n            \"price\": 300,\r\n            \"time\": \"1 month\",\r\n            \"info\": \"15m x 10m\"\r\n        }\r\n    ],\r\n    \"title\": \"Wood interior\",\r\n    \"description\": \"Working with wood for 10 years, can offer you any type of design for your interior\",\r\n    \"theme\": [\"Design\"],\r\n    \"user\": {\r\n        \"username\": \"Luisss\"\r\n    },\r\n    \"pictures\": [\r\n        {\r\n            \"picture\": \"/../assets/servicePictureMain10.PNG\"\r\n        },\r\n        {\r\n            \"picture\": \"/../assets/servicePictureMain11.PNG\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:9000/shop/service/add",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"shop",
+										"service",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addService 4",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"addService 4. Successful POST request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"instances\": [\r\n        {\r\n            \"price\": 30,\r\n            \"time\": \"1 day\",\r\n            \"info\": \"Fotoshoot for 1h\"\r\n        },\r\n        {\r\n            \"price\": 50,\r\n            \"time\": \"1 day\",\r\n            \"info\": \"Fotoshoot for 2h\"\r\n        },\r\n        {\r\n            \"price\": 300,\r\n            \"time\": \"1 day\",\r\n            \"info\": \"Fotoshoot for entire day\"\r\n        }\r\n    ],\r\n    \"title\": \"Fotograph\",\r\n    \"description\": \"Profesional building photograph\",\r\n    \"theme\": [\"Design\",\"Video\",\"Lifestyle\"],\r\n    \"user\": {\r\n        \"username\": \"Sally123\"\r\n    },\r\n    \"pictures\": [\r\n        {\r\n            \"picture\": \"/../assets/servicePictureMain12.PNG\"\r\n        },\r\n        {\r\n            \"picture\": \"/../assets/servicePictureMain13.PNG\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:9000/shop/service/add",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"shop",
+										"service",
+										"add"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "addService",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"addService. Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"instances\": [\r\n        {\r\n            \"price\": 50,\r\n            \"time\": \"1 week\",\r\n            \"info\": \"One page\"\r\n        },\r\n        {\r\n            \"price\": 100,\r\n            \"time\": \"2 weeks\",\r\n            \"info\": \"3 pages\"\r\n        },\r\n        {\r\n            \"price\": 200,\r\n            \"time\": \"6 weeks\",\r\n            \"info\": \"Whole weebsite\"\r\n        }\r\n    ],\r\n    \"title\": \"Website design\",\r\n    \"description\": \"Offering individually made websites right for your needs and budget\",\r\n    \"theme\": \"Programming, Design\",\r\n    \"user\": {\r\n        \"username\": \"zane123\"\r\n    },\r\n    \"pictures\": [\r\n        {\r\n            \"picture\": \"/../assets/servicePictureMain2.PNG\"\r\n        }\r\n    ]\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9000/shop/service/add",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"shop",
+								"service",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllServices",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"addUser. Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"instances\": [],\r\n    \"title\": \"Service 1\",\r\n    \"description\": \"Testing services\",\r\n    \"theme\": \"Have to change this\",\r\n    \"user\": {\r\n        \"username\": \"zane123\"\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9000/shop/service/add",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"shop",
+								"service",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteService",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"deleteService. Successful DELETE request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:9000/shop/service/delete/{{serviceId}}",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"shop",
+								"service",
+								"delete",
+								"{{serviceId}}"
 							]
 						}
 					},
