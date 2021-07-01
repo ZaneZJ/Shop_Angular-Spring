@@ -52,11 +52,18 @@ export class SignInComponent implements OnInit {
   }
 
   public signIn(): void {
-    console.log(this.signInForm.value);
-    this.userService.signInUser(this.signInForm.value["username"], "password").subscribe(
+    // SET PASSWORD IN THIS STRING:
+    var pass:string = this.signInForm.value["password"];
+    var password:string = btoa(pass);
+
+    console.log(this.signInForm);
+    this.userService.signInUser(this.signInForm.value["username"], password).subscribe(
       (response: User) => {
+        if (response == null) {
+          alert("Wrong username or password!");
+          return;
+        }
         console.log(response);
-        // this.cookieService.set( "username" , response.username );
         this.cookieService.set( "username" , response.username );
         window.location.href='http://localhost:4200/main';
       },

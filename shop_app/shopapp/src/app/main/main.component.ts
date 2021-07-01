@@ -11,7 +11,6 @@ import { Variable } from '@angular/compiler/src/render3/r3_ast';
 import { ServiceService } from '../service.service';
 import { PicturesService } from '../pictures.service';
 
-
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -21,6 +20,19 @@ export class MainComponent implements OnInit {
   public users: User[];
   public services?: Service[];
   public picturess: Pictures[];
+  public allServices: string[] = [
+    'Programming',
+    'Design',
+    'Graphics',
+    'Music',
+    'Video',
+    'Education',
+    'Translation',
+    'Writing',
+    'Lifestyle',
+    'Health',
+    'Business',
+  ];
 
   @Input() isLoggedIn: boolean;
   @Input() isEnglish: boolean;
@@ -39,7 +51,6 @@ export class MainComponent implements OnInit {
     this.services = [];
     this.picturess = [];
 
-    
     this.username = this.cookieService.get('username');
     this.isLoggedIn = !!this.username;
     this.isEnglish = true;

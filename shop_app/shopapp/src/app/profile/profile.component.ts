@@ -55,9 +55,9 @@ export class ProfileComponent implements OnInit {
     this.username = this.cookieService.get('username');
     this.isEnglish = true;
     this.userService.getUserByUsername(this.username).subscribe(user => this.currentUser = user);
-    // if(this.username) {
-    //   this.router.navigate(['/main']);
-    // }
+    if(!this.username) {
+      this.router.navigate(['/main']);
+    }
 
   }
 
@@ -95,6 +95,7 @@ export class ProfileComponent implements OnInit {
     this.cookieService.delete('username');
     console.log("after");
     console.log(this.cookieService.get('username'));
+    this.router.navigate(['/main']);
   }
 
   setStep(index: number) {

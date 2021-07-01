@@ -98,12 +98,14 @@ export class SignUpComponent implements OnInit {
       status: 'ACTIVE'
     }
 
+    user.password = btoa(user.password);
     console.log(user);
 
     this.userService.addUser(user).subscribe(
       (response: User) => {
         console.log(response);
         this.cookieService.set( "username" , response.username );
+        this.router.navigate(['/main']);
       },
       (error: HttpErrorResponse) => {
         alert(error.message);

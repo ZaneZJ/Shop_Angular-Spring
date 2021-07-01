@@ -105,19 +105,23 @@
                 <p class="description">{{ instances.info }}</p>
                 <div style="margin-bottom: 20px">
                   <button
+                    (click)="buyService(instances)"
                     mat-raised-button
                     style="background-color: #94c6ce; color: #fff"
                   >
                     Buy
                   </button>
                 </div>
+                <p *ngIf="instances.count">Bought {{instances.count}}</p>
               </div>
             </div>
 
+
+
             <hr />
 
-            <div>
-              <p class="review-title">Reviews</p>
+            <!-- <div> -->
+              <!-- <p class="review-title">Reviews</p>
 
               <div>
                 <div>
@@ -145,6 +149,18 @@
                   Fat delivery and high quality!
                 </p>
               </div>
+            </div> -->
+
+            <div>
+              <button
+                *ngIf="isLoggedIn && (user.role == 'Admin' || user.username == service.user.username)"
+                id="hide"
+                (click)="deleteService()"
+                mat-raised-button
+                style="background-color: #cf4027; color: #fff"
+              >
+                DELETE
+              </button>
             </div>
           </div>
         </mat-card>
@@ -288,7 +304,7 @@
             <div>
               <p class="review-title">Atsauksmes</p>
 
-              <div>
+              <!-- <div>
                 <div>
                   <mat-icon style="color: #94c6ce">grade</mat-icon>
                   <mat-icon style="color: #94c6ce">grade</mat-icon>
@@ -313,7 +329,7 @@
                   Amazing service and seller, I would buy it for a second time.
                   Fat delivery and high quality!
                 </p>
-              </div>
+              </div> -->
             </div>
           </div>
         </mat-card>
@@ -339,6 +355,18 @@
             <br />Kontaktinformācija:<br />+371 22334455<br />sellyouridea@gmail.com
           </p>
         </div>
+      </div>
+
+      <div>
+        <button
+          *ngIf="isLoggedIn && (user.role == 'Admin' || user.username == service.user.username)"
+          id="hide"
+          (click)="deleteService()"
+          mat-raised-button
+          style="background-color: #cf4027; color: #fff"
+        >
+          DELETE
+        </button>
       </div>
     </div>
   </div>

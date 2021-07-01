@@ -4,4 +4,5 @@ export interface Instance {
     time: string;
     listedAs: number;
     info: string;
+    count?: number;
 }

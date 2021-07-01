@@ -1,6 +1,7 @@
 import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { User } from '../user';
+import { Instance } from '../instance';
 import { UserService } from '../user.service';
 import { NgForm } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
@@ -19,6 +20,7 @@ export class ServiceViewComponent implements OnInit {
   @Input() isLoggedIn: boolean;
   @Input() isEnglish: boolean;
   username!: string;
+  user!: User;
   service!: Service;
   id!: number;
 
@@ -40,11 +42,20 @@ export class ServiceViewComponent implements OnInit {
     }
   }
 
+  buyService(instances: any){
+    if(instances.count) {
+      instances.count++;
+    } else {
+      instances.count=1;
+    }
+  }
+
   changeLanguage() {
     this.isEnglish = !this.isEnglish;
   }
 
   ngOnInit() {
+    this.getUser();
     var serviceIdParam = this.route.snapshot.paramMap.get("service");
     var serviceId: number = parseInt(serviceIdParam!);
     this.serviceService.getAllServices().subscribe(
@@ -54,6 +65,34 @@ export class ServiceViewComponent implements OnInit {
             this.service = s;
           }
         })
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
+  }
+
+  public getUser(): void {
+    this.userService.getAllUsers().subscribe(
+      (response: User[]) => {
+        response.forEach(u => {
+          if (u.username == this.username) {
+            this.user = u;
+            return;
+          }
+        })
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
+  }
+
+  public deleteService() {
+    this.serviceService.deleteService(this.username, this.service.serviceId).subscribe(
+      (response: void) => {
+        alert("Service deleted successfully!");
+        window.location.href='http://localhost:4200/main';
       },
       (error: HttpErrorResponse) => {
         alert(error.message);

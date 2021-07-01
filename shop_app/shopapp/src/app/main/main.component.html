@@ -153,75 +153,46 @@
 
             </div>
           </mat-tab>
-          <mat-tab label="Programming">
-
-
-
-            <div *ngFor="let service of services" class="service-div-child-container">
-              <button
-                mat-raised-button
-                class="example-large-box mat-elevation-z4 service-button"
-                (click)="goToService(service.serviceId)"
-              >
-                <div style="position: relative">
-                  <div class="child service-title">
-                    <p>{{service?.title}}</p>
-                    <br />
+          <span *ngFor="let serviceText of allServices">
+            <mat-tab label="{{serviceText}}">
+              <div class="service-div-container">
+                <span *ngFor="let service of services">
+                  <div *ngIf="service.theme.includes(serviceText)" class="service-div-child-container">
+                    <button
+                      mat-raised-button
+                      class="example-large-box mat-elevation-z4 service-button"
+                      (click)="goToService(service.serviceId)"
+                    >
+                      <div style="position: relative">
+                        <div class="child service-title">
+                          <p>{{service?.title}}</p>
+                          <br />
+                        </div>
+                        <div class="child service-username">
+                          <p>{{service?.user?.username}}</p>
+                        </div>
+                        <div class="child service-picture-main" *ngFor="let picture of service?.pictures | slice:0:1;">
+                          <img
+                            src={{picture.picture}}
+                            alt="servicePicture"
+                            class="img-service-picture-main"
+                          />
+                        </div>
+                        <div class="picture-main child">
+                          <img
+                            src={{service?.user?.pictureMain}}
+                            alt="pictureMain"
+                            class="img"
+                          />
+                        </div>
+                      </div>
+                    </button>
                   </div>
-                  <div class="child service-username">
-                    <p>{{service?.user?.username}}</p>
-                  </div>
-                  <div class="child service-picture-main" *ngFor="let picture of service?.pictures | slice:0:1;">
-                    <img
-                      src={{picture.picture}}
-                      alt="servicePicture"
-                      class="img-service-picture-main"
-                    />
-                  </div>
-                  <div class="picture-main child">
-                    <img
-                      src={{service?.user?.pictureMain}}
-                      alt="pictureMain"
-                      class="img"
-                    />
-                  </div>
-                </div>
-              </button>
-            </div>
-
-
-
-          </mat-tab>
-          <mat-tab label="Design">
-            <div class="example-large-box mat-elevation-z4">Large content</div>
-          </mat-tab>
-          <mat-tab label="Graphics">
-            <div class="example-large-box mat-elevation-z4">Large content</div>
-          </mat-tab>
-          <mat-tab label="Music">
-            <div class="example-large-box mat-elevation-z4">Large content</div>
-          </mat-tab>
-          <mat-tab label="Video">
-            <div class="example-large-box mat-elevation-z4">Large content</div>
-          </mat-tab>
-          <mat-tab label="Education">
-            <div class="example-large-box mat-elevation-z4">Large content</div>
-          </mat-tab>
-          <mat-tab label="Translation">
-            <div class="example-large-box mat-elevation-z4">Large content</div>
-          </mat-tab>
-          <mat-tab label="Writing">
-            <div class="example-large-box mat-elevation-z4">Large content</div>
-          </mat-tab>
-          <mat-tab label="Lifestyle">
-            <div class="example-large-box mat-elevation-z4">Large content</div>
-          </mat-tab>
-          <mat-tab label="Health">
-            <div class="example-large-box mat-elevation-z4">Large content</div>
-          </mat-tab>
-          <mat-tab label="Business">
-            <div class="example-large-box mat-elevation-z4">Large content</div>
-          </mat-tab>
+                </span>
+  
+              </div>
+            </mat-tab>
+          </span>
         </mat-tab-group>
       </mat-card>
 

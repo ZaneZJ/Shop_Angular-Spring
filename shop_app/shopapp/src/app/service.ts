@@ -9,7 +9,7 @@ export interface Service {
     instances: Instance[];
     title: string;
     description: string;
-    theme: string;
+    theme: string[];
     reviews: Review[];
     chats: Chat[];
     user: User;
