@@ -1,546 +1,594 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Add Service</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Add Service</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  </head>
+  <body>
+    <div *ngIf="isEnglish">
+      <div>
+        <div class="main-background main-background-fade">
+          <!-- START of Nav Bar -->
 
-<div *ngIf="isEnglish">
-  <div>
-    <div class="main-background main-background-fade">
-      <!-- START of Nav Bar -->
-
-      <ul class="navbar navbody" id="navbar-zindex">
-        <button
-          class="logo-btn"
-          onclick="window.location.href='http://localhost:4200/main';"
-        >
-          <img src="assets/logo.png" alt="logo" width="200" />
-        </button>
-        <li style="float: right">
-          <a class="profile-button" href="profile"
-            ><mat-icon style="vertical-align: text-bottom">person</mat-icon></a
-          >
-        </li>
-      </ul>
-
-      <!-- END of Nav Bar -->
-
-      <main style="padding-bottom: 150px">
-        <!-- Add User Modal -->
-        <mat-card class="example-card">
-          <mat-card-header>
-            <mat-card-title style="margin-left: -15px; color: #94c6ce"
-              >Add Service</mat-card-title
+          <ul class="navbar navbody" id="navbar-zindex">
+            <button
+              class="logo-btn"
+              onclick="window.location.href='http://localhost:4200/main';"
             >
-          </mat-card-header>
-          <ng-template matStepLabel>Service</ng-template>
-
-          <form [formGroup]="mainServiceForm">
-            <!-- Title -->
-            <mat-form-field>
-              <mat-label for="title">Title</mat-label>
-              <input
-                type="text"
-                ngModel
-                name="title"
-                id="title"
-                formControlName="title"
-                matInput
-                required
-              />
-            </mat-form-field>
-
-            <!-- Description -->
-            <mat-form-field>
-              <mat-label for="description">Description</mat-label>
-              <textarea
-                type="text"
-                ngModel
-                name="description"
-                id="description"
-                formControlName="description"
-                matInput
-                required
-                placeholder="I'm providing a service for..."
-              ></textarea>
-            </mat-form-field>
-
-            <mat-form-field class="example-chip-list">
-              <mat-label>Service Theme</mat-label>
-              <mat-chip-list #chipList aria-label="Service selection">
-                <mat-chip
-                  *ngFor="let service of services"
-                  [selectable]="selectable"
-                  [removable]="removable"
-                  (removed)="remove(service)"
-                >
-                  {{ service }}
-                  <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-                </mat-chip>
-                <input
-                  placeholder="Add New Service Theme..."
-                  #serviceInput
-                  [formControl]="serviceCtrl"
-                  [matAutocomplete]="auto"
-                  [matChipInputFor]="chipList"
-                  [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-                  (matChipInputTokenEnd)="add($event)"
-                />
-              </mat-chip-list>
-              <mat-autocomplete
-                #auto="matAutocomplete"
-                (optionSelected)="selected($event)"
+              <img src="assets/logo.png" alt="logo" width="200" />
+            </button>
+            <li style="float: right">
+              <a class="profile-button" href="profile"
+                ><mat-icon style="vertical-align: text-bottom"
+                  >person</mat-icon
+                ></a
               >
-                <mat-option
-                  *ngFor="let service of filteredServices | async"
-                  [value]="service"
+            </li>
+          </ul>
+
+          <!-- END of Nav Bar -->
+
+          <main style="padding-bottom: 150px">
+            <!-- Add User Modal -->
+            <mat-card class="example-card">
+              <mat-card-header>
+                <mat-card-title style="margin-left: -15px; color: #94c6ce"
+                  >Add Service</mat-card-title
                 >
-                  {{ service }}
-                </mat-option>
-              </mat-autocomplete>
-            </mat-form-field>
+              </mat-card-header>
+              <ng-template matStepLabel>Service</ng-template>
 
-            <!-- Insert img -->
-
-            <!-- TODO: add 3 img imports -->
-
-            <!-- End insert img -->
-          </form>
-
-          <mat-tab-group mat-align-tabs="center">
-            <form [formGroup]="instanceOneForm">
-              <!-- Listed as 1 (new instance) -->
-              <mat-tab label="First">
-                <!-- Price -->
-                <mat-form-field style="margin-top: 20px">
-                  <mat-label for="price">Price</mat-label>
-                  <input
-                    ngModel
-                    name="price"
-                    id="price"
-                    formControlName="price"
-                    matInput
-                    type="number"
-                    required
-                  />
-                </mat-form-field>
-                <!-- Time -->
+              <form [formGroup]="mainServiceForm">
+                <!-- Title -->
                 <mat-form-field>
-                  <mat-label for="time">Time</mat-label>
+                  <mat-label for="title">Title</mat-label>
                   <input
-                    ngModel
-                    name="time"
-                    id="time"
-                    formControlName="time"
                     type="text"
+                    ngModel
+                    name="title"
+                    id="title"
+                    formControlName="title"
                     matInput
                     required
                   />
                 </mat-form-field>
+
+                <!-- Description -->
                 <mat-form-field>
-                  <mat-label for="info">Description</mat-label>
+                  <mat-label for="description">Description</mat-label>
                   <textarea
                     type="text"
                     ngModel
-                    name="info"
-                    id="info"
-                    formControlName="info"
+                    name="description"
+                    id="description"
+                    formControlName="description"
                     matInput
                     required
-                    placeholder="Description about specific type..."
+                    placeholder="I'm providing a service for..."
                   ></textarea>
                 </mat-form-field>
-              </mat-tab>
-            </form>
-            <form [formGroup]="instanceTwoForm">
-              <mat-tab label="Second">
-                <!-- Price -->
-                <mat-form-field style="margin-top: 20px">
-                  <mat-label for="price">Price</mat-label>
+
+                <mat-form-field class="example-chip-list">
+                  <mat-label>Service Theme</mat-label>
+                  <mat-chip-list
+                    for="theme"
+                    #chipList
+                    aria-label="Service selection"
+                  >
+                    <mat-chip
+                      *ngFor="let service of services"
+                      [selectable]="selectable"
+                      [removable]="removable"
+                      (removed)="remove(service)"
+                    >
+                      {{ service }}
+                      <mat-icon matChipRemove *ngIf="removable"
+                        >cancel</mat-icon
+                      >
+                    </mat-chip>
+                    <input
+                      name="theme"
+                      id="theme"
+                      formControlName="theme"
+                      placeholder="Add New Service Theme..."
+                      #serviceInput
+                      [formControl]="serviceCtrl"
+                      [matAutocomplete]="auto"
+                      [matChipInputFor]="chipList"
+                      [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                      (matChipInputTokenEnd)="add($event)"
+                    />
+                  </mat-chip-list>
+                  <mat-autocomplete
+                    #auto="matAutocomplete"
+                    (optionSelected)="selected($event)"
+                  >
+                    <mat-option
+                      *ngFor="let service of filteredServices | async"
+                      [value]="service"
+                    >
+                      {{ service }}
+                    </mat-option>
+                  </mat-autocomplete>
+                </mat-form-field>
+              </form>
+
+              <mat-tab-group mat-align-tabs="center">
+                <form [formGroup]="instanceOneForm">
+                  <!-- Listed as 1 (new instance) -->
+                  <mat-tab label="First">
+                    <!-- Price -->
+                    <mat-form-field style="margin-top: 20px">
+                      <mat-label for="price">Price</mat-label>
+                      <input
+                        ngModel
+                        name="price"
+                        id="price"
+                        formControlName="price"
+                        matInput
+                        type="number"
+                        required
+                      />
+                    </mat-form-field>
+                    <!-- Time -->
+                    <mat-form-field>
+                      <mat-label for="time">Time</mat-label>
+                      <input
+                        ngModel
+                        name="time"
+                        id="time"
+                        formControlName="time"
+                        type="text"
+                        matInput
+                        required
+                      />
+                    </mat-form-field>
+                    <mat-form-field>
+                      <mat-label for="info">Description</mat-label>
+                      <textarea
+                        type="text"
+                        ngModel
+                        name="info"
+                        id="info"
+                        formControlName="info"
+                        matInput
+                        required
+                        placeholder="Description about specific type..."
+                      ></textarea>
+                    </mat-form-field>
+                  </mat-tab>
+                </form>
+                <form [formGroup]="instanceTwoForm">
+                  <mat-tab label="Second">
+                    <!-- Price -->
+                    <mat-form-field style="margin-top: 20px">
+                      <mat-label for="price">Price</mat-label>
+                      <input
+                        ngModel
+                        name="price"
+                        id="price"
+                        formControlName="price"
+                        matInput
+                        type="number"
+                      />
+                    </mat-form-field>
+                    <!-- Time -->
+                    <mat-form-field>
+                      <mat-label for="time">Time</mat-label>
+                      <input
+                        ngModel
+                        name="time"
+                        id="time"
+                        formControlName="time"
+                        type="text"
+                        matInput
+                      />
+                    </mat-form-field>
+                    <mat-form-field>
+                      <mat-label for="info">Description</mat-label>
+                      <textarea
+                        type="text"
+                        ngModel
+                        name="info"
+                        id="info"
+                        formControlName="info"
+                        matInput
+                        placeholder="Description about specific type..."
+                      ></textarea>
+                    </mat-form-field>
+                  </mat-tab>
+                </form>
+                <form [formGroup]="instanceThreeForm">
+                  <mat-tab label="Third">
+                    <!-- Price -->
+                    <mat-form-field style="margin-top: 20px">
+                      <mat-label>Price</mat-label>
+                      <input
+                        ngModel
+                        name="price"
+                        id="price"
+                        formControlName="price"
+                        matInput
+                        type="number"
+                      />
+                    </mat-form-field>
+                    <!-- Time -->
+                    <mat-form-field>
+                      <mat-label for="time">Time</mat-label>
+                      <input
+                        ngModel
+                        name="time"
+                        id="time"
+                        formControlName="time"
+                        type="text"
+                        matInput
+                      />
+                    </mat-form-field>
+                    <mat-form-field>
+                      <mat-label for="text">Description</mat-label>
+                      <textarea
+                        type="text"
+                        ngModel
+                        name="info"
+                        id="info"
+                        formControlName="info"
+                        matInput
+                        placeholder="Description about specific type..."
+                      ></textarea>
+                    </mat-form-field>
+                  </mat-tab>
+                </form>
+              </mat-tab-group>
+
+              <!-- Insert img -->
+              <form [formGroup]="pictureForm">
+                <mat-form-field>
+                  <mat-label for="picture"
+                    >Your services pictures URL</mat-label
+                  >
                   <input
+                    type="text"
                     ngModel
-                    name="price"
-                    id="price"
-                    formControlName="price"
+                    name="picture"
+                    id="picture"
                     matInput
-                    type="number"
+                    formControlName="picture"
+                    required
                   />
                 </mat-form-field>
-                <!-- Time -->
-                <mat-form-field>
-                  <mat-label for="time">Time</mat-label>
-                  <input
-                    ngModel
-                    name="time"
-                    id="time"
-                    formControlName="time"
-                    type="text"
-                    matInput
-                  />
-                </mat-form-field>
-                <mat-form-field>
-                  <mat-label for="info">Description</mat-label>
-                  <textarea
-                    type="text"
-                    ngModel
-                    name="info"
-                    id="info"
-                    formControlName="info"
-                    matInput
-                    placeholder="Description about specific type..."
-                  ></textarea>
-                </mat-form-field>
-              </mat-tab>
-            </form>
-            <form [formGroup]="instanceThreeForm">
-              <mat-tab label="Third">
-                <!-- Price -->
-                <mat-form-field style="margin-top: 20px">
-                  <mat-label>Price</mat-label>
-                  <input
-                    ngModel
-                    name="price"
-                    id="price"
-                    formControlName="price"
-                    matInput
-                    type="number"
-                  />
-                </mat-form-field>
-                <!-- Time -->
-                <mat-form-field>
-                  <mat-label for="time">Time</mat-label>
-                  <input
-                    ngModel
-                    name="time"
-                    id="time"
-                    formControlName="time"
-                    type="text"
-                    matInput
-                  />
-                </mat-form-field>
-                <mat-form-field>
-                  <mat-label for="text">Description</mat-label>
-                  <textarea
-                    type="text"
-                    ngModel
-                    name="info"
-                    id="info"
-                    formControlName="info"
-                    matInput
-                    placeholder="Description about specific type..."
-                  ></textarea>
-                </mat-form-field>
-              </mat-tab>
-            </form>
-          </mat-tab-group>
+
+                <!-- End insert img -->
+              </form>
+
+              <div>
+                <button
+                  (click)="submitAll()"
+                  mat-raised-button
+                  style="background-color: #94c6ce; color: #fff"
+                >
+                  Submit
+                </button>
+              </div>
+            </mat-card>
+          </main>
+        </div>
+
+        <div class="footer">
+          <button
+            (click)="changeLanguage()"
+            mat-raised-button
+            style="
+              position: absolute;
+              margin-top: 30px;
+              margin-left: 30px;
+              color: #b2b2b2;
+            "
+          >
+            Change Language
+          </button>
 
           <div>
-            <button
-              (click)="submitAll()"
-              mat-raised-button
-              style="background-color: #94c6ce; color: #fff"
-            >
-              Submit
-            </button>
+            <p style="color: #aaaaaa; text-align-last: center; font-size: 13px">
+              <br />Contact info:<br />+371 22334455<br />sellyouridea@gmail.com
+            </p>
           </div>
-        </mat-card>
-      </main>
-    </div>
-
-    <div class="footer">
-      <button
-        (click)="changeLanguage()"
-        mat-raised-button
-        style="
-          position: absolute;
-          margin-top: 30px;
-          margin-left: 30px;
-          color: #b2b2b2;
-        "
-      >
-        Change Language
-      </button>
-
-      <div>
-        <p style="color: #aaaaaa; text-align-last: center; font-size: 13px">
-          <br />Contact info:<br />+371 22334455<br />sellyouridea@gmail.com
-        </p>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- ========================Change Language====================== -->
+    <!-- ========================Change Language====================== -->
 
-<div *ngIf="!isEnglish">
-  <div>
-    <div class="main-background main-background-fade">
-      <!-- START of Nav Bar -->
+    <div *ngIf="!isEnglish">
+      <div>
+        <div class="main-background main-background-fade">
+          <!-- START of Nav Bar -->
 
-      <ul class="navbar navbody" id="navbar-zindex">
-        <button
-          class="logo-btn"
-          onclick="window.location.href='http://localhost:4200/main';"
-        >
-          <img src="assets/logo.png" alt="logo" width="200" />
-        </button>
-        <li style="float: right">
-          <a class="profile-button" href="profile"
-            ><mat-icon style="vertical-align: text-bottom">person</mat-icon></a
-          >
-        </li>
-      </ul>
-
-      <!-- END of Nav Bar -->
-
-      <main style="padding-bottom: 150px">
-        <!-- Add User Modal -->
-        <mat-card class="example-card">
-          <mat-card-header>
-            <mat-card-title style="margin-left: -15px; color: #94c6ce"
-              >Pievienot Pakalpojumu</mat-card-title
+          <ul class="navbar navbody" id="navbar-zindex">
+            <button
+              class="logo-btn"
+              onclick="window.location.href='http://localhost:4200/main';"
             >
-          </mat-card-header>
-          <ng-template matStepLabel>Service</ng-template>
-
-          <form [formGroup]="mainServiceForm">
-            <!-- Title -->
-            <mat-form-field>
-              <mat-label for="title">Virsraksts</mat-label>
-              <input
-                type="text"
-                ngModel
-                name="title"
-                id="title"
-                formControlName="title"
-                matInput
-                required
-              />
-            </mat-form-field>
-
-            <!-- Description -->
-            <mat-form-field>
-              <mat-label for="description">Apraksts</mat-label>
-              <textarea
-                type="text"
-                ngModel
-                name="description"
-                id="description"
-                formControlName="description"
-                matInput
-                required
-                placeholder="I'm providing a service for..."
-              ></textarea>
-            </mat-form-field>
-
-            <mat-form-field class="example-chip-list">
-              <mat-label>Pakalpojuma veids</mat-label>
-              <mat-chip-list #chipList aria-label="Service selection">
-                <mat-chip
-                  *ngFor="let service of services"
-                  [selectable]="selectable"
-                  [removable]="removable"
-                  (removed)="remove(service)"
-                >
-                  {{ service }}
-                  <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-                </mat-chip>
-                <input
-                  placeholder="Add New Service Theme..."
-                  #serviceInput
-                  [formControl]="serviceCtrl"
-                  [matAutocomplete]="auto"
-                  [matChipInputFor]="chipList"
-                  [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-                  (matChipInputTokenEnd)="add($event)"
-                />
-              </mat-chip-list>
-              <mat-autocomplete
-                #auto="matAutocomplete"
-                (optionSelected)="selected($event)"
+              <img src="assets/logo.png" alt="logo" width="200" />
+            </button>
+            <li style="float: right">
+              <a class="profile-button" href="profile"
+                ><mat-icon style="vertical-align: text-bottom"
+                  >person</mat-icon
+                ></a
               >
-                <mat-option
-                  *ngFor="let service of filteredServices | async"
-                  [value]="service"
+            </li>
+          </ul>
+
+          <!-- END of Nav Bar -->
+
+          <main style="padding-bottom: 150px">
+            <!-- Add User Modal -->
+            <mat-card class="example-card">
+              <mat-card-header>
+                <mat-card-title style="margin-left: -15px; color: #94c6ce"
+                  >Pievienot Pakalpojumu</mat-card-title
                 >
-                  {{ service }}
-                </mat-option>
-              </mat-autocomplete>
-            </mat-form-field>
+              </mat-card-header>
+              <ng-template matStepLabel>Service</ng-template>
 
-            <!-- Insert img -->
-
-            <!-- TODO: add 3 img imports -->
-
-            <!-- End insert img -->
-          </form>
-
-          <mat-tab-group mat-align-tabs="center">
-            <form [formGroup]="instanceOneForm">
-              <!-- Listed as 1 (new instance) -->
-              <mat-tab label="Pirmais">
-                <!-- Price -->
-                <mat-form-field style="margin-top: 20px">
-                  <mat-label for="price">Cena</mat-label>
-                  <input
-                    ngModel
-                    name="price"
-                    id="price"
-                    formControlName="price"
-                    matInput
-                    type="number"
-                    required
-                  />
-                </mat-form-field>
-                <!-- Time -->
+              <form [formGroup]="mainServiceForm">
+                <!-- Title -->
                 <mat-form-field>
-                  <mat-label for="time">Laika periods</mat-label>
+                  <mat-label for="title">Virsraksts</mat-label>
                   <input
-                    ngModel
-                    name="time"
-                    id="time"
-                    formControlName="time"
                     type="text"
+                    ngModel
+                    name="title"
+                    id="title"
+                    formControlName="title"
                     matInput
                     required
                   />
                 </mat-form-field>
+
+                <!-- Description -->
                 <mat-form-field>
-                  <mat-label for="info">Detalizēta informācija</mat-label>
+                  <mat-label for="description">Apraksts</mat-label>
                   <textarea
                     type="text"
                     ngModel
-                    name="info"
-                    id="info"
-                    formControlName="info"
+                    name="description"
+                    id="description"
+                    formControlName="description"
                     matInput
                     required
-                    placeholder="Description about specific type..."
+                    placeholder="I'm providing a service for..."
                   ></textarea>
                 </mat-form-field>
-              </mat-tab>
-            </form>
-            <form [formGroup]="instanceTwoForm">
-              <mat-tab label="Otrais">
-                <!-- Price -->
-                <mat-form-field style="margin-top: 20px">
-                  <mat-label for="price">Cena</mat-label>
-                  <input
-                    ngModel
-                    name="price"
-                    id="price"
-                    formControlName="price"
-                    matInput
-                    type="number"
-                  />
+
+                <mat-form-field class="example-chip-list">
+                  <mat-label>Pakalpojuma veids</mat-label>
+                  <mat-chip-list
+                    for="theme"
+                    #chipList
+                    aria-label="Service selection"
+                  >
+                    <mat-chip
+                      *ngFor="let service of services"
+                      [selectable]="selectable"
+                      [removable]="removable"
+                      (removed)="remove(service)"
+                    >
+                      {{ service }}
+                      <mat-icon matChipRemove *ngIf="removable"
+                        >cancel</mat-icon
+                      >
+                    </mat-chip>
+                    <input
+                      name="theme"
+                      id="theme"
+                      formControlName="theme"
+                      placeholder="Add New Service Theme..."
+                      #serviceInput
+                      [formControl]="serviceCtrl"
+                      [matAutocomplete]="auto"
+                      [matChipInputFor]="chipList"
+                      [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                      (matChipInputTokenEnd)="add($event)"
+                    />
+                  </mat-chip-list>
+                  <mat-autocomplete
+                    #auto="matAutocomplete"
+                    (optionSelected)="selected($event)"
+                  >
+                    <mat-option
+                      *ngFor="let service of filteredServices | async"
+                      [value]="service"
+                    >
+                      {{ service }}
+                    </mat-option>
+                  </mat-autocomplete>
                 </mat-form-field>
-                <!-- Time -->
+              </form>
+
+              <!-- Insert img -->
+              <form [formGroup]="pictureForm">
                 <mat-form-field>
-                  <mat-label for="time">Laika periods</mat-label>
+                  <mat-label for="picture"
+                    >Your services pictures URL</mat-label
+                  >
                   <input
-                    ngModel
-                    name="time"
-                    id="time"
-                    formControlName="time"
-                    type="text"
-                    matInput
-                  />
-                </mat-form-field>
-                <mat-form-field>
-                  <mat-label for="info">Detalizēta informācija</mat-label>
-                  <textarea
-                    type="text"
-                    ngModel
-                    name="info"
-                    id="info"
-                    formControlName="info"
-                    matInput
-                    placeholder="Description about specific type..."
-                  ></textarea>
-                </mat-form-field>
-              </mat-tab>
-            </form>
-            <form [formGroup]="instanceThreeForm">
-              <mat-tab label="Trešais">
-                <!-- Price -->
-                <mat-form-field style="margin-top: 20px">
-                  <mat-label>Cena</mat-label>
-                  <input
-                    ngModel
-                    name="price"
-                    id="price"
-                    formControlName="price"
-                    matInput
-                    type="number"
-                  />
-                </mat-form-field>
-                <!-- Time -->
-                <mat-form-field>
-                  <mat-label for="time">Laika periods</mat-label>
-                  <input
-                    ngModel
-                    name="time"
-                    id="time"
-                    formControlName="time"
-                    type="text"
-                    matInput
-                  />
-                </mat-form-field>
-                <mat-form-field>
-                  <mat-label for="text">Detalizēta informācija</mat-label>
-                  <textarea
                     type="text"
                     ngModel
-                    name="info"
-                    id="info"
-                    formControlName="info"
+                    name="picture"
+                    id="picture"
                     matInput
-                    placeholder="Description about specific type..."
-                  ></textarea>
+                    formControlName="picture"
+                    required
+                  />
                 </mat-form-field>
-              </mat-tab>
-            </form>
-          </mat-tab-group>
+
+                <!-- End insert img -->
+              </form>
+
+              <mat-tab-group mat-align-tabs="center">
+                <form [formGroup]="instanceOneForm">
+                  <!-- Listed as 1 (new instance) -->
+                  <mat-tab label="Pirmais">
+                    <!-- Price -->
+                    <mat-form-field style="margin-top: 20px">
+                      <mat-label for="price">Cena</mat-label>
+                      <input
+                        ngModel
+                        name="price"
+                        id="price"
+                        formControlName="price"
+                        matInput
+                        type="number"
+                        required
+                      />
+                    </mat-form-field>
+                    <!-- Time -->
+                    <mat-form-field>
+                      <mat-label for="time">Laika periods</mat-label>
+                      <input
+                        ngModel
+                        name="time"
+                        id="time"
+                        formControlName="time"
+                        type="text"
+                        matInput
+                        required
+                      />
+                    </mat-form-field>
+                    <mat-form-field>
+                      <mat-label for="info">Detalizēta informācija</mat-label>
+                      <textarea
+                        type="text"
+                        ngModel
+                        name="info"
+                        id="info"
+                        formControlName="info"
+                        matInput
+                        required
+                        placeholder="Description about specific type..."
+                      ></textarea>
+                    </mat-form-field>
+                  </mat-tab>
+                </form>
+                <form [formGroup]="instanceTwoForm">
+                  <mat-tab label="Otrais">
+                    <!-- Price -->
+                    <mat-form-field style="margin-top: 20px">
+                      <mat-label for="price">Cena</mat-label>
+                      <input
+                        ngModel
+                        name="price"
+                        id="price"
+                        formControlName="price"
+                        matInput
+                        type="number"
+                      />
+                    </mat-form-field>
+                    <!-- Time -->
+                    <mat-form-field>
+                      <mat-label for="time">Laika periods</mat-label>
+                      <input
+                        ngModel
+                        name="time"
+                        id="time"
+                        formControlName="time"
+                        type="text"
+                        matInput
+                      />
+                    </mat-form-field>
+                    <mat-form-field>
+                      <mat-label for="info">Detalizēta informācija</mat-label>
+                      <textarea
+                        type="text"
+                        ngModel
+                        name="info"
+                        id="info"
+                        formControlName="info"
+                        matInput
+                        placeholder="Description about specific type..."
+                      ></textarea>
+                    </mat-form-field>
+                  </mat-tab>
+                </form>
+                <form [formGroup]="instanceThreeForm">
+                  <mat-tab label="Trešais">
+                    <!-- Price -->
+                    <mat-form-field style="margin-top: 20px">
+                      <mat-label>Cena</mat-label>
+                      <input
+                        ngModel
+                        name="price"
+                        id="price"
+                        formControlName="price"
+                        matInput
+                        type="number"
+                      />
+                    </mat-form-field>
+                    <!-- Time -->
+                    <mat-form-field>
+                      <mat-label for="time">Laika periods</mat-label>
+                      <input
+                        ngModel
+                        name="time"
+                        id="time"
+                        formControlName="time"
+                        type="text"
+                        matInput
+                      />
+                    </mat-form-field>
+                    <mat-form-field>
+                      <mat-label for="text">Detalizēta informācija</mat-label>
+                      <textarea
+                        type="text"
+                        ngModel
+                        name="info"
+                        id="info"
+                        formControlName="info"
+                        matInput
+                        placeholder="Description about specific type..."
+                      ></textarea>
+                    </mat-form-field>
+                  </mat-tab>
+                </form>
+              </mat-tab-group>
+
+              <div>
+                <button
+                  (click)="submitAll()"
+                  mat-raised-button
+                  style="background-color: #94c6ce; color: #fff"
+                >
+                  Pievienot
+                </button>
+              </div>
+            </mat-card>
+          </main>
+        </div>
+
+        <div class="footer">
+          <button
+            (click)="changeLanguage()"
+            mat-raised-button
+            style="
+              position: absolute;
+              margin-top: 30px;
+              margin-left: 30px;
+              color: #b2b2b2;
+            "
+          >
+            Mainīt valodu
+          </button>
 
           <div>
-            <button
-              (click)="submitAll()"
-              mat-raised-button
-              style="background-color: #94c6ce; color: #fff"
-            >
-              Pievienot
-            </button>
+            <p style="color: #aaaaaa; text-align-last: center; font-size: 13px">
+              <br />Kontaktinformācija:<br />+371 22334455<br />sellyouridea@gmail.com
+            </p>
           </div>
-        </mat-card>
-      </main>
-    </div>
-
-    <div class="footer">
-      <button
-        (click)="changeLanguage()"
-        mat-raised-button
-        style="
-          position: absolute;
-          margin-top: 30px;
-          margin-left: 30px;
-          color: #b2b2b2;
-        "
-      >
-        Mainīt valodu
-      </button>
-
-      <div>
-        <p style="color: #aaaaaa; text-align-last: center; font-size: 13px">
-          <br />Kontaktinformācija:<br />+371 22334455<br />sellyouridea@gmail.com
-        </p>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-
-</body>
+  </body>
 </html>

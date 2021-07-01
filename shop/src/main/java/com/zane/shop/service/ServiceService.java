@@ -69,8 +69,7 @@ public class ServiceService {
         Service service = serviceValidator.checkServiceExists(serviceId);
         User user = userValidator.checkUsernameExists(username);
         user.getServices().remove(service);
-        serviceRepo.delete((service));
+        serviceRepo.delete(service);
         userRepo.save(user);
-        serviceRepo.save(service);
     }
 }

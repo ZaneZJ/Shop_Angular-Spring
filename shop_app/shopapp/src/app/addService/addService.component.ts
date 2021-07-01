@@ -21,6 +21,7 @@ import { CdkStepper } from '@angular/cdk/stepper';
 import { ServiceService } from '../service.service';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
+import { PicturesService } from '../pictures.service';
 
 @Component({
   selector: 'app-addService',
@@ -38,6 +39,7 @@ export class AddServiceComponent implements OnInit {
   instanceOneForm!: FormGroup;
   instanceTwoForm!: FormGroup;
   instanceThreeForm!: FormGroup;
+  pictureForm!: FormGroup;
 
   @Input() isEnglish: boolean;
 
@@ -79,6 +81,7 @@ export class AddServiceComponent implements OnInit {
   constructor(
     private serviceService: ServiceService, 
     private userService: UserService, 
+    private picturesService: PicturesService, 
     private _formBuilder: FormBuilder,
     private cookieService: CookieService,
     private router: Router
@@ -151,7 +154,7 @@ export class AddServiceComponent implements OnInit {
     this.mainServiceForm = this._formBuilder.group({
       title: ['', Validators.required],
       description: ['', Validators.required],
-      theme: ['', Validators.required],
+      theme: [[''], Validators.required],
       // TODO: add img
     });
     this.instanceOneForm = this._formBuilder.group({
@@ -168,6 +171,9 @@ export class AddServiceComponent implements OnInit {
       price: ['', Validators.required],
       time: ['', Validators.required],
       info: ['', Validators.required],
+    });    
+    this.pictureForm = this._formBuilder.group({
+      picture: [''],
     });
   }
 
@@ -208,17 +214,21 @@ export class AddServiceComponent implements OnInit {
     [this.mainServiceForm, this.instanceOneForm, this.instanceTwoForm, this.instanceThreeForm].forEach((form) => {
       console.log(form);
     })
+    console.log(this.pictureForm.value);
+
 
     // FIXME: get user that's logged on and assign to it!
-
+    
     // can run the function in the future
     this.userService.getUserByUsername(this.username).subscribe(
       (user: User) => {
         const service: Service = {
           ...this.mainServiceForm.value,
           user: user,
-          instances: [this.instanceOneForm.value, this.instanceTwoForm.value, this.instanceThreeForm.value]
+          pictures: [this.pictureForm.value],
+          instances: [this.instanceOneForm.value, this.instanceTwoForm.value, this.instanceThreeForm.value],
         }
+        service.theme = this.services;
     
         console.log(service);
         console.log("before service is created");
